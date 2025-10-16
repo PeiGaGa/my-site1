@@ -58,10 +58,68 @@
     });
   }
 
+  function initActiveNav() {
+    try {
+      var currentPath = window.location.pathname;
+      var links = document.querySelectorAll('.pc-nav__menu a, .m-links a');
+      if (!links || links.length === 0) return;
+
+      // Clear previous states
+      links.forEach(function (a) {
+        a.classList.remove('router-link-active');
+        a.classList.remove('router-link-exact-active');
+      });
+
+      // Choose best match by pathname (ignore hash/query), prefer exact match
+      var best = null;
+      var exactPaths = [];
+      links.forEach(function (a) {
+        var href = a.getAttribute('href');
+        if (!href || href === '#') return;
+        var url;
+        try {
+          url = new URL(href, window.location.href);
+        } catch (e) {
+          return;
+        }
+        var path = url.pathname;
+
+        // Exact match
+        if (path === currentPath) {
+          exactPaths.push(a);
+          // keep first exact match as best (likely the top nav link)
+          if (!best || !best.exact) {
+            best = { a: a, exact: true };
+          }
+          return;
+        }
+        // Fallback: tolerate relative path differences (e.g., ../en/about.html vs /en/about.html)
+        var currTail = currentPath.split('/').slice(-2).join('/');
+        var pathTail = path.split('/').slice(-2).join('/');
+        if (!best && currTail && pathTail && currTail === pathTail) {
+          best = { a: a, exact: false };
+        }
+      });
+
+      if (exactPaths.length > 0) {
+        exactPaths.forEach(function (a) {
+          a.classList.add('router-link-active');
+          a.classList.add('router-link-exact-active');
+        });
+      } else if (best && best.a) {
+        best.a.classList.add('router-link-active');
+        if (best.exact) best.a.classList.add('router-link-exact-active');
+      }
+    } catch (err) {
+      // noop
+    }
+  }
+
   function init() {
     var heroSwipers = document.querySelectorAll('.hero-swiper');
     heroSwipers.forEach(function (root) { initHeroSlider(root); });
     initLanguageSwitch();
+    initActiveNav();
   }
 
   if (document.readyState === 'loading') {
