@@ -207,6 +207,40 @@
   function init() {
     var heroSwipers = document.querySelectorAll('.hero-swiper');
     heroSwipers.forEach(function (root) { initHeroSlider(root); });
+    // mobile drawer
+    try {
+      var mNavs = document.querySelectorAll('.m-nav');
+      mNavs.forEach(function (nav) {
+        var root = nav.closest('.m-container') || document;
+        var hamburger = nav.querySelector('.hamburger');
+        var overlay = root.querySelector('.drawer-overlay');
+        var drawer = root.querySelector('.drawer');
+        if (!hamburger || !overlay || !drawer) return;
+
+        var open = false;
+        function setOpen(v) {
+          open = !!v;
+          if (open) {
+            drawer.classList.add('is-open');
+            overlay.classList.add('is-open');
+            document.body.classList.add('no-scroll');
+          } else {
+            drawer.classList.remove('is-open');
+            overlay.classList.remove('is-open');
+            document.body.classList.remove('no-scroll');
+          }
+        }
+
+        hamburger.addEventListener('click', function () { setOpen(true); });
+        overlay.addEventListener('click', function () { setOpen(false); });
+        var closeBtn = root.querySelector('.drawer__close');
+        if (closeBtn) closeBtn.addEventListener('click', function () { setOpen(false); });
+        // ESC to close
+        document.addEventListener('keydown', function (e) {
+          if (e.key === 'Escape') setOpen(false);
+        });
+      });
+    } catch (e) {}
     initLanguageSwitch();
     initNewsSwipers();
     initProductSwipers();
