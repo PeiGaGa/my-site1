@@ -1,39 +1,51 @@
 (function () {
   function initHeroSlider(root) {
-    var wrapper = root.querySelector('.swiper-wrapper');
-    if (!wrapper) return;
-    var slides = Array.prototype.slice.call(wrapper.children).filter(function (el) {
-      return el.classList && el.classList.contains('swiper-slide');
-    });
-    if (slides.length === 0) return;
-
+    if (!root) return;
+    
     var prevBtn = root.parentElement.querySelector('.hero-prev');
     var nextBtn = root.parentElement.querySelector('.hero-next');
     var counterEl = root.parentElement.querySelector('.hero-counter');
 
-    var index = 0;
-
-    function render() {
-      for (var i = 0; i < slides.length; i++) {
-        var show = i === index;
-        slides[i].style.display = show ? 'block' : 'none';
+    var swiper = new Swiper(root, {
+      loop: true,
+      speed: 800,
+      autoplay: {
+        delay: 5000,
+        disableOnInteraction: false,
+        pauseOnMouseEnter: true
+      },
+      effect: 'fade',
+      fadeEffect: {
+        crossFade: true
+      },
+      navigation: {
+        prevEl: prevBtn,
+        nextEl: nextBtn
+      },
+      on: {
+        init: function() {
+          if (counterEl && this.slides) {
+            var curr = '01';
+            var total = (this.slides.length / (this.loopedSlides ? 3 : 1)).toString().padStart(2, '0');
+            counterEl.textContent = curr + '/' + total;
+          }
+        },
+        slideChange: function() {
+          if (counterEl) {
+            var curr = ((this.realIndex || 0) + 1).toString().padStart(2, '0');
+            var total = (this.slides.length / (this.loopedSlides ? 3 : 1)).toString().padStart(2, '0');
+            counterEl.textContent = curr + '/' + total;
+          }
+        }
       }
-      if (counterEl) {
-        var curr = (index + 1).toString().padStart(2, '0');
-        var total = slides.length.toString().padStart(2, '0');
-        counterEl.textContent = curr + '/' + total;
-      }
+    });
+
+    // 初始化计数器
+    if (counterEl && swiper.slides) {
+      var curr = '01';
+      var total = swiper.slides.length.toString().padStart(2, '0');
+      counterEl.textContent = curr + '/' + total;
     }
-
-    function go(delta) {
-      index = (index + delta + slides.length) % slides.length;
-      render();
-    }
-
-    if (prevBtn) prevBtn.addEventListener('click', function () { go(-1); });
-    if (nextBtn) nextBtn.addEventListener('click', function () { go(1); });
-
-    render();
   }
 
   // Minimal generic swiper for news lists with dots pagination
