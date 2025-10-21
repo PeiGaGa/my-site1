@@ -204,9 +204,62 @@
     }
   }
 
+  function initHeaderScroll() {
+    
+    var pcHeader = document.querySelector('.pc-header');
+    var mHeader = document.querySelector('.m-header');
+
+    var scrollThreshold = 100; // 滚动阈值，可以根据需要调整
+    
+    function updateHeaderBackground() {
+      var scrollTop = window.pageYOffset || document.documentElement.scrollTop || document.body.scrollTop;
+      
+      if (scrollTop > scrollThreshold) {
+        
+        if (pcHeader) {
+          pcHeader.classList.remove('is-transparent');
+        }
+        if (mHeader) {
+          mHeader.classList.remove('is-transparent');
+        }
+      } else {
+        if (pcHeader) {
+          pcHeader.classList.add('is-transparent');
+        }
+        if (mHeader) {
+          mHeader.classList.add('is-transparent');
+        }
+      }
+    }
+
+    // 使用 requestAnimationFrame 优化滚动处理
+    var ticking = false;
+    function onScroll() {
+      if (!ticking) {
+        window.requestAnimationFrame(function() {
+          updateHeaderBackground();
+          ticking = false;
+        });
+        ticking = true;
+      }
+    }
+
+    // 添加多个滚动事件监听
+    window.addEventListener('scroll', onScroll, { passive: true });
+    document.addEventListener('scroll', onScroll, { passive: true });
+    document.body.addEventListener('scroll', onScroll, { passive: true });
+    
+    // 初始化状态
+    updateHeaderBackground();
+    
+    // 100ms 后再次检查状态
+    setTimeout(updateHeaderBackground, 100);
+  }
+
   function init() {
     var heroSwipers = document.querySelectorAll('.hero-swiper');
     heroSwipers.forEach(function (root) { initHeroSlider(root); });
+    initHeaderScroll(); // 初始化导航栏滚动效果
     // mobile drawer
     try {
       var mNavs = document.querySelectorAll('.m-nav');

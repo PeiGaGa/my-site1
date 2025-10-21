@@ -1362,6 +1362,11 @@ button.swiper-pagination-bullet {
     font-size: 7rem;
   }
 }
+@media (max-width: 1024px) {
+  .hero[data-v-a4d37009] {
+    margin-top: calc(var(--m-header-height) * -1);
+  }
+}
 @media (min-width: 1025px) {
   .hero[data-v-a4d37009] {
     margin-top: calc(var(--pc-header-height) * -1);
@@ -3961,10 +3966,25 @@ body {
   will-change: transform;
 }
 .pc-header[data-v-36d2d450] {
-  background: #000000d9;
-  backdrop-filter: saturate(120%) blur(0.5rem);
-  -webkit-backdrop-filter: saturate(120%) blur(0.5rem);
-  border-bottom: 1px solid rgba(255, 255, 255, 0.06);
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: 10;
+  background: rgba(0, 0, 0, 0.95) !important;
+  backdrop-filter: saturate(120%) blur(0.5rem) !important;
+  -webkit-backdrop-filter: saturate(120%) blur(0.5rem) !important;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.1) !important;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.15) !important;
+  transition: all 0.3s ease;
+}
+
+.pc-header.is-transparent[data-v-36d2d450] {
+  background: transparent !important;
+  backdrop-filter: none !important;
+  -webkit-backdrop-filter: none !important;
+  border-bottom: 1px solid transparent !important;
+  box-shadow: none !important;
 }
 .pc-header.is-transparent[data-v-36d2d450] {
   background: transparent;
@@ -4219,10 +4239,25 @@ body {
   box-sizing: border-box;
 }
 .m-header[data-v-d2e9f48d] {
-  background: #000000d9;
-  backdrop-filter: saturate(120%) blur(0.5rem);
-  -webkit-backdrop-filter: saturate(120%) blur(0.5rem);
-  border-bottom: 1px solid rgba(255, 255, 255, 0.06);
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: 10;
+  background: rgba(0, 0, 0, 0.95) !important;
+  backdrop-filter: saturate(120%) blur(0.5rem) !important;
+  -webkit-backdrop-filter: saturate(120%) blur(0.5rem) !important;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.1) !important;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.15) !important;
+  transition: all 0.3s ease;
+}
+
+.m-header.is-transparent[data-v-d2e9f48d] {
+  background: transparent !important;
+  backdrop-filter: none !important;
+  -webkit-backdrop-filter: none !important;
+  border-bottom: 1px solid transparent !important;
+  box-shadow: none !important;
 }
 .m-header.is-transparent[data-v-d2e9f48d] {
   background: transparent;
@@ -4337,10 +4372,12 @@ body.no-scroll {
 @media (max-width: 1023px) {
   .pc-header { display: none !important; }
   .pc-main { padding-top: var(--m-header-height) !important; }
+  .pc-main.compact { padding-top: 0 !important; }
   .m-header { display: block !important; }
 }
 @media (min-width: 1024px) {
   .m-header, .drawer, .drawer-overlay { display: none !important; }
   .pc-header { display: block !important; }
   .pc-main { padding-top: var(--pc-header-height) !important; }
+  .pc-main.compact { padding-top: 0 !important; }
 }
