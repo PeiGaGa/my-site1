@@ -132,6 +132,7 @@
             aria-label="home hero"
             data-v-a4d37009=""
           >
+            <img class="hero-background-img" src="./assets/ex.png" alt="背景图" data-v-a4d37009="" />
             <div class="swiper hero-swiper" data-v-a4d37009="">
               <!--[--><!--]-->
               <div class="swiper-wrapper">
@@ -162,35 +163,9 @@
                 </div>
                 <!--]--><!--[--><!--]-->
               </div>
-              <!----><!----><!----><!--[--><!--]-->
-            </div>
-            <div class="hero-controls" data-v-a4d37009="">
-              <span
-                class="hero-prev"
-                role="button"
-                aria-label="上一张"
-                data-v-a4d37009=""
-                ><img
-                  class="hero-icon"
-                  src="data:image/png;base64,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"
-                  alt="上一张"
-                  data-v-a4d37009=""
-              /></span>
-              <div class="hero-right" data-v-a4d37009="">
-                <span class="hero-counter" data-v-a4d37009="">01/02</span
-                ><span
-                  class="hero-next"
-                  role="button"
-                  aria-label="下一张"
-                  data-v-a4d37009=""
-                  ><img
-                    class="hero-icon"
-                    src="data:image/png;base64,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"
-                    alt="下一张"
-                    data-v-a4d37009=""
-                /></span>
-              </div>
-            </div>
+              <div class="swiper-button-next"></div>
+              <div class="swiper-button-prev"></div>
+              <div class="swiper-pagination"></div>
             <div class="hero-mask" data-v-a4d37009=""></div>
             <h1 class="hero-title" data-v-a4d37009="">连深海洋</h1>
           </section>

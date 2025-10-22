@@ -1,10 +1,6 @@
 (function () {
   function initHeroSlider(root) {
     if (!root) return;
-    
-    var prevBtn = root.parentElement.querySelector('.hero-prev');
-    var nextBtn = root.parentElement.querySelector('.hero-next');
-    var counterEl = root.parentElement.querySelector('.hero-counter');
 
     var swiper = new Swiper(root, {
       loop: true,
@@ -19,33 +15,14 @@
         crossFade: true
       },
       navigation: {
-        prevEl: prevBtn,
-        nextEl: nextBtn
+        nextEl: '.swiper-button-next',
+        prevEl: '.swiper-button-prev'
       },
-      on: {
-        init: function() {
-          if (counterEl && this.slides) {
-            var curr = '01';
-            var total = (this.slides.length / (this.loopedSlides ? 3 : 1)).toString().padStart(2, '0');
-            counterEl.textContent = curr + '/' + total;
-          }
-        },
-        slideChange: function() {
-          if (counterEl) {
-            var curr = ((this.realIndex || 0) + 1).toString().padStart(2, '0');
-            var total = (this.slides.length / (this.loopedSlides ? 3 : 1)).toString().padStart(2, '0');
-            counterEl.textContent = curr + '/' + total;
-          }
-        }
+      pagination: {
+        el: '.swiper-pagination',
+        clickable: true
       }
     });
-
-    // 初始化计数器
-    if (counterEl && swiper.slides) {
-      var curr = '01';
-      var total = swiper.slides.length.toString().padStart(2, '0');
-      counterEl.textContent = curr + '/' + total;
-    }
   }
 
   // Minimal generic swiper for news lists with dots pagination
