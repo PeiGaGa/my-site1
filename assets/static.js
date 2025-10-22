@@ -25,6 +25,25 @@
     });
   }
 
+  function initIndustrySlider() {
+    if (typeof Swiper === 'undefined') return;
+    var el = document.querySelector('.industry-hero .swiper');
+    if (!el) return;
+    new Swiper(el, {
+      speed: 600,
+      loop: true,
+      autoplay: { delay: 4000, disableOnInteraction: false },
+      navigation: {
+        nextEl: '.industry-hero .swiper-button-next',
+        prevEl: '.industry-hero .swiper-button-prev'
+      },
+      pagination: {
+        el: '.industry-hero .swiper-pagination',
+        clickable: true
+      }
+    });
+  }
+
   // Minimal generic swiper for news lists with dots pagination
   function initNewsSwipers() {
     if (typeof Swiper === 'undefined') return;
@@ -248,6 +267,7 @@
   function init() {
     var heroSwipers = document.querySelectorAll('.hero-swiper');
     heroSwipers.forEach(function (root) { initHeroSlider(root); });
+    initIndustrySlider();
     initHeaderScroll(); // 初始化导航栏滚动效果
     // mobile drawer
     try {
