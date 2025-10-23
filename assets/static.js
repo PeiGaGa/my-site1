@@ -132,6 +132,63 @@
     });
   }
 
+  // 产品中心轮播初始化
+  function initProductsSwiper() {
+    if (typeof Swiper === 'undefined') {
+      console.log('Swiper not loaded');
+      return;
+    }
+    var productsSwiper = document.querySelector('.products-swiper');
+    if (!productsSwiper) {
+      console.log('Products swiper element not found');
+      return;
+    }
+    
+    console.log('Initializing products swiper');
+    
+    new Swiper(productsSwiper, {
+      slidesPerView: 4,
+      spaceBetween: 0,
+      loop: false,
+      centeredSlides: false,
+      autoplay: {
+        delay: 4000,
+        disableOnInteraction: false,
+        pauseOnMouseEnter: true
+      },
+      pagination: {
+        el: ".swiper-pagination",
+        dynamicBullets: true,
+      },
+      breakpoints: {
+        "@0.00": {
+          slidesPerView: 1,
+          spaceBetween: 0,
+        },
+        "@0.75": {
+          slidesPerView: 2,
+          spaceBetween: 0,
+        },
+        "@1.00": {
+          slidesPerView: 3,
+          spaceBetween: 0,
+        },
+        "@1.25": {
+          slidesPerView: 4,
+          spaceBetween: 0,
+        },
+        "@1.50": {
+          slidesPerView: 4,
+          spaceBetween: 0,
+        },
+        "@2.00": {
+          slidesPerView: 4,
+          spaceBetween: 0,
+        },
+      },
+    });
+  }
+
   function initLanguageSwitch() {
     var switches = document.querySelectorAll('.language-switch');
     switches.forEach(function (sw) {
@@ -268,6 +325,7 @@
     var heroSwipers = document.querySelectorAll('.hero-swiper');
     heroSwipers.forEach(function (root) { initHeroSlider(root); });
     initIndustrySlider();
+    initProductsSwiper(); // 初始化产品中心轮播
     initHeaderScroll(); // 初始化导航栏滚动效果
     // mobile drawer
     try {
