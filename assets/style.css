@@ -1932,20 +1932,27 @@ button.swiper-pagination-bullet {
 }
 
 .products-title[data-v-a4d37009] {
-  font-size: 18px;
+  font-size: 1.25rem;
   font-weight: 800;
-  color: #ff6b35;
+  color: #df7f08;
   text-align: left;
-  margin: 0 0 8px;
+  margin: 0 0 1rem;
   letter-spacing: 0.2rem;
 }
 
 .products-subtitle[data-v-a4d37009] {
-  font-size: 13px;
+  font-size: .875rem;
   color: #8c8c8c;
   text-align: left;
   line-height: 1.6;
-  margin: 0 0 16px;
+  margin: 0 0 1rem;
+}
+
+.products-underline[data-v-a4d37009] {
+  width: 3.75rem;
+  height: .1875rem;
+  background-color: #b79344;
+  margin: 0 0 1rem;
 }
 
 .products-header .header-icon[data-v-a4d37009] {
@@ -1989,7 +1996,6 @@ button.swiper-pagination-bullet {
   position: relative;
   width: 100%;
   height: 100%;
-  border-radius: 8px;
   overflow: hidden;
   box-shadow: 0 .25rem .75rem rgba(0, 0, 0, 0.15);
 }
@@ -2076,29 +2082,150 @@ button.swiper-pagination-bullet {
 }
 
 
-/* 动态分页器样式 - 当轮播图很多时 */
-.products-swiper .swiper-pagination-dynamic[data-v-a4d37009] {
-  overflow: hidden;
+/* 自定义分页器容器 - 通用样式 */
+.products-custom-pagination[data-v-a4d37009],
+.hero-custom-pagination[data-v-a4d37009] {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 24px;
+  margin-top: 32px;
+  padding: 20px 0;
+  min-height: 60px;
+}
+
+/* Hero分页器特殊定位 */
+.hero-custom-pagination[data-v-a4d37009] {
+  position: absolute;
+  bottom: 40px;
+  left: 50%;
+  transform: translateX(-50%);
+  z-index: 10;
+  margin-top: 0;
+  border-radius: 50px;
+  padding: 12px 24px;
+  min-height: auto;
+}
+
+/* 圆点容器 */
+.pagination-bullets {
+  display: flex;
+  gap: 8px;
+  align-items: center;
+  transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+/* 圆点样式 */
+.pagination-bullet {
+  width: 8px;
+  height: 8px;
+  background: #d1d5db;
+  border-radius: 50%;
+  cursor: pointer;
+  transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+  display: inline-block;
   position: relative;
 }
 
-.products-swiper .swiper-pagination-dynamic .swiper-pagination-bullet[data-v-a4d37009] {
-  transition: all 0.3s ease;
-  position: relative;
-}
-
-.products-swiper .swiper-pagination-dynamic .swiper-pagination-bullet-active[data-v-a4d37009] {
-  transform: scale(1.2);
-}
-
-.products-swiper .swiper-pagination-dynamic .swiper-pagination-bullet-active-main[data-v-a4d37009] {
-  transform: scale(1.2);
-}
-
-.products-swiper .swiper-pagination-dynamic .swiper-pagination-bullet-active-prev[data-v-a4d37009],
-.products-swiper .swiper-pagination-dynamic .swiper-pagination-bullet-active-next[data-v-a4d37009] {
+.pagination-bullet:hover {
+  background: #9ca3af;
   transform: scale(1.1);
-  opacity: 0.8;
+}
+
+.pagination-bullet.active {
+  width: 14px;
+  height: 14px;
+  background: #f5a34b;
+  box-shadow: 0 2px 8px rgba(245, 163, 75, 0.4);
+}
+
+/* 数字容器 */
+.pagination-numbers {
+  display: flex;
+  gap: 16px;
+  align-items: center;
+  transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+/* 数字样式 */
+.pagination-number {
+  font-size: 14px;
+  font-weight: 500;
+  color: #9ca3af;
+  cursor: pointer;
+  transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+  letter-spacing: 0.05em;
+  padding: 4px 8px;
+  border-radius: 4px;
+  user-select: none;
+}
+
+.pagination-number:hover {
+  color: #6b7280;
+  background: #f3f4f6;
+  transform: translateY(-1px);
+}
+
+.pagination-number.active {
+  color: #1a365d;
+  font-weight: 600;
+  font-size: 16px;
+  background: #eff6ff;
+  transform: scale(1.05);
+}
+
+/* Hero分页器白色主题 */
+.hero-custom-pagination[data-v-a4d37009] .pagination-bullet {
+  background: rgba(255, 255, 255, 0.5);
+}
+
+.hero-custom-pagination[data-v-a4d37009] .pagination-bullet:hover {
+  background: rgba(255, 255, 255, 0.7);
+}
+
+.hero-custom-pagination[data-v-a4d37009] .pagination-bullet.active {
+  background: #f5a34b;
+}
+
+.hero-custom-pagination[data-v-a4d37009] .pagination-number {
+  color: rgba(255, 255, 255, 0.7);
+}
+
+.hero-custom-pagination[data-v-a4d37009] .pagination-number:hover {
+  color: rgba(255, 255, 255, 0.9);
+  background: rgba(255, 255, 255, 0.1);
+}
+
+.hero-custom-pagination[data-v-a4d37009] .pagination-number.active {
+  color: #ffffff;
+  background: rgba(255, 255, 255, 0.2);
+}
+
+/* 响应式调整 */
+@media (max-width: 48rem) {
+  .products-custom-pagination[data-v-a4d37009] {
+    gap: 16px;
+    padding: 16px 0;
+  }
+  
+  .hero-custom-pagination[data-v-a4d37009] {
+    bottom: 20px;
+    gap: 16px;
+    padding: 8px 16px;
+  }
+  
+  .pagination-numbers {
+    gap: 12px;
+  }
+  
+  .pagination-number {
+    font-size: 13px;
+  }
+  
+  .pagination-number.active {
+    font-size: 15px;
+  }
 }
 
 

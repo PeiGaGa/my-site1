@@ -2,7 +2,7 @@
   function initHeroSlider(root) {
     if (!root) return;
 
-    var swiper = new Swiper(root, {
+    var swiperInstance = new Swiper(root, {
       loop: true,
       speed: 800,
       autoplay: {
@@ -19,10 +19,70 @@
         prevEl: '.swiper-button-prev'
       },
       pagination: {
-        el: '.swiper-pagination',
-        clickable: true
+        el: '.hero-custom-pagination',
+        type: 'custom',
+        clickable: true,
+        renderCustom: function (swiper, current, total) {
+          var maxVisible = 5; // 最多显示5个圆点和数字
+          var html = '<div class="pagination-bullets">';
+          
+          // 计算显示范围
+          var start, end;
+          if (total <= maxVisible) {
+            start = 1;
+            end = total;
+          } else {
+            var halfVisible = Math.floor(maxVisible / 2);
+            start = Math.max(1, current - halfVisible);
+            end = Math.min(total, start + maxVisible - 1);
+            
+            if (end - start + 1 < maxVisible) {
+              start = Math.max(1, end - maxVisible + 1);
+            }
+          }
+          
+          // 生成圆点
+          for (var i = start; i <= end; i++) {
+            if (i === current) {
+              html += '<span class="pagination-bullet active" data-index="' + i + '"></span>';
+            } else {
+              html += '<span class="pagination-bullet" data-index="' + i + '"></span>';
+            }
+          }
+          
+          html += '</div><div class="pagination-numbers">';
+          
+          // 生成数字
+          for (var j = start; j <= end; j++) {
+            var numStr = j < 10 ? '0' + j : '' + j;
+            if (j === current) {
+              html += '<span class="pagination-number active" data-index="' + j + '">' + numStr + '</span>';
+            } else {
+              html += '<span class="pagination-number" data-index="' + j + '">' + numStr + '</span>';
+            }
+          }
+          
+          html += '</div>';
+          return html;
+        }
       }
     });
+    
+    // 添加点击事件监听
+    var paginationEl = document.querySelector('.hero-custom-pagination');
+    if (paginationEl) {
+      paginationEl.addEventListener('click', function(e) {
+        var target = e.target;
+        
+        if (target.classList.contains('pagination-bullet') || 
+            target.classList.contains('pagination-number')) {
+          var index = parseInt(target.getAttribute('data-index'));
+          if (index && swiperInstance) {
+            swiperInstance.slideToLoop(index - 1); // 使用slideToLoop因为是loop模式
+          }
+        }
+      });
+    }
   }
 
   function initIndustrySlider() {
@@ -146,7 +206,7 @@
     
     console.log('Initializing products swiper');
     
-    new Swiper(productsSwiper, {
+    var swiperInstance = new Swiper(productsSwiper, {
       slidesPerView: 4,
       spaceBetween: 0,
       loop: false,
@@ -157,8 +217,55 @@
         pauseOnMouseEnter: true
       },
       pagination: {
-        el: ".swiper-pagination",
-        dynamicBullets: true,
+        el: '.products-custom-pagination',
+        type: 'custom',
+        clickable: true,
+        renderCustom: function (swiper, current, total) {
+          var maxVisible = 5; // 最多显示5个圆点和数字
+          var html = '<div class="pagination-bullets">';
+          
+          // 计算显示范围
+          var start, end;
+          if (total <= maxVisible) {
+            // 总数不超过最大显示数，显示全部
+            start = 1;
+            end = total;
+          } else {
+            // 总数超过最大显示数，计算显示范围
+            var halfVisible = Math.floor(maxVisible / 2);
+            start = Math.max(1, current - halfVisible);
+            end = Math.min(total, start + maxVisible - 1);
+            
+            // 调整起始位置，确保始终显示maxVisible个
+            if (end - start + 1 < maxVisible) {
+              start = Math.max(1, end - maxVisible + 1);
+            }
+          }
+          
+          // 生成圆点（只显示范围内的）
+          for (var i = start; i <= end; i++) {
+            if (i === current) {
+              html += '<span class="pagination-bullet active" data-index="' + i + '"></span>';
+            } else {
+              html += '<span class="pagination-bullet" data-index="' + i + '"></span>';
+            }
+          }
+          
+          html += '</div><div class="pagination-numbers">';
+          
+          // 生成数字（只显示范围内的）
+          for (var j = start; j <= end; j++) {
+            var numStr = j < 10 ? '0' + j : '' + j;
+            if (j === current) {
+              html += '<span class="pagination-number active" data-index="' + j + '">' + numStr + '</span>';
+            } else {
+              html += '<span class="pagination-number" data-index="' + j + '">' + numStr + '</span>';
+            }
+          }
+          
+          html += '</div>';
+          return html;
+        }
       },
       breakpoints: {
         "@0.00": {
@@ -187,6 +294,23 @@
         },
       },
     });
+    
+    // 添加点击事件监听（使用事件委托）
+    var paginationEl = document.querySelector('.products-custom-pagination');
+    if (paginationEl) {
+      paginationEl.addEventListener('click', function(e) {
+        var target = e.target;
+        
+        // 检查是否点击了圆点或数字
+        if (target.classList.contains('pagination-bullet') || 
+            target.classList.contains('pagination-number')) {
+          var index = parseInt(target.getAttribute('data-index'));
+          if (index && swiperInstance) {
+            swiperInstance.slideTo(index - 1); // 注意：slideTo的索引从0开始
+          }
+        }
+      });
+    }
   }
 
   function initLanguageSwitch() {
@@ -321,12 +445,50 @@
     setTimeout(updateHeaderBackground, 100);
   }
 
+  // 新闻动态 tab 切换功能
+  function initNewsTabs() {
+    var newsSection = document.querySelector('.news-section');
+    if (!newsSection) return;
+
+    var navButtons = newsSection.querySelectorAll('.news-nav .nav-btn');
+    var newsCards = newsSection.querySelectorAll('.news-card');
+    
+    if (!navButtons.length || !newsCards.length) return;
+
+    // 为每个按钮添加点击事件
+    navButtons.forEach(function(btn) {
+      btn.addEventListener('click', function() {
+        var category = btn.textContent.trim();
+        
+        // 切换按钮的 active 状态
+        navButtons.forEach(function(b) {
+          b.classList.remove('active');
+        });
+        btn.classList.add('active');
+        
+        // 筛选新闻卡片
+        newsCards.forEach(function(card) {
+          var cardCategory = card.getAttribute('data-category');
+          
+          // 如果点击"全部"，显示所有卡片
+          // 否则只显示匹配的分类
+          if (category === '全部' || cardCategory === category) {
+            card.style.display = 'block';
+          } else {
+            card.style.display = 'none';
+          }
+        });
+      });
+    });
+  }
+
   function init() {
     var heroSwipers = document.querySelectorAll('.hero-swiper');
     heroSwipers.forEach(function (root) { initHeroSlider(root); });
     initIndustrySlider();
     initProductsSwiper(); // 初始化产品中心轮播
     initHeaderScroll(); // 初始化导航栏滚动效果
+    initNewsTabs(); // 初始化新闻动态tab切换
     // mobile drawer
     try {
       var mNavs = document.querySelectorAll('.m-nav');
