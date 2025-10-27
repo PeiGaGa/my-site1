@@ -34,8 +34,8 @@
       loop: true,
       autoplay: { delay: 4000, disableOnInteraction: false },
       navigation: {
-        nextEl: '.industry-hero .swiper-button-next',
-        prevEl: '.industry-hero .swiper-button-prev'
+        nextEl: '.industry-hero .swiper-buttons-wrap .swiper-button-next',
+        prevEl: '.industry-hero .swiper-buttons-wrap .swiper-button-prev'
       },
       pagination: {
         el: '.industry-hero .swiper-pagination',

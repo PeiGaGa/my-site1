@@ -1462,7 +1462,7 @@ button.swiper-pagination-bullet {
 
 .industry-header[data-v-a4d37009] {
   position: relative;
-  max-width: 1200px;
+  max-width: 93.75rem;
   margin: 0 auto 16px;
   padding: 0 32px;
   margin-top: 5rem;
@@ -1500,17 +1500,19 @@ button.swiper-pagination-bullet {
 /* 产业布局 —— 大图轮播（一比一还原） */
 .industry-hero[data-v-a4d37009] {
   position: relative;
-  max-width: 1200px; /* 75rem */
-  margin: 0 auto 48px;
+  max-width: 93.75rem; /* 75rem */
+  height: 39.375rem;
+  margin: 0 auto 3.875rem;
 }
 
 .industry-hero .swiper[data-v-a4d37009] {
+  height: 100%;
   width: 100%;
 }
 
 .industry-hero .swiper-slide img[data-v-a4d37009] {
   width: 100%;
-  height: auto;
+  height: 100%;
   display: block;
   object-fit: cover;
   aspect-ratio: 1200/620; /* 近似截图比例 */
@@ -1526,26 +1528,37 @@ button.swiper-pagination-bullet {
   background: #ff6b35;
 }
 
+
+.industry-hero .swiper-buttons-wrap {
+  width: 17.375rem;
+  height: 4.875rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  position: absolute;
+  padding: 0 3.125rem;
+  bottom: 0;
+  z-index: 10;
+  background: rgba(255, 255, 255, 0.2);
+}
+
 /* 左下角的左右箭头 */
-.industry-hero .swiper-button-prev,
-.industry-hero .swiper-button-next {
-  color: #fff;
+.industry-hero .swiper-buttons-wrap .swiper-button-prev,
+.industry-hero .swiper-buttons-wrap .swiper-button-next {
+  color: #505d75;
   width: 36px;
   height: 36px;
-  background: rgba(0,0,0,0.35);
   border-radius: .125rem;
-  top: auto;
-  bottom: 16px;
+  position: static;
+  margin: 0;
 }
-.industry-hero .swiper-button-prev { left: 24px; }
-.industry-hero .swiper-button-next { left: 68px; }
 .industry-hero .swiper-pagination { display: none; }
 
 .industry-modules[data-v-a4d37009] {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
   gap: 48px;
-  max-width: 1200px;
+  max-width: 93.75rem;
   margin: 0 auto;
   padding: 0 32px;
 }
@@ -1587,32 +1600,30 @@ button.swiper-pagination-bullet {
 .industry-features-wrap[data-v-a4d37009] {
   background: #3d4a8a;
   color: #fff;
-  margin-top: 40px;
+  margin-top: 9.375rem;
 }
 
 .industry-features-image[data-v-a4d37009] {
   width: 100%;
-  height: auto;
+  height: 65rem;
   display: block;
   object-fit: cover;
   margin-bottom: 0;
 }
 
 .industry-features[data-v-a4d37009] {
-  max-width: 1200px;
+  max-width: 93.75rem;
   margin: 0 auto;
-  padding: 36px 32px 24px;
-  display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  gap: 32px;
+  padding: 4.375rem 0 3.125rem;
+  display: flex;
   align-items: center;
+  justify-content: center;
 }
 
 .feature-item[data-v-a4d37009] {
   display: flex;
   align-items: flex-end;
   justify-content: center;
-  gap: 16px;
 }
 
 .feature-wheat-left[data-v-a4d37009],
@@ -1645,20 +1656,20 @@ button.swiper-pagination-bullet {
 }
 
 .industry-slogan[data-v-a4d37009] {
-  max-width: 1200px;
+  max-width: 93.75rem;
   margin: 0 auto;
   padding: 0 32px 32px;
   text-align: center;
   font-weight: 800;
   letter-spacing: 0.03em;
-  font-size: 20px;
+  font-size: 2.75rem;
 }
 
 .industry-slogan .s-underline[data-v-a4d37009] {
-  width: 128px;
-  height: 6px;
+  width: 19.125rem;
+  height: 8px;
   background: #ff6b35;
-  margin: 12px auto 0;
+  margin: 3.125rem auto 4.5rem;
 }
 
 /* 移动端响应式 */
@@ -1668,7 +1679,6 @@ button.swiper-pagination-bullet {
     width: 32px;
   }
   .feature-item[data-v-a4d37009] {
-    gap: 12.8px;
   }
   .feature-content[data-v-a4d37009] {
     max-width: 160px;
@@ -1688,7 +1698,6 @@ button.swiper-pagination-bullet {
     width: 40px;
   }
   .feature-item[data-v-a4d37009] {
-    gap: 16px;
   }
   .feature-content[data-v-a4d37009] {
     max-width: 192px;
@@ -1707,7 +1716,6 @@ button.swiper-pagination-bullet {
     width: 48px;
   }
   .feature-item[data-v-a4d37009] {
-    gap: 19.2px;
   }
   .feature-content[data-v-a4d37009] {
     max-width: 224px;
@@ -1727,7 +1735,6 @@ button.swiper-pagination-bullet {
     width: 56px;
   }
   .feature-item[data-v-a4d37009] {
-    gap: 24px;
   }
   .feature-content[data-v-a4d37009] {
     max-width: 240px;
@@ -1745,7 +1752,7 @@ button.swiper-pagination-bullet {
 .news-section[data-v-a4d37009] {
   padding: 64px 0;
   background: #fff;
-  max-width: 1200px;
+  max-width: 93.75rem;
   margin: 0 auto;
 }
 
@@ -1919,7 +1926,7 @@ button.swiper-pagination-bullet {
 
 .products-header[data-v-a4d37009] {
   position: relative;
-  max-width: 1200px;
+  max-width: 93.75rem;
   margin: 0 auto 16px;
   padding: 0 32px;
 }
@@ -1957,7 +1964,7 @@ button.swiper-pagination-bullet {
 .products-swiper[data-v-a4d37009] {
   width: 100%;
   height: 320px;
-  max-width: 1200px;
+  max-width: 93.75rem;
   margin: 0 auto;
   padding: 0;
   overflow: hidden;
@@ -2188,15 +2195,7 @@ button.swiper-pagination-bullet {
     gap: 24px;
     padding: 0 16px;
   }
-  .industry-features[data-v-a4d37009] {
-    grid-template-columns: 1fr;
-    gap: 20px;
-    padding: 24px 16px 16px;
-  }
-  .feature-item[data-v-a4d37009] {
-    gap: 12px;
-  }
-  .industry-slogan[data-v-a4d37009] { padding: 0 16px 24px; font-size: 18px; }
+  .industry-slogan[data-v-a4d37009] { padding: 0 16px 24px; font-size: 2.75rem; }
   .industry-hero[data-v-a4d37009] {
     margin-bottom: 32px;
   }
@@ -3045,7 +3044,7 @@ button.swiper-pagination-bullet {
   }
 }
 .page[data-v-76787693] {
-  max-width: 1200px;
+  max-width: 93.75rem;
   margin: 0 auto;
   padding: 40px 16px;
 }
@@ -3416,7 +3415,7 @@ button:focus-visible {
   }
 }
 :root {
-  --max-width: 1200px;
+  --max-width: 93.75rem;
   --space: 16px;
   --mobile-space: 12px;
   --tablet-space: 20px;
@@ -4322,7 +4321,7 @@ NaNpx-96 {
   }
   .content-desktop {
     padding: 32px;
-    max-width: 1200px;
+    max-width: 93.75rem;
   }
 }
 @media (min-width: 75rem) {
