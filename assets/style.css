@@ -381,9 +381,7 @@ button.swiper-pagination-bullet {
   position: relative;
   width: 100vw;
   margin-left: calc(50% - 50vw);
-  height: 56vh;
-  min-height: 320px;
-  max-height: 680px;
+  height: 73.75rem;
   overflow: hidden;
 }
 .hero-img[data-v-c8ca6fd6] {
@@ -427,7 +425,7 @@ button.swiper-pagination-bullet {
   }
 }
 .news-page[data-v-c8ca6fd6] {
-  padding: 40px 0 60px;
+  padding: 2.5rem 1.75rem 3.75rem;
 }
 .icon-row[data-v-c8ca6fd6] {
   display: flex;
@@ -604,9 +602,7 @@ button.swiper-pagination-bullet {
   position: relative;
   width: 100vw;
   margin-left: calc(50% - 50vw);
-  height: 56vh;
-  min-height: 320px;
-  max-height: 680px;
+  height: 73.75rem;
   overflow: hidden;
 }
 .hero-img[data-v-2ad75555] {
@@ -652,7 +648,7 @@ button.swiper-pagination-bullet {
 .page[data-v-2ad75555] {
   max-width: 93.75rem;
   margin: 0 auto;
-  padding: 40px 60px;
+  padding: 2.5rem 1.75rem;
 }
 .icon-row[data-v-2ad75555] {
   display: flex;
@@ -702,7 +698,7 @@ button.swiper-pagination-bullet {
   border-radius: .125rem;
 }
 .content .media[data-v-2ad75555] {
-  margin-bottom: 16px;
+  margin: 3.75rem 0 1rem;
 }
 .content[data-v-2ad75555] {
   padding-bottom: 16px;
@@ -745,7 +741,7 @@ button.swiper-pagination-bullet {
     height: 240px;
   }
   .content .media[data-v-2ad75555] {
-    margin-bottom: 20px;
+    margin: 3.875rem 0 1.25rem;
   }
   .item-underline[data-v-2ad75555] {
     margin: 20px 0 50px;
@@ -755,10 +751,10 @@ button.swiper-pagination-bullet {
   .content .media img[data-v-2ad75555] {
     width: 100%;
     max-width: 1170px;
-    height: 360px;
+    height: 22.5rem;
   }
   .content .media[data-v-2ad75555] {
-    margin-bottom: 32px;
+    margin: 3.875rem 0 1.875rem;
   }
   .item-underline[data-v-2ad75555] {
     margin: 24px 0 50px;
@@ -766,7 +762,7 @@ button.swiper-pagination-bullet {
 }
 @media (min-width: 100rem) {
   .content .media[data-v-2ad75555] {
-    margin-bottom: 38px;
+    margin: 3.875rem 0 2.375rem;
   }
   .item-underline[data-v-2ad75555] {
     margin: 26px 0 50px;
@@ -774,7 +770,7 @@ button.swiper-pagination-bullet {
 }
 @media (min-width: 137.5rem) {
   .content .media[data-v-2ad75555] {
-    margin-bottom: 44px;
+    margin: 3.875rem 0 2.75rem;
   }
   .item-underline[data-v-2ad75555] {
     margin: 30px 0 50px;
@@ -915,9 +911,7 @@ button.swiper-pagination-bullet {
   position: relative;
   width: 100vw;
   margin-left: calc(50% - 50vw);
-  height: 56vh;
-  min-height: 320px;
-  max-height: 680px;
+  height: 73.75rem;
   overflow: hidden;
 }
 .page-hero-img[data-v-872c3d89] {
@@ -963,7 +957,7 @@ button.swiper-pagination-bullet {
 .page[data-v-872c3d89] {
   max-width: 93.75rem;
   margin: 0 auto;
-  padding: 40px 60px;
+  padding: 2.5rem 1.75rem;
 }
 .icon-row[data-v-872c3d89] {
   display: flex;
@@ -1323,9 +1317,7 @@ button.swiper-pagination-bullet {
   position: relative;
   width: 100vw;
   margin-left: calc(50% - 50vw);
-  height: 56vh;
-  min-height: 320px;
-  max-height: 680px;
+  height: 73.75rem;
   overflow: hidden;
 }
 
@@ -1350,6 +1342,15 @@ button.swiper-pagination-bullet {
 }
 
 /* Mobile/tablet: make hero-swiper narrower with uniform margins */
+/* 中等屏幕 (48rem - 64rem / 768px - 1024px) */
+@media (min-width: 48rem) and (max-width: 63.9375rem) {
+  .hero[data-v-a4d37009] {
+    height: 35rem;
+    min-height: 35rem;
+    max-height: 35rem;
+  }
+}
+
 @media (max-width: 64rem) {
   .hero-swiper[data-v-a4d37009] {
     width: calc(100% - 64px);
@@ -2275,8 +2276,9 @@ button.swiper-pagination-bullet {
 @media (max-width: 30rem) {
   /* Hero 区域 */
   .hero[data-v-a4d37009] {
-    height: 40vh;
-    min-height: 280px;
+    height: 20rem;
+    min-height: 20rem;
+    max-height: 20rem;
   }
   
   .hero-title[data-v-a4d37009] {
@@ -2493,8 +2495,9 @@ button.swiper-pagination-bullet {
 @media (min-width: 30.0625rem) and (max-width: 47.9375rem) {
   /* Hero 区域 */
   .hero[data-v-a4d37009] {
-    height: 45vh;
-    min-height: 320px;
+    height: 22.5rem;
+    min-height: 22.5rem;
+    max-height: 22.5rem;
   }
   
   .hero-title[data-v-a4d37009] {
@@ -2698,9 +2701,7 @@ button.swiper-pagination-bullet {
   position: relative;
   width: 100vw;
   margin-left: calc(50% - 50vw);
-  height: 56vh;
-  min-height: 320px;
-  max-height: 680px;
+  height: 73.75rem;
   overflow: hidden;
 }
 .hero-img[data-v-4b20d276] {
@@ -2746,7 +2747,7 @@ button.swiper-pagination-bullet {
 .page[data-v-4b20d276] {
     max-width: 93.75rem;
     margin: 0 auto;
-    padding: 40px 60px;
+    padding: 4.5rem 3.75rem;
 }
 .icon-row[data-v-4b20d276] {
   display: flex;
@@ -2788,7 +2789,7 @@ button.swiper-pagination-bullet {
   border-top-color: #c5c5c5;
 }
 .section[data-v-4b20d276] {
-  padding: 56px 0;
+  padding: 2.5rem 0;
 }
 .section-top .container[data-v-4b20d276] {
   display: flex;
@@ -2875,13 +2876,13 @@ button.swiper-pagination-bullet {
 }
 .base-grid[data-v-4b20d276] {
   display: grid;
-  grid-template-columns: 1.2fr 1fr;
-  gap: 28px;
+  grid-template-columns: 3fr 4fr;
+  gap: 7rem;
   align-items: flex-start;
   margin-top: 20px;
 }
 .base-photo-wrap .divider[data-v-4b20d276] {
-  margin: 0 0 12px;
+  margin: 0 0 5rem;
   width: 100%;
 }
 .photo[data-v-4b20d276] {
@@ -2894,7 +2895,7 @@ button.swiper-pagination-bullet {
   font-size: clamp(20px, 2.6vw, 28px);
 }
 .base-text .divider[data-v-4b20d276] {
-  margin: 0 0 12px;
+  margin: 0 0 5rem;
   width: 100%;
 }
 .base-text p[data-v-4b20d276] {
@@ -2908,13 +2909,14 @@ button.swiper-pagination-bullet {
 .two-col[data-v-4b20d276] {
   display: grid;
   grid-template-columns: 1fr 1fr;
-  gap: 28px;
+  gap: 3.5rem;
 }
 .col[data-v-4b20d276] {
   display: flex;
   flex-direction: column;
-  gap: 16px;
+  gap: 1rem;
   align-items: center;
+  margin-top: 4.875rem;
 }
 .card[data-v-4b20d276] {
   background: #fff;
@@ -2923,30 +2925,29 @@ button.swiper-pagination-bullet {
   width: 80%;
 }
 .col .photo + .card[data-v-4b20d276] {
-  margin-top: -40px;
+  margin-top: -5.625rem;
   box-shadow: 0 .625rem 1.5rem #00000014;
 }
 .card-title[data-v-4b20d276] {
   position: relative;
-  margin: 0 0 12px;
-  font-size: 18px;
+  margin: 6rem 0 2.9375rem;
+  font-size: 1.5rem;
 }
 .card-title[data-v-4b20d276]:after {
   content: "";
   position: absolute;
   left: 0;
-  bottom: -6px;
+  bottom: -2.75rem;
   width: 56px;
   height: 3px;
   background: #e68600;
 }
 .card-list[data-v-4b20d276] {
-  margin: 14px 0 0;
-  padding-left: 0;
+  padding: 4.5rem 0 0;
   color: #555;
   width: 100%;
   max-width: 680px;
-  height: 720px;
+  height: 45rem;
   overflow-y: auto;
   box-sizing: border-box;
   list-style: none;
@@ -2955,14 +2956,15 @@ button.swiper-pagination-bullet {
   margin-bottom: 12px;
   line-height: 1.6;
   padding-left: 0;
+  letter-spacing: .15rem;
 }
 .card-list li[data-v-4b20d276]:last-child {
   margin-bottom: 0;
 }
 .two-col .photo[data-v-4b20d276] {
   width: 100%;
-  max-width: 780px;
-  height: 476px;
+  max-width: 48.75rem;
+  height: 29.75rem;
   -o-object-fit: cover;
   object-fit: cover;
 }
@@ -2988,10 +2990,10 @@ button.swiper-pagination-bullet {
 }
 @media (max-width: 56.1875rem) and (min-width: 48rem) {
   .page[data-v-4b20d276] {
-    padding: 30px 60px;
+    padding: 1.875rem 3.75rem;
   }
   .section[data-v-4b20d276] {
-    padding: 40px 0;
+    padding: 2.5rem 0;
   }
   .title[data-v-4b20d276] {
     font-size: 20px;
@@ -3017,7 +3019,7 @@ button.swiper-pagination-bullet {
     margin-bottom: 8px;
   }
   .section-top .container[data-v-4b20d276] {
-    padding: 50px 60px 20px;
+    padding: 3.125rem 3.75rem 1.25rem;
   }
   .base-grid[data-v-4b20d276] {
     grid-template-columns: 1fr;
@@ -3057,7 +3059,7 @@ button.swiper-pagination-bullet {
 }
 @media (max-width: 47.9375rem) {
   .page[data-v-4b20d276] {
-    padding: 20px 60px;
+    padding: 3rem 2rem;
   }
   .section[data-v-4b20d276] {
     padding: 30px 0;
@@ -3103,7 +3105,7 @@ button.swiper-pagination-bullet {
     margin-bottom: 3px;
   }
   .section-top .container[data-v-4b20d276] {
-    padding: 30px 20px 15px;
+    padding: 1.875rem 1.25rem 0.9375rem;
   }
   .formula[data-v-4b20d276] {
     gap: 8px;
@@ -3144,24 +3146,24 @@ button.swiper-pagination-bullet {
     gap: 12px;
   }
   .card[data-v-4b20d276] {
-    width: 95%;
-    padding: 16px;
+    width: 90%;
+    padding: 1rem;
   }
   .col .photo + .card[data-v-4b20d276] {
-    margin-top: -30px;
+    margin-top: -1.875rem;
   }
   .card-title[data-v-4b20d276] {
-    font-size: 16px;
+    font-size: 1rem;
   }
   .card-title[data-v-4b20d276]:after {
-    width: 40px;
+    width: 2.5rem;
     height: 2px;
   }
   .card-list[data-v-4b20d276] {
     width: 100%;
-    height: 500px;
+    height: 31.25rem;
     max-width: 100%;
-    font-size: 14px;
+    font-size: .875rem;
     padding-left: 0;
   }
   .card-list li[data-v-4b20d276] {
@@ -3176,7 +3178,7 @@ button.swiper-pagination-bullet {
 }
 @media (max-width: 30rem) {
   .page[data-v-4b20d276] {
-    padding: 15px 60px;
+    padding: 1rem 1.5rem;
   }
   .section[data-v-4b20d276] {
     padding: 25px 0;
@@ -3192,7 +3194,7 @@ button.swiper-pagination-bullet {
     height: 18px;
   }
   .section-top .container[data-v-4b20d276] {
-    padding: 20px 15px 10px;
+    padding: 1.25rem 0.9375rem 0.625rem;
   }
   .formula[data-v-4b20d276] {
     gap: 6px;
@@ -3241,7 +3243,7 @@ button.swiper-pagination-bullet {
   }
   .card-list[data-v-4b20d276] {
     width: 100%;
-    height: 400px;
+    min-height: 25rem;
     max-width: 100%;
     font-size: 13px;
   }
@@ -3259,9 +3261,7 @@ button.swiper-pagination-bullet {
   position: relative;
   width: 100vw;
   margin-left: calc(50% - 50vw);
-  height: 52vh;
-  min-height: 320px;
-  max-height: 640px;
+  height: 73.75rem;
   overflow: hidden;
 }
 .hero-img[data-v-3f2fff2f] {
@@ -3292,7 +3292,7 @@ button.swiper-pagination-bullet {
 .page[data-v-3f2fff2f] {
   max-width: 93.75rem;
   margin: 0 auto;
-  padding: 40px 60px;
+  padding: 2.5rem 3.75rem;
 }
 .icon-row[data-v-3f2fff2f] {
   display: flex;
@@ -3396,12 +3396,92 @@ button.swiper-pagination-bullet {
     grid-template-columns: 1fr 1fr;
   }
 }
-@media (min-width: 75rem) {
-  .hero[data-v-3f2fff2f] {
-    height: 62vh;
+/* 大屏幕 (64rem - 75rem / 1024px - 1200px) */
+@media (min-width: 64rem) and (max-width: 74.9375rem) {
+  .hero[data-v-a4d37009] {
+    height: 50rem;
+    min-height: 50rem;
+    max-height: 50rem;
   }
-  .hero-title[data-v-3f2fff2f] {
-    font-size: 112px;
+}
+
+/* 超大屏幕 (75rem+ / 1200px+) */
+@media (min-width: 75rem) {
+  .hero[data-v-a4d37009] {
+    height: 73.75rem;
+    min-height: 73.75rem;
+    max-height: 73.75rem;
+  }
+}
+
+/* 为其他hero样式添加响应式适配 */
+/* 超小屏幕 */
+@media (max-width: 30rem) {
+  .hero[data-v-c8ca6fd6],
+  .hero[data-v-2ad75555],
+  .hero[data-v-4b20d276],
+  .hero[data-v-3f2fff2f],
+  .hero[data-v-76787693],
+  .page-hero[data-v-872c3d89] {
+    height: 20rem;
+    min-height: 20rem;
+    max-height: 20rem;
+  }
+}
+
+/* 小屏幕 */
+@media (min-width: 30.0625rem) and (max-width: 47.9375rem) {
+  .hero[data-v-c8ca6fd6],
+  .hero[data-v-2ad75555],
+  .hero[data-v-4b20d276],
+  .hero[data-v-3f2fff2f],
+  .hero[data-v-76787693],
+  .page-hero[data-v-872c3d89] {
+    height: 22.5rem;
+    min-height: 22.5rem;
+    max-height: 22.5rem;
+  }
+}
+
+/* 中等屏幕 */
+@media (min-width: 48rem) and (max-width: 63.9375rem) {
+  .hero[data-v-c8ca6fd6],
+  .hero[data-v-2ad75555],
+  .hero[data-v-4b20d276],
+  .hero[data-v-3f2fff2f],
+  .hero[data-v-76787693],
+  .page-hero[data-v-872c3d89] {
+    height: 35rem;
+    min-height: 35rem;
+    max-height: 35rem;
+  }
+}
+
+/* 大屏幕 */
+@media (min-width: 64rem) and (max-width: 74.9375rem) {
+  .hero[data-v-c8ca6fd6],
+  .hero[data-v-2ad75555],
+  .hero[data-v-4b20d276],
+  .hero[data-v-3f2fff2f],
+  .hero[data-v-76787693],
+  .page-hero[data-v-872c3d89] {
+    height: 50rem;
+    min-height: 50rem;
+    max-height: 50rem;
+  }
+}
+
+/* 超大屏幕 */
+@media (min-width: 75rem) {
+  .hero[data-v-c8ca6fd6],
+  .hero[data-v-2ad75555],
+  .hero[data-v-4b20d276],
+  .hero[data-v-3f2fff2f],
+  .hero[data-v-76787693],
+  .page-hero[data-v-872c3d89] {
+    height: 73.75rem;
+    min-height: 73.75rem;
+    max-height: 73.75rem;
   }
 }
 @media (min-width: 64.0625rem) {
@@ -3445,8 +3525,7 @@ button.swiper-pagination-bullet {
 }
 @media (max-width: 30rem) {
   .hero[data-v-76787693] {
-    height: 300px;
-    min-height: 240px;
+    height: 73.75rem;
   }
   .hero-title[data-v-76787693] {
     font-size: 24px;
@@ -3457,7 +3536,7 @@ button.swiper-pagination-bullet {
 }
 @media (min-width: 30.0625rem) and (max-width: 48rem) {
   .hero[data-v-76787693] {
-    height: 350px;
+    height: 73.75rem;
   }
   .hero-title[data-v-76787693] {
     font-size: 48px;

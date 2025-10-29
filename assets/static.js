@@ -155,40 +155,62 @@
         thumbs: { swiper: thumbs }
       });
 
-      // Custom dots and numbers updating
+      // Custom pagination (windowed like homepage hero)
       var pagination = container.querySelector('.swiper-pagination-custom');
-      var dotsWrap = pagination ? pagination.querySelector('.dots') : null;
-      var numsWrap = pagination ? pagination.querySelector('.numbers') : null;
-      function updateCustom(i) {
-        if (dotsWrap) {
-          var dots = dotsWrap.children;
-          for (var d = 0; d < dots.length; d++) {
-            if (d === i) dots[d].classList.add('swiper-pagination-bullet-active-custom');
-            else dots[d].classList.remove('swiper-pagination-bullet-active-custom');
-          }
+      function getRealTotal() {
+        var slides = imageEl.querySelectorAll('.swiper-slide');
+        var count = 0;
+        for (var k = 0; k < slides.length; k++) {
+          if (!slides[k].classList.contains('swiper-slide-duplicate')) count++;
         }
-        if (numsWrap) {
-          var nums = numsWrap.children;
-          for (var n = 0; n < nums.length; n++) {
-            if (n === i) nums[n].classList.add('active');
-            else nums[n].classList.remove('active');
-          }
-        }
+        return Math.max(count, 1);
       }
-      thumbs.on('slideChange', function () { updateCustom(thumbs.realIndex || thumbs.activeIndex || 0); });
-      main.on('slideChange', function () { updateCustom(main.realIndex || main.activeIndex || 0); });
-
-      if (dotsWrap) {
-        for (var j = 0; j < dotsWrap.children.length; j++) {
-          (function (to) { dotsWrap.children[j].addEventListener('click', function () { thumbs.slideTo(to); main.slideTo(to); }); })(j);
+      function renderCustom(current) {
+        if (!pagination) return;
+        var total = getRealTotal();
+        var maxVisible = 5;
+        var start, end;
+        if (total <= maxVisible) {
+          start = 1; end = total;
+        } else {
+          var half = Math.floor(maxVisible / 2);
+          start = Math.max(1, current - half);
+          end = Math.min(total, start + maxVisible - 1);
+          if (end - start + 1 < maxVisible) start = Math.max(1, end - maxVisible + 1);
         }
-      }
-      if (numsWrap) {
-        for (var m = 0; m < numsWrap.children.length; m++) {
-          (function (to2) { numsWrap.children[m].addEventListener('click', function () { thumbs.slideTo(to2); main.slideTo(to2); }); })(m);
+        var html = '<div class="dots" data-v-872c3d89="">';
+        for (var i = start; i <= end; i++) {
+          if (i === current) html += '<span class="dot swiper-pagination-bullet-active-custom" data-index="' + i + '" data-v-872c3d89=""></span>';
+          else html += '<span class="dot" data-index="' + i + '" data-v-872c3d89=""></span>';
         }
+        html += '</div><div class="numbers" data-v-872c3d89="">';
+        for (var j = start; j <= end; j++) {
+          var numStr = j < 10 ? '0' + j : '' + j;
+          if (j === current) html += '<span class="active" data-index="' + j + '" data-v-872c3d89="">' + numStr + '</span>';
+          else html += '<span data-index="' + j + '" data-v-872c3d89="">' + numStr + '</span>';
+        }
+        html += '</div>';
+        pagination.innerHTML = html;
       }
-      updateCustom(0);
+      function updateFromSwiper(sw) {
+        var idx = typeof sw.realIndex === 'number' ? sw.realIndex : (sw.activeIndex || 0);
+        var current = (idx % getRealTotal()) + 1;
+        renderCustom(current);
+      }
+      thumbs.on('slideChange', function () { updateFromSwiper(thumbs); });
+      main.on('slideChange', function () { updateFromSwiper(main); });
+      if (pagination) {
+        pagination.addEventListener('click', function (e) {
+          var t = e.target;
+          if (!t || !t.getAttribute) return;
+          var idx = parseInt(t.getAttribute('data-index'));
+          if (!idx || !main || !thumbs) return;
+          var to = idx - 1;
+          if (thumbs.slideToLoop) thumbs.slideToLoop(to);
+          if (main.slideToLoop) main.slideToLoop(to);
+        });
+      }
+      renderCustom(1);
     });
   }
 
