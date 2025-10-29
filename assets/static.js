@@ -109,19 +109,52 @@
     if (typeof Swiper === 'undefined') return;
     var swipers = document.querySelectorAll('.news-page .sec-body .swiper');
     swipers.forEach(function (swiperEl) {
-      new Swiper(swiperEl, {
+      var swiperInstance = new Swiper(swiperEl, {
         speed: 400,
         autoHeight: true,
         loop: true,
-        autoplay: {
-          delay: 3000,
-          disableOnInteraction: false
-        },
+        autoplay: { delay: 3000, disableOnInteraction: false },
         pagination: {
           el: swiperEl.querySelector('.swiper-pagination'),
-          clickable: true
+          clickable: true,
+          type: 'custom',
+          renderCustom: function (swiper, current, total) {
+            var maxVisible = 5;
+            var start, end;
+            if (total <= maxVisible) {
+              start = 1; end = total;
+            } else {
+              var half = Math.floor(maxVisible / 2);
+              start = Math.max(1, current - half);
+              end = Math.min(total, start + maxVisible - 1);
+              if (end - start + 1 < maxVisible) start = Math.max(1, end - maxVisible + 1);
+            }
+            var html = '<div class="dots" data-v-c8ca6fd6="">';
+            for (var i = start; i <= end; i++) {
+              if (i === current) html += '<span class="dot swiper-pagination-bullet-active-custom" data-index="' + i + '" data-v-c8ca6fd6=""></span>';
+              else html += '<span class="dot" data-index="' + i + '" data-v-c8ca6fd6=""></span>';
+            }
+            html += '</div><div class="numbers" data-v-c8ca6fd6="">';
+            for (var j = start; j <= end; j++) {
+              var numStr = j < 10 ? '0' + j : '' + j;
+              if (j === current) html += '<span class="active" data-index="' + j + '" data-v-c8ca6fd6="">' + numStr + '</span>';
+              else html += '<span data-index="' + j + '" data-v-c8ca6fd6="">' + numStr + '</span>';
+            }
+            html += '</div>';
+            return html;
+          }
         }
       });
+      var paginationEl = swiperEl.querySelector('.swiper-pagination');
+      if (paginationEl) {
+        paginationEl.addEventListener('click', function (e) {
+          var t = e.target;
+          if (!t || !t.getAttribute) return;
+          var idx = parseInt(t.getAttribute('data-index'));
+          if (!idx || !swiperInstance) return;
+          swiperInstance.slideToLoop(idx - 1);
+        });
+      }
     });
   }
 
