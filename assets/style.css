@@ -783,17 +783,16 @@ button.swiper-pagination-bullet {
 .hero-swiper .swiper-button-next,
 .hero-swiper .swiper-button-prev {
   position: absolute;
-  top: 60%;
-  transform: translateY(-50%);
+  top: 50% !important;
+  bottom: auto !important;
+  transform: translateY(-50%) !important;
+  margin-top: 0 !important;
+  z-index: 4;
+  width: var(--swiper-navigation-size);
+  height: var(--swiper-navigation-size);
+  background: transparent;
+  border: none;
   color: #fff;
-  background: rgba(255, 255, 255, 0.2);
-  border-radius: 50%;
-  width: 50px;
-  height: 50px;
-  backdrop-filter: blur(.625rem);
-  -webkit-backdrop-filter: blur(.625rem);
-  border: .0625rem solid rgba(255, 255, 255, 0.3);
-  z-index: 3;
 }
 
 .hero-swiper .swiper-button-next {
@@ -806,14 +805,12 @@ button.swiper-pagination-bullet {
 
 .hero-swiper .swiper-button-next:hover,
 .hero-swiper .swiper-button-prev:hover {
-  background: rgba(255, 255, 255, 0.3);
-  transform: translateY(-50%) scale(1.1);
+  opacity: .9;
 }
 
 .hero-swiper .swiper-button-next:after,
 .hero-swiper .swiper-button-prev:after {
-  font-size: 1.25rem;
-  font-weight: bold;
+  /* use default Swiper arrow */
 }
 
 /* Hero swiper pagination */
