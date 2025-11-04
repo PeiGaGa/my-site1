@@ -129,16 +129,16 @@
               end = Math.min(total, start + maxVisible - 1);
               if (end - start + 1 < maxVisible) start = Math.max(1, end - maxVisible + 1);
             }
-            var html = '<div class="dots">';
+            var html = '<div class="dots" data-v-c8ca6fd6="">';
             for (var i = start; i <= end; i++) {
-              if (i === current) html += '<span class="dot swiper-pagination-bullet-active-custom" data-index="' + i + '"></span>';
-              else html += '<span class="dot" data-index="' + i + '"></span>';
+              if (i === current) html += '<span class="dot swiper-pagination-bullet-active-custom" data-index="' + i + '" data-v-c8ca6fd6=""></span>';
+              else html += '<span class="dot" data-index="' + i + '" data-v-c8ca6fd6=""></span>';
             }
-            html += '</div><div class="numbers" >';
+            html += '</div><div class="numbers" data-v-c8ca6fd6="">';
             for (var j = start; j <= end; j++) {
               var numStr = j < 10 ? '0' + j : '' + j;
-              if (j === current) html += '<span class="active" data-index="' + j + '">' + numStr + '</span>';
-              else html += '<span data-index="' + j + '">' + numStr + '</span>';
+              if (j === current) html += '<span class="active" data-index="' + j + '" data-v-c8ca6fd6="">' + numStr + '</span>';
+              else html += '<span data-index="' + j + '" data-v-c8ca6fd6="">' + numStr + '</span>';
             }
             html += '</div>';
             return html;
@@ -211,16 +211,16 @@
           end = Math.min(total, start + maxVisible - 1);
           if (end - start + 1 < maxVisible) start = Math.max(1, end - maxVisible + 1);
         }
-        var html = '<div class="dots" >';
+        var html = '<div class="dots" data-v-872c3d89="">';
         for (var i = start; i <= end; i++) {
-          if (i === current) html += '<span class="dot swiper-pagination-bullet-active-custom" data-index="' + i + '" ></span>';
-          else html += '<span class="dot" data-index="' + i + '" ></span>';
+          if (i === current) html += '<span class="dot swiper-pagination-bullet-active-custom" data-index="' + i + '" data-v-872c3d89=""></span>';
+          else html += '<span class="dot" data-index="' + i + '" data-v-872c3d89=""></span>';
         }
-        html += '</div><div class="numbers" >';
+        html += '</div><div class="numbers" data-v-872c3d89="">';
         for (var j = start; j <= end; j++) {
           var numStr = j < 10 ? '0' + j : '' + j;
-          if (j === current) html += '<span class="active" data-index="' + j + '" >' + numStr + '</span>';
-          else html += '<span data-index="' + j + '" >' + numStr + '</span>';
+          if (j === current) html += '<span class="active" data-index="' + j + '" data-v-872c3d89="">' + numStr + '</span>';
+          else html += '<span data-index="' + j + '" data-v-872c3d89="">' + numStr + '</span>';
         }
         html += '</div>';
         pagination.innerHTML = html;
