@@ -158,16 +158,15 @@
     });
   }
 
-  // Product page: sync two swipers and custom pagination (dots + numbers)
+  // Product page: only image swiper, content is static
   function initProductSwipers() {
     if (typeof Swiper === 'undefined') return;
     var containers = document.querySelectorAll('.product-swiper-container');
     containers.forEach(function (container) {
       var imageEl = container.querySelector('.image-swiper');
-      var contentEl = container.querySelector('.content-swiper');
-      if (!imageEl || !contentEl) return;
+      if (!imageEl) return;
 
-      var thumbs = new Swiper(imageEl, {
+      var imageSwiper = new Swiper(imageEl, {
         speed: 400,
         effect: 'slide',
         loop: true,
@@ -175,17 +174,6 @@
           delay: 3000,
           disableOnInteraction: false
         }
-      });
-
-      var main = new Swiper(contentEl, {
-        speed: 400,
-        autoHeight: true,
-        loop: true,
-        autoplay: {
-          delay: 3000,
-          disableOnInteraction: false
-        },
-        thumbs: { swiper: thumbs }
       });
 
       // Custom pagination (windowed like homepage hero)
@@ -230,17 +218,15 @@
         var current = (idx % getRealTotal()) + 1;
         renderCustom(current);
       }
-      thumbs.on('slideChange', function () { updateFromSwiper(thumbs); });
-      main.on('slideChange', function () { updateFromSwiper(main); });
+      imageSwiper.on('slideChange', function () { updateFromSwiper(imageSwiper); });
       if (pagination) {
         pagination.addEventListener('click', function (e) {
           var t = e.target;
           if (!t || !t.getAttribute) return;
           var idx = parseInt(t.getAttribute('data-index'));
-          if (!idx || !main || !thumbs) return;
+          if (!idx || !imageSwiper) return;
           var to = idx - 1;
-          if (thumbs.slideToLoop) thumbs.slideToLoop(to);
-          if (main.slideToLoop) main.slideToLoop(to);
+          if (imageSwiper.slideToLoop) imageSwiper.slideToLoop(to);
         });
       }
       renderCustom(1);
