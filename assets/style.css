@@ -1444,11 +1444,6 @@ button.swiper-pagination-bullet {
     font-size: 112px;
   }
 }
-@media (max-width: 64rem) {
-  .hero[data-v-a4d37009] {
-    margin-top: calc(var(--m-header-height) * -1);
-  }
-}
 @media (min-width: 64.0625rem) {
   .hero[data-v-a4d37009] {
     margin-top: calc(var(--pc-header-height) * -1);
