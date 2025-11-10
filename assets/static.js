@@ -89,19 +89,88 @@
     if (typeof Swiper === 'undefined') return;
     var el = document.querySelector('.industry-hero .swiper');
     if (!el) return;
-    new Swiper(el, {
+    
+    // 查找按钮元素，优先使用带特定类的按钮
+    var nextBtn = el.querySelector('.industry-swiper-button-next') || 
+                  el.closest('.industry-hero').querySelector('.swiper-buttons-wrap .swiper-button-next') ||
+                  el.closest('.industry-hero').querySelector('.swiper-button-next');
+    var prevBtn = el.querySelector('.industry-swiper-button-prev') || 
+                  el.closest('.industry-hero').querySelector('.swiper-buttons-wrap .swiper-button-prev') ||
+                  el.closest('.industry-hero').querySelector('.swiper-button-prev');
+    
+    var swiperInstance = new Swiper(el, {
       speed: 600,
       loop: true,
       autoplay: { delay: 4000, disableOnInteraction: false },
       navigation: {
-        nextEl: '.industry-hero .swiper-buttons-wrap .swiper-button-next',
-        prevEl: '.industry-hero .swiper-buttons-wrap .swiper-button-prev'
+        nextEl: nextBtn,
+        prevEl: prevBtn
       },
       pagination: {
-        el: '.industry-hero .swiper-pagination',
-        clickable: true
+        el: '.industry-hero .industry-custom-pagination',
+        type: 'custom',
+        clickable: true,
+        renderCustom: function (swiper, current, total) {
+          var maxVisible = 5; // 最多显示5个圆点和数字
+          var html = '<div class="pagination-bullets">';
+          
+          // 计算显示范围
+          var start, end;
+          if (total <= maxVisible) {
+            start = 1;
+            end = total;
+          } else {
+            var halfVisible = Math.floor(maxVisible / 2);
+            start = Math.max(1, current - halfVisible);
+            end = Math.min(total, start + maxVisible - 1);
+            
+            if (end - start + 1 < maxVisible) {
+              start = Math.max(1, end - maxVisible + 1);
+            }
+          }
+          
+          // 生成圆点
+          for (var i = start; i <= end; i++) {
+            if (i === current) {
+              html += '<span class="pagination-bullet active" data-index="' + i + '"></span>';
+            } else {
+              html += '<span class="pagination-bullet" data-index="' + i + '"></span>';
+            }
+          }
+          
+          html += '</div><div class="pagination-numbers">';
+          
+          // 生成数字
+          for (var j = start; j <= end; j++) {
+            var numStr = j < 10 ? '0' + j : '' + j;
+            if (j === current) {
+              html += '<span class="pagination-number active" data-index="' + j + '">' + numStr + '</span>';
+            } else {
+              html += '<span class="pagination-number" data-index="' + j + '">' + numStr + '</span>';
+            }
+          }
+          
+          html += '</div>';
+          return html;
+        }
       }
     });
+    
+    // 添加点击事件监听
+    var paginationEl = el.closest('.industry-hero').querySelector('.industry-custom-pagination');
+    if (paginationEl) {
+      paginationEl.addEventListener('click', function(e) {
+        var target = e.target;
+        
+        if (target.classList.contains('pagination-bullet') || 
+            target.classList.contains('pagination-number')) {
+          var index = parseInt(target.getAttribute('data-index'));
+          if (index && swiperInstance) {
+            swiperInstance.slideToLoop(index - 1); // 使用slideToLoop因为是loop模式
+          }
+        }
+      });
+    }
   }
 
   // Minimal generic swiper for news lists with dots pagination

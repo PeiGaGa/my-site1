@@ -1531,29 +1531,98 @@ button.swiper-pagination-bullet {
 
 
 .industry-hero .swiper-buttons-wrap {
-  width: 17.375rem;
-  height: 4.875rem;
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
   position: absolute;
-  padding: 0 3.125rem;
+  top: 0;
+  left: 0;
+  right: 0;
   bottom: 0;
+  pointer-events: none;
   z-index: 10;
-  background: rgba(255, 255, 255, 0.2);
 }
 
-/* 左下角的左右箭头 */
+/* 中间的左右箭头 */
 .industry-hero .swiper-buttons-wrap .swiper-button-prev,
-.industry-hero .swiper-buttons-wrap .swiper-button-next {
-  color: #505d75;
+.industry-hero .swiper-buttons-wrap .swiper-button-next,
+.industry-hero .industry-swiper-button-prev,
+.industry-hero .industry-swiper-button-next {
+  color: #ffffff;
   width: 36px;
   height: 36px;
   border-radius: .125rem;
-  position: static;
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
   margin: 0;
+  pointer-events: auto;
+  z-index: 11;
 }
-.industry-hero .swiper-pagination { display: none; }
+
+.industry-hero .swiper-buttons-wrap .swiper-button-prev,
+.industry-hero .industry-swiper-button-prev {
+  left: 20px;
+}
+
+.industry-hero .swiper-buttons-wrap .swiper-button-next,
+.industry-hero .industry-swiper-button-next {
+  right: 20px;
+}
+
+.industry-hero .swiper-buttons-wrap .swiper-button-prev:hover,
+.industry-hero .swiper-buttons-wrap .swiper-button-next:hover,
+.industry-hero .industry-swiper-button-prev:hover,
+.industry-hero .industry-swiper-button-next:hover {
+  color: #ffffff;
+  opacity: 0.8;
+}
+
+.industry-hero .swiper-buttons-wrap .swiper-button-prev:after,
+.industry-hero .swiper-buttons-wrap .swiper-button-next:after,
+.industry-hero .industry-swiper-button-prev:after,
+.industry-hero .industry-swiper-button-next:after {
+  color: #ffffff;
+}
+/* Industry custom pagination - 与hero一致 */
+.industry-custom-pagination[data-v-a4d37009] {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 24px;
+  position: absolute;
+  bottom: 20px;
+  left: 50%;
+  transform: translateX(-50%);
+  z-index: 10;
+  border-radius: 50px;
+  padding: 12px 24px;
+  min-height: auto;
+}
+
+/* Industry分页器白色主题 - 与hero一致 */
+.industry-custom-pagination[data-v-a4d37009] .pagination-bullet {
+  background: rgba(255, 255, 255, 0.5);
+}
+
+.industry-custom-pagination[data-v-a4d37009] .pagination-bullet:hover {
+  background: rgba(255, 255, 255, 0.7);
+}
+
+.industry-custom-pagination[data-v-a4d37009] .pagination-bullet.active {
+  background: #f5a34b;
+}
+
+.industry-custom-pagination[data-v-a4d37009] .pagination-number {
+  color: rgba(255, 255, 255, 0.7);
+}
+
+.industry-custom-pagination[data-v-a4d37009] .pagination-number:hover {
+  color: rgba(255, 255, 255, 0.9);
+  background: rgba(255, 255, 255, 0.1);
+}
+
+.industry-custom-pagination[data-v-a4d37009] .pagination-number.active {
+  color: #ffffff;
+  background: rgba(255, 255, 255, 0.2);
+}
 
 .industry-modules[data-v-a4d37009] {
   display: grid;
@@ -2210,7 +2279,8 @@ button.swiper-pagination-bullet {
     padding: 16px 0;
   }
   
-  .hero-custom-pagination[data-v-a4d37009] {
+  .hero-custom-pagination[data-v-a4d37009],
+  .industry-custom-pagination[data-v-a4d37009] {
     bottom: 20px;
     gap: 16px;
     padding: 8px 16px;
@@ -2350,9 +2420,9 @@ button.swiper-pagination-bullet {
 @media (max-width: 30rem) {
   /* Hero 区域 */
   .hero[data-v-a4d37009] {
-    height: 20rem;
-    min-height: 20rem;
-    max-height: 20rem;
+    height: 25.5rem;
+    min-height: 25.5rem;
+    max-height: 25.5rem;
   }
   
   .hero-title[data-v-a4d37009] {
@@ -2391,16 +2461,23 @@ button.swiper-pagination-bullet {
     margin-bottom: 2rem;
   }
   
-  .industry-hero .swiper-buttons-wrap {
-    width: 12rem;
-    height: 3rem;
-    padding: 0 2rem;
+  .industry-hero .swiper-buttons-wrap .swiper-button-prev,
+  .industry-hero .swiper-buttons-wrap .swiper-button-next,
+  .industry-hero .industry-swiper-button-prev,
+  .industry-hero .industry-swiper-button-next {
+    width: 28px;
+    height: 28px;
+    color: #ffffff;
   }
   
   .industry-hero .swiper-buttons-wrap .swiper-button-prev,
-  .industry-hero .swiper-buttons-wrap .swiper-button-next {
-    width: 24px;
-    height: 24px;
+  .industry-hero .industry-swiper-button-prev {
+    left: 10px;
+  }
+  
+  .industry-hero .swiper-buttons-wrap .swiper-button-next,
+  .industry-hero .industry-swiper-button-next {
+    right: 10px;
   }
   
   .industry-modules[data-v-a4d37009] {

@@ -1,620 +1,527 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="utf-8" />
-    <link rel="icon" type="image/svg+xml" href="./vite.svg" />
-    <link rel="icon" href="/favicon.ico" />
-    <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png" />
-    <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png" />
-    <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png" />
-    <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <title>Vite + Vue</title>
-    <link rel="stylesheet" href="https://unpkg.com/swiper@8/swiper-bundle.min.css">
-    <link rel="stylesheet" href="./assets/style.css" />
-    <script src="https://unpkg.com/swiper@8/swiper-bundle.min.js"></script>
-  </head>
-  <body>
-    <div id="app" data-server-rendered="true">
-      <div class="m-container" data-v-d2e9f48d="">
-        <header class="is-transparent m-header" data-v-d2e9f48d="">
-          <nav class="m-nav" data-v-d2e9f48d="" data-v-96127a15="">
-            <div class="m-nav__left" data-v-96127a15="">
-              <a href="./zh-cn.html" class="logo" data-v-96127a15="">
-                <div class="logo-main" data-v-96127a15="">连深海洋</div>
-                <div class="logo-sub" data-v-96127a15="">LIANSHEN MARINE</div>
-              </a>
-            </div>
-            <div class="m-nav__right" data-v-96127a15="">
-              <div class="language-switch" data-v-96127a15="">
-                <button class="active lang-btn" data-v-96127a15="">CN</button>
-                <span class="lang-divider" data-v-96127a15="">|</span>
-                <button class="lang-btn" data-v-96127a15="">EN</button>
-              </div>
-              <button class="hamburger" aria-label="打开菜单" data-v-96127a15="">
-                <span data-v-96127a15=""></span>
-                <span data-v-96127a15=""></span>
-                <span data-v-96127a15=""></span>
-              </button>
-            </div>
-          </nav>
-        </header>
-        <div class="drawer-overlay" data-v-96127a15=""></div>
-        <div class="drawer" data-v-96127a15="">
-          <div class="drawer__header" data-v-96127a15="">
-            <button class="drawer__close" aria-label="关闭菜单" data-v-96127a15="">×</button>
+
+<head>
+  <meta charset="utf-8" />
+  <link rel="icon" type="image/svg+xml" href="./vite.svg" />
+  <link rel="icon" href="/favicon.ico" />
+  <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png" />
+  <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png" />
+  <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Vite + Vue</title>
+  <link rel="stylesheet" href="https://unpkg.com/swiper@8/swiper-bundle.min.css">
+  <link rel="stylesheet" href="./assets/style.css" />
+  <script src="https://unpkg.com/swiper@8/swiper-bundle.min.js"></script>
+</head>
+
+<body>
+  <div id="app" data-server-rendered="true">
+    <div class="m-container" data-v-d2e9f48d="">
+      <header class="is-transparent m-header" data-v-d2e9f48d="">
+        <nav class="m-nav" data-v-d2e9f48d="" data-v-96127a15="">
+          <div class="m-nav__left" data-v-96127a15="">
+            <a href="./zh-cn.html" class="logo" data-v-96127a15="">
+              <div class="logo-main" data-v-96127a15="">连深海洋</div>
+              <div class="logo-sub" data-v-96127a15="">LIANSHEN MARINE</div>
+            </a>
           </div>
-          <ul class="drawer__menu" data-v-96127a15="">
-            <li><a href="./zh-cn.html" data-v-96127a15="">首页</a></li>
-            <li><a href="./zh-cn/about.html" data-v-96127a15="">关于我们</a></li>
-            <li><a href="./zh-cn/farming.html" data-v-96127a15="">养殖模式</a></li>
-            <li><a href="./zh-cn/research.html" data-v-96127a15="">科研平台</a></li>
-            <li><a href="./zh-cn/products.html" data-v-96127a15="">产品中心</a></li>
-            <li><a href="./zh-cn/news.html" data-v-96127a15="">新闻动态</a></li>
-            <li><a href="./zh-cn/contact.html" data-v-96127a15="">联系合作</a></li>
-          </ul>
-          <div class="drawer__lang language-switch" data-v-96127a15="">
-            <button class="active lang-btn" data-v-96127a15="">CN</button>
-            <span class="lang-divider" data-v-96127a15="">|</span>
-            <button class="lang-btn" data-v-96127a15="">EN</button>
+          <div class="m-nav__right" data-v-96127a15="">
+            <div class="language-switch" data-v-96127a15="">
+              <button class="active lang-btn" data-v-96127a15="">CN</button>
+              <span class="lang-divider" data-v-96127a15="">|</span>
+              <button class="lang-btn" data-v-96127a15="">EN</button>
+            </div>
+            <button class="hamburger" aria-label="打开菜单" data-v-96127a15="">
+              <span data-v-96127a15=""></span>
+              <span data-v-96127a15=""></span>
+              <span data-v-96127a15=""></span>
+            </button>
           </div>
+        </nav>
+      </header>
+      <div class="drawer-overlay" data-v-96127a15=""></div>
+      <div class="drawer" data-v-96127a15="">
+        <div class="drawer__header" data-v-96127a15="">
+          <button class="drawer__close" aria-label="关闭菜单" data-v-96127a15="">×</button>
+        </div>
+        <ul class="drawer__menu" data-v-96127a15="">
+          <li><a href="./zh-cn.html" data-v-96127a15="">首页</a></li>
+          <li><a href="./zh-cn/about.html" data-v-96127a15="">关于我们</a></li>
+          <li><a href="./zh-cn/farming.html" data-v-96127a15="">养殖模式</a></li>
+          <li><a href="./zh-cn/research.html" data-v-96127a15="">科研平台</a></li>
+          <li><a href="./zh-cn/products.html" data-v-96127a15="">产品中心</a></li>
+          <li><a href="./zh-cn/news.html" data-v-96127a15="">新闻动态</a></li>
+          <li><a href="./zh-cn/contact.html" data-v-96127a15="">联系合作</a></li>
+        </ul>
+        <div class="drawer__lang language-switch" data-v-96127a15="">
+          <button class="active lang-btn" data-v-96127a15="">CN</button>
+          <span class="lang-divider" data-v-96127a15="">|</span>
+          <button class="lang-btn" data-v-96127a15="">EN</button>
         </div>
       </div>
-      <div class="pc-container" data-v-36d2d450="">
-        <header class="is-transparent pc-header" data-v-36d2d450="">
-          <nav class="pc-nav" data-v-36d2d450="" data-v-4c615095="">
-            <div class="pc-nav__left" data-v-4c615095="">
-              <a
-                aria-current="page"
-                href="./zh-cn.html"
-                class="router-link-active router-link-exact-active logo"
-                data-v-4c615095=""
-                ><div class="logo-main" data-v-4c615095="">连深海洋</div>
-                <div class="logo-sub" data-v-4c615095="">
-                  LIANSHEN MARINE
-                </div></a
-              >
-            </div>
-            <div class="pc-nav__right" data-v-4c615095="">
-              <ul class="pc-nav__menu" data-v-4c615095="">
-                <li data-v-4c615095="">
-                  <a
-                    aria-current="page"
-                    href="./zh-cn.html"
-                    class="router-link-active router-link-exact-active"
-                    data-v-4c615095=""
-                    >首页</a
-                  >
-                </li>
-                <li data-v-4c615095="">
-                  <a href="./zh-cn/about.html" class="" data-v-4c615095=""
-                    >关于我们</a
-                  >
-                </li>
-                <li data-v-4c615095="">
-                  <a href="./zh-cn/farming.html" class="" data-v-4c615095=""
-                    >养殖模式</a
-                  >
-                </li>
-                <li data-v-4c615095="">
-                  <a href="./zh-cn/research.html" class="" data-v-4c615095=""
-                    >科研平台</a
-                  >
-                </li>
-                <li data-v-4c615095="">
-                  <a href="./zh-cn/products.html" class="" data-v-4c615095=""
-                    >产品中心</a
-                  >
-                </li>
-                <li data-v-4c615095="">
-                  <a href="./zh-cn/news.html" class="" data-v-4c615095=""
-                    >新闻动态</a
-                  >
-                </li>
-                <li data-v-4c615095="">
-                  <a href="./zh-cn/contact.html" class="" data-v-4c615095=""
-                    >联系合作</a
-                  >
-                </li>
-              </ul>
-              <div class="language-switch" data-v-4c615095="">
-                <button class="active lang-btn" data-v-4c615095="">CN</button
-                ><span class="lang-divider" data-v-4c615095="">|</span
-                ><button class="lang-btn" data-v-4c615095="">EN</button>
+    </div>
+    <div class="pc-container" data-v-36d2d450="">
+      <header class="is-transparent pc-header" data-v-36d2d450="">
+        <nav class="pc-nav" data-v-36d2d450="" data-v-4c615095="">
+          <div class="pc-nav__left" data-v-4c615095="">
+            <a aria-current="page" href="./zh-cn.html" class="router-link-active router-link-exact-active logo"
+              data-v-4c615095="">
+              <div class="logo-main" data-v-4c615095="">连深海洋</div>
+              <div class="logo-sub" data-v-4c615095="">
+                LIANSHEN MARINE
               </div>
+            </a>
+          </div>
+          <div class="pc-nav__right" data-v-4c615095="">
+            <ul class="pc-nav__menu" data-v-4c615095="">
+              <li data-v-4c615095="">
+                <a aria-current="page" href="./zh-cn.html" class="router-link-active router-link-exact-active"
+                  data-v-4c615095="">首页</a>
+              </li>
+              <li data-v-4c615095="">
+                <a href="./zh-cn/about.html" class="" data-v-4c615095="">关于我们</a>
+              </li>
+              <li data-v-4c615095="">
+                <a href="./zh-cn/farming.html" class="" data-v-4c615095="">养殖模式</a>
+              </li>
+              <li data-v-4c615095="">
+                <a href="./zh-cn/research.html" class="" data-v-4c615095="">科研平台</a>
+              </li>
+              <li data-v-4c615095="">
+                <a href="./zh-cn/products.html" class="" data-v-4c615095="">产品中心</a>
+              </li>
+              <li data-v-4c615095="">
+                <a href="./zh-cn/news.html" class="" data-v-4c615095="">新闻动态</a>
+              </li>
+              <li data-v-4c615095="">
+                <a href="./zh-cn/contact.html" class="" data-v-4c615095="">联系合作</a>
+              </li>
+            </ul>
+            <div class="language-switch" data-v-4c615095="">
+              <button class="active lang-btn" data-v-4c615095="">CN</button><span class="lang-divider"
+                data-v-4c615095="">|</span><button class="lang-btn" data-v-4c615095="">EN</button>
             </div>
-          </nav>
-        </header>
-        <main class="compact pc-main" data-v-36d2d450="">
-          <!--[-->
-          <section
-            class="hero"
-            role="img"
-            aria-label="home hero"
-            data-v-a4d37009=""
-          >
-            <img class="hero-background-img" src="./assets/ex.png" alt="背景图" data-v-a4d37009="" />
-            <div class="swiper hero-swiper" data-v-a4d37009="">
-              <!--[--><!--]-->
-              <div class="swiper-wrapper">
-                <!--[--><!--]--><!--[-->
-                <div
-                  class="swiper-slide"
-                  data-swiper-slide-index="0"
-                  data-v-a4d37009=""
-                >
-                  <!--[--><img
-                    class="hero-img"
-                    src="./assets/ex.png"
-                    alt="连深海洋 一"
-                    data-v-a4d37009=""
-                  /><!--]--><!---->
-                </div>
-                <div
-                  class="swiper-slide"
-                  data-swiper-slide-index="1"
-                  data-v-a4d37009=""
-                >
-                  <!--[--><img
-                    class="hero-img"
-                    src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAEUAAABFCAYAAAAcjSspAAAACXBIWXMAAAsSAAALEgHS3X78AAABIUlEQVR4nO3cQQrCMBBA0an0Xrqsp1JP1Sx7s7ipUPCDTi1o6n8gdpFA+IvCQLSrtcZ5GK6xX9NYypTZ0M/fl+3P8lOmzOJ+8XwbS7luepQvOw9DXbPvsPVB9sAowCjAKMAowCjAKMAowCigf73kWWOz0il53mlVlGhrVjrOn7etjRLRwKw0zz5vn/MxK/lOAUYBRgFGAUYBRgFGAUYBRgFGAUYBRgFGAUYBRgFGAUYBRgFGAUYBRgFGAUYBRgFGAUYBRgFGAUYBRgFGAUYBRgFGAUYBRgFGAUYBRgHLe7TZm8nZ9c1YRsneTE7fZG5FHxExltJlNmVvMrfGdwowCjAKMAowCjAKMAowCjAK+OQ3hH8x+2Ttdvbpal31ZzS7dgfVDy3yF7xX1AAAAABJRU5ErkJggg=="
-                    alt="连深海洋 二"
-                    data-v-a4d37009=""
-                  /><!--]--><!---->
-                </div>
-                <!--]--><!--[--><!--]-->
+          </div>
+        </nav>
+      </header>
+      <main class="compact pc-main" data-v-36d2d450="">
+        <!--[-->
+        <section class="hero" role="img" aria-label="home hero" data-v-a4d37009="">
+          <img class="hero-background-img" src="./assets/ex.png" alt="背景图" data-v-a4d37009="" />
+          <div class="swiper hero-swiper" data-v-a4d37009="">
+            <!--[--><!--]-->
+            <div class="swiper-wrapper">
+              <!--[--><!--]--><!--[-->
+              <div class="swiper-slide" data-swiper-slide-index="0" data-v-a4d37009="">
+                <!--[--><img class="hero-img" src="./assets/ex.png" alt="连深海洋 一" data-v-a4d37009="" /><!--]--><!---->
               </div>
-              <div class="swiper-button-next"></div>
-              <div class="swiper-button-prev"></div>
+              <div class="swiper-slide" data-swiper-slide-index="1" data-v-a4d37009="">
+                <!--[--><img class="hero-img"
+                  src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAEUAAABFCAYAAAAcjSspAAAACXBIWXMAAAsSAAALEgHS3X78AAABIUlEQVR4nO3cQQrCMBBA0an0Xrqsp1JP1Sx7s7ipUPCDTi1o6n8gdpFA+IvCQLSrtcZ5GK6xX9NYypTZ0M/fl+3P8lOmzOJ+8XwbS7luepQvOw9DXbPvsPVB9sAowCjAKMAowCjAKMAowCigf73kWWOz0il53mlVlGhrVjrOn7etjRLRwKw0zz5vn/MxK/lOAUYBRgFGAUYBRgFGAUYBRgFGAUYBRgFGAUYBRgFGAUYBRgFGAUYBRgFGAUYBRgFGAUYBRgFGAUYBRgFGAUYBRgFGAUYBRgFGAUYBRgHLe7TZm8nZ9c1YRsneTE7fZG5FHxExltJlNmVvMrfGdwowCjAKMAowCjAKMAowCjAK+OQ3hH8x+2Ttdvbpal31ZzS7dgfVDy3yF7xX1AAAAABJRU5ErkJggg=="
+                  alt="连深海洋 二" data-v-a4d37009="" /><!--]--><!---->
+              </div>
+              <!--]--><!--[--><!--]-->
+            </div>
+            <div class="swiper-button-next"></div>
+            <div class="swiper-button-prev"></div>
             <div class="hero-mask" data-v-a4d37009=""></div>
             <h1 class="hero-title" data-v-a4d37009="">连深海洋</h1>
             <div class="hero-custom-pagination" data-v-a4d37009=""></div>
-          </section>
-          <section class="section industry-layout" data-v-a4d37009="">
-            <div class="industry-header" data-v-a4d37009="">
-              <h2 class="industry-title" data-v-a4d37009="">产业布局</h2>
-              <p class="industry-desc" data-v-a4d37009="">
-                依托黄海冷水西岗资源<br>
-                实现温暖海域冷水性鱼类养殖创新
-              </p>
-              <img
-                class="header-icon"
-                src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAEUAAABFCAYAAAAcjSspAAAACXBIWXMAAAsSAAALEgHS3X78AAABIUlEQVR4nO3cQQrCMBBA0an0Xrqsp1JP1Sx7s7ipUPCDTi1o6n8gdpFA+IvCQLSrtcZ5GK6xX9NYypTZ0M/fl+3P8lOmzOJ+8XwbS7luepQvOw9DXbPvsPVB9sAowCjAKMAowCjAKMAowCigf73kWWOz0il53mlVlGhrVjrOn7etjRLRwKw0zz5vn/MxK/lOAUYBRgFGAUYBRgFGAUYBRgFGAUYBRgFGAUYBRgFGAUYBRgFGAUYBRgFGAUYBRgFGAUYBRgFGAUYBRgFGAUYBRgFGAUYBRgFGAUYBRgHLe7TZm8nZ9c1YRsneTE7fZG5FHxExltJlNmVvMrfGdwowCjAKMAowCjAKMAowCjAK+OQ3hH8x+2Ttdvbpal31ZzS7dgfVDy3yF7xX1AAAAABJRU5ErkJggg=="
-                alt="copy"
-                data-v-a4d37009=""
-              />
+        </section>
+        <section class="section industry-layout" data-v-a4d37009="">
+          <div class="industry-header" data-v-a4d37009="">
+            <h2 class="industry-title" data-v-a4d37009="">产业布局</h2>
+            <p class="industry-desc" data-v-a4d37009="">
+              依托黄海冷水西岗资源<br>
+              实现温暖海域冷水性鱼类养殖创新
+            </p>
+            <img class="header-icon"
+              src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAEUAAABFCAYAAAAcjSspAAAACXBIWXMAAAsSAAALEgHS3X78AAABIUlEQVR4nO3cQQrCMBBA0an0Xrqsp1JP1Sx7s7ipUPCDTi1o6n8gdpFA+IvCQLSrtcZ5GK6xX9NYypTZ0M/fl+3P8lOmzOJ+8XwbS7luepQvOw9DXbPvsPVB9sAowCjAKMAowCjAKMAowCigf73kWWOz0il53mlVlGhrVjrOn7etjRLRwKw0zz5vn/MxK/lOAUYBRgFGAUYBRgFGAUYBRgFGAUYBRgFGAUYBRgFGAUYBRgFGAUYBRgFGAUYBRgFGAUYBRgFGAUYBRgFGAUYBRgFGAUYBRgFGAUYBRgHLe7TZm8nZ9c1YRsneTE7fZG5FHxExltJlNmVvMrfGdwowCjAKMAowCjAKMAowCjAK+OQ3hH8x+2Ttdvbpal31ZzS7dgfVDy3yF7xX1AAAAABJRU5ErkJggg=="
+              alt="copy" data-v-a4d37009="" />
+          </div>
+          <div class="industry-hero" data-v-a4d37009="">
+            <div class="swiper" data-v-a4d37009="">
+              <div class="swiper-wrapper">
+                <div class="swiper-slide" data-v-a4d37009="">
+                  <img src="./assets/ex.png" alt="产业布局图1" data-v-a4d37009="" />
+                </div>
+                <div class="swiper-slide" data-v-a4d37009="">
+                  <img src="./assets/ex.png" alt="产业布局图2" data-v-a4d37009="" />
+                </div>
+                <div class="swiper-slide" data-v-a4d37009="">
+                  <img src="./assets/ex.png" alt="产业布局图3" data-v-a4d37009="" />
+                </div>
+              </div>
+              <div class="swiper-buttons-wrap" data-v-a4d37009="">
+                <div class="swiper-button-prev industry-swiper-button-prev" data-v-a4d37009=""></div>
+                <div class="swiper-button-next industry-swiper-button-next" data-v-a4d37009=""></div>
+              </div>
+              <div class="industry-custom-pagination" data-v-a4d37009=""></div>
             </div>
-            <div class="industry-hero" data-v-a4d37009="">
-              <div class="swiper" data-v-a4d37009="">
-                <div class="swiper-wrapper">
-                  <div class="swiper-slide" data-v-a4d37009="">
-                    <img src="./assets/ex.png" alt="产业布局图1" data-v-a4d37009="" />
-                  </div>
-                  <div class="swiper-slide" data-v-a4d37009="">
-                    <img src="./assets/ex.png" alt="产业布局图2" data-v-a4d37009="" />
-                  </div>
-                  <div class="swiper-slide" data-v-a4d37009="">
-                    <img src="./assets/ex.png" alt="产业布局图3" data-v-a4d37009="" />
-                  </div>
-                </div>
-                <div class="swiper-button-prev" data-v-a4d37009=""></div>
-                <div class="swiper-button-next" data-v-a4d37009=""></div>
-                <div class="swiper-pagination" data-v-a4d37009=""></div>
-              </div>
+          </div>
+          <div class="industry-modules" data-v-a4d37009="">
+            <div class="industry-module" data-v-a4d37009="">
+              <h3 data-v-a4d37009="">一体</h3>
+              <p data-v-a4d37009="">岸海联动、陆海统筹打造全国最大的三文鱼工知养殖岸海一体化基地</p>
+              <span class="arrow" data-v-a4d37009="">>></span>
             </div>
-            <div class="industry-modules" data-v-a4d37009="">
-              <div class="industry-module" data-v-a4d37009="">
-                <h3 data-v-a4d37009="">一体</h3>
-                <p data-v-a4d37009="">岸海联动、陆海统筹打造全国最大的三文鱼工知养殖岸海一体化基地</p>
-                <span class="arrow" data-v-a4d37009="">>></span>
-              </div>
-              <div class="industry-module" data-v-a4d37009="">
-                <h3 data-v-a4d37009="">两船</h3>
-                <p data-v-a4d37009="">配备全球首鲜鱼养殖工船苏海1号,圳海1号</p>
-                <span class="arrow" data-v-a4d37009="">>></span>
-              </div>
-              <div class="industry-module" data-v-a4d37009="">
-                <h3 data-v-a4d37009="">六中心</h3>
-                <p data-v-a4d37009="">种业科研中心、苗种繁育中心、漁港及后勤补给中心,产品加工中心</p>
-                <span class="arrow" data-v-a4d37009="">>></span>
-              </div>
+            <div class="industry-module" data-v-a4d37009="">
+              <h3 data-v-a4d37009="">两船</h3>
+              <p data-v-a4d37009="">配备全球首鲜鱼养殖工船苏海1号,圳海1号</p>
+              <span class="arrow" data-v-a4d37009="">>></span>
             </div>
-            <div class="industry-features-wrap" data-v-a4d37009="">
-              <img src="./assets/ex.png" alt="产业特色图" class="industry-features-image" data-v-a4d37009="" />
-              <div class="industry-features" data-v-a4d37009="">
-                <div class="feature-item" data-v-a4d37009="">
-                  <img src="./assets/mleft.png" alt="左麦穗" class="feature-wheat-left" data-v-a4d37009="">
-                  <div class="feature-content" data-v-a4d37009="">
-                    <div class="feature-title" data-v-a4d37009="">全球首艘</div>
-                    <div class="feature-sub" data-v-a4d37009="">鲑鳟鱼养殖工船</div>
-                  </div>
-                  <img src="./assets/mrigth.png" alt="右麦穗" class="feature-wheat-right" data-v-a4d37009="">
+            <div class="industry-module" data-v-a4d37009="">
+              <h3 data-v-a4d37009="">六中心</h3>
+              <p data-v-a4d37009="">种业科研中心、苗种繁育中心、漁港及后勤补给中心,产品加工中心</p>
+              <span class="arrow" data-v-a4d37009="">>></span>
+            </div>
+          </div>
+          <div class="industry-features-wrap" data-v-a4d37009="">
+            <img src="./assets/ex.png" alt="产业特色图" class="industry-features-image" data-v-a4d37009="" />
+            <div class="industry-features" data-v-a4d37009="">
+              <div class="feature-item" data-v-a4d37009="">
+                <img src="./assets/mleft.png" alt="左麦穗" class="feature-wheat-left" data-v-a4d37009="">
+                <div class="feature-content" data-v-a4d37009="">
+                  <div class="feature-title" data-v-a4d37009="">全球首艘</div>
+                  <div class="feature-sub" data-v-a4d37009="">鲑鳟鱼养殖工船</div>
                 </div>
-                <div class="feature-item" data-v-a4d37009="">
-                  <img src="./assets/mleft.png" alt="左麦穗" class="feature-wheat-left" data-v-a4d37009="">
-                  <div class="feature-content" data-v-a4d37009="">
-                    <div class="feature-title" data-v-a4d37009="">中国最大</div>
-                    <div class="feature-sub" data-v-a4d37009="">三文鱼产品供应商</div>
-                  </div>
-                  <img src="./assets/mrigth.png" alt="右麦穗" class="feature-wheat-right" data-v-a4d37009="">
-                </div>
-                <div class="feature-item" data-v-a4d37009="">
-                  <img src="./assets/mleft.png" alt="左麦穗" class="feature-wheat-left" data-v-a4d37009="">
-                  <div class="feature-content" data-v-a4d37009="">
-                    <div class="feature-title" data-v-a4d37009="">中国规模最大</div>
-                    <div class="feature-sub" data-v-a4d37009="">三文鱼产业集群</div>
-                  </div>
-                  <img src="./assets/mrigth.png" alt="右麦穗" class="feature-wheat-right" data-v-a4d37009="">
-                </div>
+                <img src="./assets/mrigth.png" alt="右麦穗" class="feature-wheat-right" data-v-a4d37009="">
               </div>
-              <div class="industry-slogan" data-v-a4d37009="">
-                开创中国深远海三文鱼产业新纪元
-                <div class="s-underline" data-v-a4d37009=""></div>
+              <div class="feature-item" data-v-a4d37009="">
+                <img src="./assets/mleft.png" alt="左麦穗" class="feature-wheat-left" data-v-a4d37009="">
+                <div class="feature-content" data-v-a4d37009="">
+                  <div class="feature-title" data-v-a4d37009="">中国最大</div>
+                  <div class="feature-sub" data-v-a4d37009="">三文鱼产品供应商</div>
+                </div>
+                <img src="./assets/mrigth.png" alt="右麦穗" class="feature-wheat-right" data-v-a4d37009="">
+              </div>
+              <div class="feature-item" data-v-a4d37009="">
+                <img src="./assets/mleft.png" alt="左麦穗" class="feature-wheat-left" data-v-a4d37009="">
+                <div class="feature-content" data-v-a4d37009="">
+                  <div class="feature-title" data-v-a4d37009="">中国规模最大</div>
+                  <div class="feature-sub" data-v-a4d37009="">三文鱼产业集群</div>
+                </div>
+                <img src="./assets/mrigth.png" alt="右麦穗" class="feature-wheat-right" data-v-a4d37009="">
               </div>
             </div>
-          </section>
-          <section class="news-section" data-v-a4d37009="">
-            <div class="news-header" data-v-a4d37009="">
-              <h2 class="news-title" data-v-a4d37009="">新闻动态</h2>
-              <p class="news-subtitle" data-v-a4d37009="">关注连深海洋最新动态,了解行业前沿资讯</p>
-              <div class="news-underline" data-v-a4d37009=""></div>
+            <div class="industry-slogan" data-v-a4d37009="">
+              开创中国深远海三文鱼产业新纪元
+              <div class="s-underline" data-v-a4d37009=""></div>
             </div>
-            <div class="news-nav" data-v-a4d37009="">
-              <button class="nav-btn active" data-v-a4d37009="">全部</button>
-              <button class="nav-btn" data-v-a4d37009="">工船进展</button>
-              <button class="nav-btn" data-v-a4d37009="">科研突破</button>
-              <button class="nav-btn" data-v-a4d37009="">行业合作</button>
-              <button class="nav-btn" data-v-a4d37009="">政策解读</button>
-              <button class="nav-btn" data-v-a4d37009="">专题报道</button>
+          </div>
+        </section>
+        <section class="news-section" data-v-a4d37009="">
+          <div class="news-header" data-v-a4d37009="">
+            <h2 class="news-title" data-v-a4d37009="">新闻动态</h2>
+            <p class="news-subtitle" data-v-a4d37009="">关注连深海洋最新动态,了解行业前沿资讯</p>
+            <div class="news-underline" data-v-a4d37009=""></div>
+          </div>
+          <div class="news-nav" data-v-a4d37009="">
+            <button class="nav-btn active" data-v-a4d37009="">全部</button>
+            <button class="nav-btn" data-v-a4d37009="">工船进展</button>
+            <button class="nav-btn" data-v-a4d37009="">科研突破</button>
+            <button class="nav-btn" data-v-a4d37009="">行业合作</button>
+            <button class="nav-btn" data-v-a4d37009="">政策解读</button>
+            <button class="nav-btn" data-v-a4d37009="">专题报道</button>
+          </div>
+          <div class="news-grid" data-v-a4d37009="">
+            <!-- 工船进展 -->
+            <div class="news-card" data-category="工船进展" data-v-a4d37009="">
+              <img src="./assets/ex.png" alt="苏海1号工船" class="news-image" data-v-a4d37009="" />
+              <div class="news-meta" data-v-a4d37009="">
+                <span class="news-date" data-v-a4d37009="">2023-05-15</span>
+                <span class="news-category" data-v-a4d37009="">工船进展</span>
+              </div>
+              <h3 class="news-card-title" data-v-a4d37009="">苏海1号工船首航成功,开启中国深远海三文鱼养殖新纪元</h3>
+              <p class="news-description" data-v-a4d37009="">全球首批鲑鳟鱼养殖工船"苏海1号"顺利完成首航,标志着我国深远海三文鱼养殖技术取得重大突破。</p>
+              <a href="#" class="news-link" data-v-a4d37009="">阅读全文 →</a>
             </div>
-            <div class="news-grid" data-v-a4d37009="">
-              <!-- 工船进展 -->
-              <div class="news-card" data-category="工船进展" data-v-a4d37009="">
-                <img src="./assets/ex.png" alt="苏海1号工船" class="news-image" data-v-a4d37009="" />
-                <div class="news-meta" data-v-a4d37009="">
-                  <span class="news-date" data-v-a4d37009="">2023-05-15</span>
-                  <span class="news-category" data-v-a4d37009="">工船进展</span>
-                </div>
-                <h3 class="news-card-title" data-v-a4d37009="">苏海1号工船首航成功,开启中国深远海三文鱼养殖新纪元</h3>
-                <p class="news-description" data-v-a4d37009="">全球首批鲑鳟鱼养殖工船"苏海1号"顺利完成首航,标志着我国深远海三文鱼养殖技术取得重大突破。</p>
-                <a href="#" class="news-link" data-v-a4d37009="">阅读全文 →</a>
+            <div class="news-card" data-category="工船进展" data-v-a4d37009="">
+              <img src="./assets/ex.png" alt="圳海1号工船" class="news-image" data-v-a4d37009="" />
+              <div class="news-meta" data-v-a4d37009="">
+                <span class="news-date" data-v-a4d37009="">2023-06-20</span>
+                <span class="news-category" data-v-a4d37009="">工船进展</span>
               </div>
-              <div class="news-card" data-category="工船进展" data-v-a4d37009="">
-                <img src="./assets/ex.png" alt="圳海1号工船" class="news-image" data-v-a4d37009="" />
-                <div class="news-meta" data-v-a4d37009="">
-                  <span class="news-date" data-v-a4d37009="">2023-06-20</span>
-                  <span class="news-category" data-v-a4d37009="">工船进展</span>
-                </div>
-                <h3 class="news-card-title" data-v-a4d37009="">圳海1号工船完成设备调试,即将投入生产运营</h3>
-                <p class="news-description" data-v-a4d37009="">第二艘鲑鳟鱼养殖工船"圳海1号"完成全部设备调试工作,各项性能指标均达到设计要求,将于下月投入生产。</p>
-                <a href="#" class="news-link" data-v-a4d37009="">阅读全文 →</a>
-              </div>
-              <div class="news-card" data-category="工船进展" data-v-a4d37009="">
-                <img src="./assets/ex.png" alt="工船技术升级" class="news-image" data-v-a4d37009="" />
-                <div class="news-meta" data-v-a4d37009="">
-                  <span class="news-date" data-v-a4d37009="">2023-07-08</span>
-                  <span class="news-category" data-v-a4d37009="">工船进展</span>
-                </div>
-                <h3 class="news-card-title" data-v-a4d37009="">养殖工船智能化系统升级,实现全自动化养殖管理</h3>
-                <p class="news-description" data-v-a4d37009="">连深海洋完成工船智能化系统升级,引入AI技术实现饲料投喂、水质监测、病害预警等全流程自动化管理。</p>
-                <a href="#" class="news-link" data-v-a4d37009="">阅读全文 →</a>
-              </div>
-              
-              <!-- 科研突破 -->
-              <div class="news-card" data-category="科研突破" data-v-a4d37009="">
-                <img src="./assets/ex.png" alt="科研合作" class="news-image" data-v-a4d37009="" />
-                <div class="news-meta" data-v-a4d37009="">
-                  <span class="news-date" data-v-a4d37009="">2023-04-28</span>
-                  <span class="news-category" data-v-a4d37009="">科研突破</span>
-                </div>
-                <h3 class="news-card-title" data-v-a4d37009="">连深海洋与中科院联合研发三文鱼病害快速检测技术</h3>
-                <p class="news-description" data-v-a4d37009="">公司与中科院海洋研究所合作研发的三文鱼病害快速检测技术取得重大突破,检测时间从传统的24小时缩短至30分钟。</p>
-                <a href="#" class="news-link" data-v-a4d37009="">阅读全文 →</a>
-              </div>
-              <div class="news-card" data-category="科研突破" data-v-a4d37009="">
-                <img src="./assets/ex.png" alt="新品种培育" class="news-image" data-v-a4d37009="" />
-                <div class="news-meta" data-v-a4d37009="">
-                  <span class="news-date" data-v-a4d37009="">2023-05-22</span>
-                  <span class="news-category" data-v-a4d37009="">科研突破</span>
-                </div>
-                <h3 class="news-card-title" data-v-a4d37009="">成功培育抗病能力更强的三文鱼新品种,存活率提升20%</h3>
-                <p class="news-description" data-v-a4d37009="">经过3年研发,公司成功培育出抗病能力更强的三文鱼新品种,在保持品质的同时,存活率提升20%以上。</p>
-                <a href="#" class="news-link" data-v-a4d37009="">阅读全文 →</a>
-              </div>
-              <div class="news-card" data-category="科研突破" data-v-a4d37009="">
-                <img src="./assets/ex.png" alt="环保技术" class="news-image" data-v-a4d37009="" />
-                <div class="news-meta" data-v-a4d37009="">
-                  <span class="news-date" data-v-a4d37009="">2023-06-15</span>
-                  <span class="news-category" data-v-a4d37009="">科研突破</span>
-                </div>
-                <h3 class="news-card-title" data-v-a4d37009="">突破性水质净化技术,实现养殖废水零排放目标</h3>
-                <p class="news-description" data-v-a4d37009="">自主研发的循环水养殖系统配套水质净化技术通过专家验收,实现养殖过程废水零排放,达到国际领先水平。</p>
-                <a href="#" class="news-link" data-v-a4d37009="">阅读全文 →</a>
-              </div>
-              
-              <!-- 行业合作 -->
-              <div class="news-card" data-category="行业合作" data-v-a4d37009="">
-                <img src="./assets/ex.png" alt="行业合作" class="news-image" data-v-a4d37009="" />
-                <div class="news-meta" data-v-a4d37009="">
-                  <span class="news-date" data-v-a4d37009="">2023-03-10</span>
-                  <span class="news-category" data-v-a4d37009="">行业合作</span>
-                </div>
-                <h3 class="news-card-title" data-v-a4d37009="">连深海洋与多家知名企业达成战略合作,共建三文鱼全产业链</h3>
-                <p class="news-description" data-v-a4d37009="">公司与国内多家知名食品企业、物流企业达成战略合作,共同打造从养殖到餐桌的三文鱼全产业链。</p>
-                <a href="#" class="news-link" data-v-a4d37009="">阅读全文 →</a>
-              </div>
-              <div class="news-card" data-category="行业合作" data-v-a4d37009="">
-                <img src="./assets/ex.png" alt="国际合作" class="news-image" data-v-a4d37009="" />
-                <div class="news-meta" data-v-a4d37009="">
-                  <span class="news-date" data-v-a4d37009="">2023-04-05</span>
-                  <span class="news-category" data-v-a4d37009="">行业合作</span>
-                </div>
-                <h3 class="news-card-title" data-v-a4d37009="">与挪威三文鱼养殖巨头签署技术交流协议</h3>
-                <p class="news-description" data-v-a4d37009="">连深海洋与挪威最大的三文鱼养殖企业签署技术交流与合作协议,将在育种、养殖技术等方面开展深度合作。</p>
-                <a href="#" class="news-link" data-v-a4d37009="">阅读全文 →</a>
-              </div>
-              <div class="news-card" data-category="行业合作" data-v-a4d37009="">
-                <img src="./assets/ex.png" alt="供应链合作" class="news-image" data-v-a4d37009="" />
-                <div class="news-meta" data-v-a4d37009="">
-                  <span class="news-date" data-v-a4d37009="">2023-07-18</span>
-                  <span class="news-category" data-v-a4d37009="">行业合作</span>
-                </div>
-                <h3 class="news-card-title" data-v-a4d37009="">与京东、盒马等电商平台达成独家供货协议</h3>
-                <p class="news-description" data-v-a4d37009="">连深海洋与京东、盒马等主流电商平台签署独家供货协议,国产三文鱼将以更优惠的价格送达消费者餐桌。</p>
-                <a href="#" class="news-link" data-v-a4d37009="">阅读全文 →</a>
-              </div>
-              
-              <!-- 政策解读 -->
-              <div class="news-card" data-category="政策解读" data-v-a4d37009="">
-                <img src="./assets/ex.png" alt="政策支持" class="news-image" data-v-a4d37009="" />
-                <div class="news-meta" data-v-a4d37009="">
-                  <span class="news-date" data-v-a4d37009="">2023-02-15</span>
-                  <span class="news-category" data-v-a4d37009="">政策解读</span>
-                </div>
-                <h3 class="news-card-title" data-v-a4d37009="">国家出台深远海养殖扶持政策,连深海洋成首批受益企业</h3>
-                <p class="news-description" data-v-a4d37009="">农业农村部发布《关于加快深远海养殖发展的指导意见》,明确将给予财政补贴和税收优惠,连深海洋入选首批试点。</p>
-                <a href="#" class="news-link" data-v-a4d37009="">阅读全文 →</a>
-              </div>
-              <div class="news-card" data-category="政策解读" data-v-a4d37009="">
-                <img src="./assets/ex.png" alt="海域使用权" class="news-image" data-v-a4d37009="" />
-                <div class="news-meta" data-v-a4d37009="">
-                  <span class="news-date" data-v-a4d37009="">2023-03-28</span>
-                  <span class="news-category" data-v-a4d37009="">政策解读</span>
-                </div>
-                <h3 class="news-card-title" data-v-a4d37009="">获批20年海域使用权,为深远海养殖提供长期保障</h3>
-                <p class="news-description" data-v-a4d37009="">公司获得政府批准的20年海域使用权,为工船养殖项目提供稳定的海域资源保障,项目投资安全性大幅提升。</p>
-                <a href="#" class="news-link" data-v-a4d37009="">阅读全文 →</a>
-              </div>
-              <div class="news-card" data-category="政策解读" data-v-a4d37009="">
-                <img src="./assets/ex.png" alt="蓝色经济" class="news-image" data-v-a4d37009="" />
-                <div class="news-meta" data-v-a4d37009="">
-                  <span class="news-date" data-v-a4d37009="">2023-08-10</span>
-                  <span class="news-category" data-v-a4d37009="">政策解读</span>
-                </div>
-                <h3 class="news-card-title" data-v-a4d37009="">列入国家"蓝色粮仓"重点项目,获得专项资金支持</h3>
-                <p class="news-description" data-v-a4d37009="">连深海洋三文鱼养殖项目被列入国家"蓝色粮仓"建设重点项目,获得5000万元专项资金支持用于技术升级。</p>
-                <a href="#" class="news-link" data-v-a4d37009="">阅读全文 →</a>
-              </div>
-              
-              <!-- 专题报道 -->
-              <div class="news-card" data-category="专题报道" data-v-a4d37009="">
-                <img src="./assets/ex.png" alt="央视报道" class="news-image" data-v-a4d37009="" />
-                <div class="news-meta" data-v-a4d37009="">
-                  <span class="news-date" data-v-a4d37009="">2023-05-01</span>
-                  <span class="news-category" data-v-a4d37009="">专题报道</span>
-                </div>
-                <h3 class="news-card-title" data-v-a4d37009="">央视《新闻联播》专题报道连深海洋工船养殖创新模式</h3>
-                <p class="news-description" data-v-a4d37009="">中央电视台《新闻联播》以"科技兴海 蓝色粮仓"为主题,深度报道连深海洋工船养殖的创新实践和显著成效。</p>
-                <a href="#" class="news-link" data-v-a4d37009="">阅读全文 →</a>
-              </div>
-              <div class="news-card" data-category="专题报道" data-v-a4d37009="">
-                <img src="./assets/ex.png" alt="海洋经济" class="news-image" data-v-a4d37009="" />
-                <div class="news-meta" data-v-a4d37009="">
-                  <span class="news-date" data-v-a4d37009="">2023-06-12</span>
-                  <span class="news-category" data-v-a4d37009="">专题报道</span>
-                </div>
-                <h3 class="news-card-title" data-v-a4d37009="">人民日报整版报道:从无到有的中国深海三文鱼产业</h3>
-                <p class="news-description" data-v-a4d37009="">人民日报以整版篇幅报道中国深海三文鱼产业发展历程,重点介绍连深海洋在产业突破中的引领作用。</p>
-                <a href="#" class="news-link" data-v-a4d37009="">阅读全文 →</a>
-              </div>
-              <div class="news-card" data-category="专题报道" data-v-a4d37009="">
-                <img src="./assets/ex.png" alt="行业标杆" class="news-image" data-v-a4d37009="" />
-                <div class="news-meta" data-v-a4d37009="">
-                  <span class="news-date" data-v-a4d37009="">2023-07-25</span>
-                  <span class="news-category" data-v-a4d37009="">专题报道</span>
-                </div>
-                <h3 class="news-card-title" data-v-a4d37009="">财经杂志封面故事:连深海洋如何打造中国三文鱼产业标杆</h3>
-                <p class="news-description" data-v-a4d37009="">《财经》杂志以封面故事形式深度解析连深海洋的商业模式、技术创新和产业布局,探讨中国水产养殖业转型升级路径。</p>
-                <a href="#" class="news-link" data-v-a4d37009="">阅读全文 →</a>
-              </div>
+              <h3 class="news-card-title" data-v-a4d37009="">圳海1号工船完成设备调试,即将投入生产运营</h3>
+              <p class="news-description" data-v-a4d37009="">第二艘鲑鳟鱼养殖工船"圳海1号"完成全部设备调试工作,各项性能指标均达到设计要求,将于下月投入生产。</p>
+              <a href="#" class="news-link" data-v-a4d37009="">阅读全文 →</a>
             </div>
-            <div class="news-more" data-v-a4d37009="">
-              <button class="more-btn" data-v-a4d37009="">查看更多新闻</button>
-            </div>
-          </section>
-          <section class="section products-layout" data-v-a4d37009="">
-            <div class="products-header" data-v-a4d37009="">
-              <h2 class="products-title" data-v-a4d37009="">产品中心</h2>
-              <p class="products-subtitle" data-v-a4d37009="">
-                高品质三文鱼产品从深海到餐桌的全程把控
-              </p>
-              <div class="products-underline" data-v-a4d37009=""></div>
-              <img
-                class="header-icon"
-                src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAEUAAABFCAYAAAAcjSspAAAACXBIWXMAAAsSAAALEgHS3X78AAABIUlEQVR4nO3cQQrCMBBA0an0Xrqsp1JP1Sx7s7ipUPCDTi1o6n8gdpFA+IvCQLSrtcZ5GK6xX9NYypTZ0M/fl+3P8lOmzOJ+8XwbS7luepQvOw9DXbPvsPVB9sAowCjAKMAowCjAKMAowCigf73kWWOz0il53mlVlGhrVjrOn7etjRLRwKw0zz5vn/MxK/lOAUYBRgFGAUYBRgFGAUYBRgFGAUYBRgFGAUYBRgFGAUYBRgFGAUYBRgFGAUYBRgFGAUYBRgFGAUYBRgFGAUYBRgFGAUYBRgFGAUYBRgHLe7TZm8nZ9c1YRsneTE7fZG5FHxExltJlNmVvMrfGdwowCjAKMAowCjAKMAowCjAK+OQ3hH8x+2Ttdvbpal31ZzS7dgfVDy3yF7xX1AAAAABJRU5ErkJggg=="
-                alt="copy"
-                data-v-a4d37009=""
-              />
-            </div>
-            <div class="products-gallery" data-v-a4d37009="">
-              <div class="products-swiper" data-v-a4d37009="">
-                <div class="swiper-wrapper">
-                  <div class="swiper-slide" data-v-a4d37009="">
-                    <div class="product-image-container" data-v-a4d37009="">
-                      <img src="./assets/ex.png" alt="三文鱼鱼片" class="product-image" data-v-a4d37009="" />
-                    </div>
-                  </div>
-                  <div class="swiper-slide" data-v-a4d37009="">
-                    <div class="product-image-container" data-v-a4d37009="">
-                      <img src="./assets/ex.png" alt="三文鱼切片" class="product-image" data-v-a4d37009="" />
-                    </div>
-                  </div>
-                  <div class="swiper-slide" data-v-a4d37009="">
-                    <div class="product-image-container" data-v-a4d37009="">
-                      <img src="./assets/ex.png" alt="三文鱼刺身" class="product-image" data-v-a4d37009="" />
-                    </div>
-                  </div>
-                  <div class="swiper-slide" data-v-a4d37009="">
-                    <div class="product-image-container" data-v-a4d37009="">
-                      <img src="./assets/ex.png" alt="三文鱼牛排" class="product-image" data-v-a4d37009="" />
-                    </div>
-                  </div>
-                  <div class="swiper-slide" data-v-a4d37009="">
-                    <div class="product-image-container" data-v-a4d37009="">
-                      <img src="./assets/ex.png" alt="三文鱼寿司" class="product-image" data-v-a4d37009="" />
-                    </div>
-                  </div>
-                  <div class="swiper-slide" data-v-a4d37009="">
-                    <div class="product-image-container" data-v-a4d37009="">
-                      <img src="./assets/ex.png" alt="三文鱼沙拉" class="product-image" data-v-a4d37009="" />
-                    </div>
-                  </div>
-                  <div class="swiper-slide" data-v-a4d37009="">
-                    <div class="product-image-container" data-v-a4d37009="">
-                      <img src="./assets/ex.png" alt="三文鱼汤" class="product-image" data-v-a4d37009="" />
-                    </div>
-                  </div>
-                  <div class="swiper-slide" data-v-a4d37009="">
-                    <div class="product-image-container" data-v-a4d37009="">
-                      <img src="./assets/ex.png" alt="三文鱼卷" class="product-image" data-v-a4d37009="" />
-                    </div>
-                  </div>
-                  <div class="swiper-slide" data-v-a4d37009="">
-                    <div class="product-image-container" data-v-a4d37009="">
-                      <img src="./assets/ex.png" alt="三文鱼塔塔" class="product-image" data-v-a4d37009="" />
-                    </div>
-                  </div>
-                </div>
+            <div class="news-card" data-category="工船进展" data-v-a4d37009="">
+              <img src="./assets/ex.png" alt="工船技术升级" class="news-image" data-v-a4d37009="" />
+              <div class="news-meta" data-v-a4d37009="">
+                <span class="news-date" data-v-a4d37009="">2023-07-08</span>
+                <span class="news-category" data-v-a4d37009="">工船进展</span>
               </div>
-              <div class="products-custom-pagination" data-v-a4d37009=""></div>
+              <h3 class="news-card-title" data-v-a4d37009="">养殖工船智能化系统升级,实现全自动化养殖管理</h3>
+              <p class="news-description" data-v-a4d37009="">连深海洋完成工船智能化系统升级,引入AI技术实现饲料投喂、水质监测、病害预警等全流程自动化管理。</p>
+              <a href="#" class="news-link" data-v-a4d37009="">阅读全文 →</a>
             </div>
-          </section>
-        </main>
-        <footer class="m-footer" data-v-36d2d450="" data-v-e7d68f9b="">
-          <div class="m-foot-wrap" data-v-e7d68f9b="">
-            <div class="top-section" data-v-e7d68f9b="">
-              <div class="m-brand" data-v-e7d68f9b="">
-                <div class="logo" data-v-e7d68f9b="">连深海洋</div>
-                <div class="sub" data-v-e7d68f9b="">LIANSHEN MARINE</div>
+
+            <!-- 科研突破 -->
+            <div class="news-card" data-category="科研突破" data-v-a4d37009="">
+              <img src="./assets/ex.png" alt="科研合作" class="news-image" data-v-a4d37009="" />
+              <div class="news-meta" data-v-a4d37009="">
+                <span class="news-date" data-v-a4d37009="">2023-04-28</span>
+                <span class="news-category" data-v-a4d37009="">科研突破</span>
               </div>
-              <nav class="m-links" data-v-e7d68f9b="">
-                <div class="col" data-v-e7d68f9b="">
-                  <a href="./zh-cn.html" class="" data-v-e7d68f9b="">首页</a
-                  ><a href="./zh-cn/about.html" class="" data-v-e7d68f9b="">关于我们</a
-                  ><a href="./zh-cn/farming.html" class="" data-v-e7d68f9b="">养殖模式</a>
+              <h3 class="news-card-title" data-v-a4d37009="">连深海洋与中科院联合研发三文鱼病害快速检测技术</h3>
+              <p class="news-description" data-v-a4d37009="">公司与中科院海洋研究所合作研发的三文鱼病害快速检测技术取得重大突破,检测时间从传统的24小时缩短至30分钟。</p>
+              <a href="#" class="news-link" data-v-a4d37009="">阅读全文 →</a>
+            </div>
+            <div class="news-card" data-category="科研突破" data-v-a4d37009="">
+              <img src="./assets/ex.png" alt="新品种培育" class="news-image" data-v-a4d37009="" />
+              <div class="news-meta" data-v-a4d37009="">
+                <span class="news-date" data-v-a4d37009="">2023-05-22</span>
+                <span class="news-category" data-v-a4d37009="">科研突破</span>
+              </div>
+              <h3 class="news-card-title" data-v-a4d37009="">成功培育抗病能力更强的三文鱼新品种,存活率提升20%</h3>
+              <p class="news-description" data-v-a4d37009="">经过3年研发,公司成功培育出抗病能力更强的三文鱼新品种,在保持品质的同时,存活率提升20%以上。</p>
+              <a href="#" class="news-link" data-v-a4d37009="">阅读全文 →</a>
+            </div>
+            <div class="news-card" data-category="科研突破" data-v-a4d37009="">
+              <img src="./assets/ex.png" alt="环保技术" class="news-image" data-v-a4d37009="" />
+              <div class="news-meta" data-v-a4d37009="">
+                <span class="news-date" data-v-a4d37009="">2023-06-15</span>
+                <span class="news-category" data-v-a4d37009="">科研突破</span>
+              </div>
+              <h3 class="news-card-title" data-v-a4d37009="">突破性水质净化技术,实现养殖废水零排放目标</h3>
+              <p class="news-description" data-v-a4d37009="">自主研发的循环水养殖系统配套水质净化技术通过专家验收,实现养殖过程废水零排放,达到国际领先水平。</p>
+              <a href="#" class="news-link" data-v-a4d37009="">阅读全文 →</a>
+            </div>
+
+            <!-- 行业合作 -->
+            <div class="news-card" data-category="行业合作" data-v-a4d37009="">
+              <img src="./assets/ex.png" alt="行业合作" class="news-image" data-v-a4d37009="" />
+              <div class="news-meta" data-v-a4d37009="">
+                <span class="news-date" data-v-a4d37009="">2023-03-10</span>
+                <span class="news-category" data-v-a4d37009="">行业合作</span>
+              </div>
+              <h3 class="news-card-title" data-v-a4d37009="">连深海洋与多家知名企业达成战略合作,共建三文鱼全产业链</h3>
+              <p class="news-description" data-v-a4d37009="">公司与国内多家知名食品企业、物流企业达成战略合作,共同打造从养殖到餐桌的三文鱼全产业链。</p>
+              <a href="#" class="news-link" data-v-a4d37009="">阅读全文 →</a>
+            </div>
+            <div class="news-card" data-category="行业合作" data-v-a4d37009="">
+              <img src="./assets/ex.png" alt="国际合作" class="news-image" data-v-a4d37009="" />
+              <div class="news-meta" data-v-a4d37009="">
+                <span class="news-date" data-v-a4d37009="">2023-04-05</span>
+                <span class="news-category" data-v-a4d37009="">行业合作</span>
+              </div>
+              <h3 class="news-card-title" data-v-a4d37009="">与挪威三文鱼养殖巨头签署技术交流协议</h3>
+              <p class="news-description" data-v-a4d37009="">连深海洋与挪威最大的三文鱼养殖企业签署技术交流与合作协议,将在育种、养殖技术等方面开展深度合作。</p>
+              <a href="#" class="news-link" data-v-a4d37009="">阅读全文 →</a>
+            </div>
+            <div class="news-card" data-category="行业合作" data-v-a4d37009="">
+              <img src="./assets/ex.png" alt="供应链合作" class="news-image" data-v-a4d37009="" />
+              <div class="news-meta" data-v-a4d37009="">
+                <span class="news-date" data-v-a4d37009="">2023-07-18</span>
+                <span class="news-category" data-v-a4d37009="">行业合作</span>
+              </div>
+              <h3 class="news-card-title" data-v-a4d37009="">与京东、盒马等电商平台达成独家供货协议</h3>
+              <p class="news-description" data-v-a4d37009="">连深海洋与京东、盒马等主流电商平台签署独家供货协议,国产三文鱼将以更优惠的价格送达消费者餐桌。</p>
+              <a href="#" class="news-link" data-v-a4d37009="">阅读全文 →</a>
+            </div>
+
+            <!-- 政策解读 -->
+            <div class="news-card" data-category="政策解读" data-v-a4d37009="">
+              <img src="./assets/ex.png" alt="政策支持" class="news-image" data-v-a4d37009="" />
+              <div class="news-meta" data-v-a4d37009="">
+                <span class="news-date" data-v-a4d37009="">2023-02-15</span>
+                <span class="news-category" data-v-a4d37009="">政策解读</span>
+              </div>
+              <h3 class="news-card-title" data-v-a4d37009="">国家出台深远海养殖扶持政策,连深海洋成首批受益企业</h3>
+              <p class="news-description" data-v-a4d37009="">农业农村部发布《关于加快深远海养殖发展的指导意见》,明确将给予财政补贴和税收优惠,连深海洋入选首批试点。</p>
+              <a href="#" class="news-link" data-v-a4d37009="">阅读全文 →</a>
+            </div>
+            <div class="news-card" data-category="政策解读" data-v-a4d37009="">
+              <img src="./assets/ex.png" alt="海域使用权" class="news-image" data-v-a4d37009="" />
+              <div class="news-meta" data-v-a4d37009="">
+                <span class="news-date" data-v-a4d37009="">2023-03-28</span>
+                <span class="news-category" data-v-a4d37009="">政策解读</span>
+              </div>
+              <h3 class="news-card-title" data-v-a4d37009="">获批20年海域使用权,为深远海养殖提供长期保障</h3>
+              <p class="news-description" data-v-a4d37009="">公司获得政府批准的20年海域使用权,为工船养殖项目提供稳定的海域资源保障,项目投资安全性大幅提升。</p>
+              <a href="#" class="news-link" data-v-a4d37009="">阅读全文 →</a>
+            </div>
+            <div class="news-card" data-category="政策解读" data-v-a4d37009="">
+              <img src="./assets/ex.png" alt="蓝色经济" class="news-image" data-v-a4d37009="" />
+              <div class="news-meta" data-v-a4d37009="">
+                <span class="news-date" data-v-a4d37009="">2023-08-10</span>
+                <span class="news-category" data-v-a4d37009="">政策解读</span>
+              </div>
+              <h3 class="news-card-title" data-v-a4d37009="">列入国家"蓝色粮仓"重点项目,获得专项资金支持</h3>
+              <p class="news-description" data-v-a4d37009="">连深海洋三文鱼养殖项目被列入国家"蓝色粮仓"建设重点项目,获得5000万元专项资金支持用于技术升级。</p>
+              <a href="#" class="news-link" data-v-a4d37009="">阅读全文 →</a>
+            </div>
+
+            <!-- 专题报道 -->
+            <div class="news-card" data-category="专题报道" data-v-a4d37009="">
+              <img src="./assets/ex.png" alt="央视报道" class="news-image" data-v-a4d37009="" />
+              <div class="news-meta" data-v-a4d37009="">
+                <span class="news-date" data-v-a4d37009="">2023-05-01</span>
+                <span class="news-category" data-v-a4d37009="">专题报道</span>
+              </div>
+              <h3 class="news-card-title" data-v-a4d37009="">央视《新闻联播》专题报道连深海洋工船养殖创新模式</h3>
+              <p class="news-description" data-v-a4d37009="">中央电视台《新闻联播》以"科技兴海 蓝色粮仓"为主题,深度报道连深海洋工船养殖的创新实践和显著成效。</p>
+              <a href="#" class="news-link" data-v-a4d37009="">阅读全文 →</a>
+            </div>
+            <div class="news-card" data-category="专题报道" data-v-a4d37009="">
+              <img src="./assets/ex.png" alt="海洋经济" class="news-image" data-v-a4d37009="" />
+              <div class="news-meta" data-v-a4d37009="">
+                <span class="news-date" data-v-a4d37009="">2023-06-12</span>
+                <span class="news-category" data-v-a4d37009="">专题报道</span>
+              </div>
+              <h3 class="news-card-title" data-v-a4d37009="">人民日报整版报道:从无到有的中国深海三文鱼产业</h3>
+              <p class="news-description" data-v-a4d37009="">人民日报以整版篇幅报道中国深海三文鱼产业发展历程,重点介绍连深海洋在产业突破中的引领作用。</p>
+              <a href="#" class="news-link" data-v-a4d37009="">阅读全文 →</a>
+            </div>
+            <div class="news-card" data-category="专题报道" data-v-a4d37009="">
+              <img src="./assets/ex.png" alt="行业标杆" class="news-image" data-v-a4d37009="" />
+              <div class="news-meta" data-v-a4d37009="">
+                <span class="news-date" data-v-a4d37009="">2023-07-25</span>
+                <span class="news-category" data-v-a4d37009="">专题报道</span>
+              </div>
+              <h3 class="news-card-title" data-v-a4d37009="">财经杂志封面故事:连深海洋如何打造中国三文鱼产业标杆</h3>
+              <p class="news-description" data-v-a4d37009="">《财经》杂志以封面故事形式深度解析连深海洋的商业模式、技术创新和产业布局,探讨中国水产养殖业转型升级路径。</p>
+              <a href="#" class="news-link" data-v-a4d37009="">阅读全文 →</a>
+            </div>
+          </div>
+          <div class="news-more" data-v-a4d37009="">
+            <button class="more-btn" data-v-a4d37009="">查看更多新闻</button>
+          </div>
+        </section>
+        <section class="section products-layout" data-v-a4d37009="">
+          <div class="products-header" data-v-a4d37009="">
+            <h2 class="products-title" data-v-a4d37009="">产品中心</h2>
+            <p class="products-subtitle" data-v-a4d37009="">
+              高品质三文鱼产品从深海到餐桌的全程把控
+            </p>
+            <div class="products-underline" data-v-a4d37009=""></div>
+            <img class="header-icon"
+              src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAEUAAABFCAYAAAAcjSspAAAACXBIWXMAAAsSAAALEgHS3X78AAABIUlEQVR4nO3cQQrCMBBA0an0Xrqsp1JP1Sx7s7ipUPCDTi1o6n8gdpFA+IvCQLSrtcZ5GK6xX9NYypTZ0M/fl+3P8lOmzOJ+8XwbS7luepQvOw9DXbPvsPVB9sAowCjAKMAowCjAKMAowCigf73kWWOz0il53mlVlGhrVjrOn7etjRLRwKw0zz5vn/MxK/lOAUYBRgFGAUYBRgFGAUYBRgFGAUYBRgFGAUYBRgFGAUYBRgFGAUYBRgFGAUYBRgFGAUYBRgFGAUYBRgFGAUYBRgFGAUYBRgFGAUYBRgHLe7TZm8nZ9c1YRsneTE7fZG5FHxExltJlNmVvMrfGdwowCjAKMAowCjAKMAowCjAK+OQ3hH8x+2Ttdvbpal31ZzS7dgfVDy3yF7xX1AAAAABJRU5ErkJggg=="
+              alt="copy" data-v-a4d37009="" />
+          </div>
+          <div class="products-gallery" data-v-a4d37009="">
+            <div class="products-swiper" data-v-a4d37009="">
+              <div class="swiper-wrapper">
+                <div class="swiper-slide" data-v-a4d37009="">
+                  <div class="product-image-container" data-v-a4d37009="">
+                    <img src="./assets/ex.png" alt="三文鱼鱼片" class="product-image" data-v-a4d37009="" />
+                  </div>
                 </div>
-                <div class="col" data-v-e7d68f9b="">
-                  <a href="./zh-cn/research.html" class="" data-v-e7d68f9b="">科研平台</a
-                  ><a href="./zh-cn/products.html" class="" data-v-e7d68f9b="">产品中心</a
-                  ><a href="./zh-cn/news.html" class="" data-v-e7d68f9b="">新闻动态</a>
+                <div class="swiper-slide" data-v-a4d37009="">
+                  <div class="product-image-container" data-v-a4d37009="">
+                    <img src="./assets/ex.png" alt="三文鱼切片" class="product-image" data-v-a4d37009="" />
+                  </div>
                 </div>
-                <div class="col" data-v-e7d68f9b="">
-                  <a href="./zh-cn/about.html#join" data-v-e7d68f9b="">加入我们</a
-                  ><a href="./zh-cn/contact.html" class="" data-v-e7d68f9b="">联系合作</a>
+                <div class="swiper-slide" data-v-a4d37009="">
+                  <div class="product-image-container" data-v-a4d37009="">
+                    <img src="./assets/ex.png" alt="三文鱼刺身" class="product-image" data-v-a4d37009="" />
+                  </div>
                 </div>
-              </nav>
-              <div class="m-social" data-v-e7d68f9b="">
-                <span data-v-e7d68f9b="">Follow our social media</span>
-                <div class="icons" data-v-e7d68f9b="">
-                  <a
-                    href="#"
-                    aria-label="wechat"
-                    class="wechat-icon"
-                    data-v-e7d68f9b=""
-                    ><svg
-                      viewBox="0 0 24 24"
-                      width="14"
-                      height="14"
-                      data-v-e7d68f9b=""
-                    >
-                      <path
-                        d="M8.5 12c0-1.9 1.6-3.5 3.5-3.5s3.5 1.6 3.5 3.5-1.6 3.5-3.5 3.5-3.5-1.6-3.5-3.5z"
-                        fill="currentColor"
-                        data-v-e7d68f9b=""
-                      ></path>
-                      <path
-                        d="M12 2C6.5 2 2 6.5 2 12c0 1.7.4 3.3 1.1 4.7L2 22l5.3-1.1C8.7 21.6 10.3 22 12 22c5.5 0 10-4.5 10-10S17.5 2 12 2z"
-                        fill="currentColor"
-                        data-v-e7d68f9b=""
-                      ></path></svg></a
-                  ><a
-                    href="#"
-                    aria-label="weibo"
-                    class="weibo-icon"
-                    data-v-e7d68f9b=""
-                    ><svg
-                      viewBox="0 0 24 24"
-                      width="14"
-                      height="14"
-                      data-v-e7d68f9b=""
-                    >
-                      <path
-                        d="M12 2C6.5 2 2 6.5 2 12s4.5 10 10 10 10-4.5 10-10S17.5 2 12 2zm-1 17.9c-4.4-.4-7.9-4-7.9-8.4 0-4.4 3.5-8 7.9-8.4v16.8zm2 0V3.1c4.4.4 7.9 4 7.9 8.4 0 4.4-3.5 8-7.9 8.4z"
-                        fill="currentColor"
-                        data-v-e7d68f9b=""
-                      ></path></svg></a
-                  ><a
-                    href="#"
-                    aria-label="linkedin"
-                    class="linkedin-icon"
-                    data-v-e7d68f9b=""
-                    ><svg
-                      viewBox="0 0 24 24"
-                      width="14"
-                      height="14"
-                      data-v-e7d68f9b=""
-                    >
-                      <path
-                        d="M20.5 2h-17A1.5 1.5 0 002 3.5v17A1.5 1.5 0 003.5 22h17a1.5 1.5 0 001.5-1.5v-17A1.5 1.5 0 0020.5 2zM8 19H5v-9h3zM6.5 8.25A1.75 1.75 0 118.3 6.5a1.78 1.78 0 01-1.8 1.75zM19 19h-3v-4.74c0-1.42-.6-1.93-1.38-1.93A1.74 1.74 0 0013 14.19a.66.66 0 000 .14V19h-3v-9h2.9v1.3a3.11 3.11 0 012.7-1.4c1.55 0 3.36.86 3.36 3.66z"
-                        fill="currentColor"
-                        data-v-e7d68f9b=""
-                      ></path></svg></a
-                  ><a
-                    href="#"
-                    aria-label="youtube"
-                    class="youtube-icon"
-                    data-v-e7d68f9b=""
-                    ><svg
-                      viewBox="0 0 24 24"
-                      width="14"
-                      height="14"
-                      data-v-e7d68f9b=""
-                    >
-                      <path
-                        d="M23.5 6.5c-.3-1.1-1.2-1.8-2.3-1.8C19.4 4.5 12 4.5 12 4.5s-7.4 0-9.2.2c-1.1.1-2 .7-2.3 1.8C.2 8.4.2 12 .2 12s0 3.6.2 5.5c.3 1.1 1.2 1.8 2.3 1.8 1.8.2 9.2.2 9.2.2s7.4 0 9.2-.2c1.1-.1 2-.7 2.3-1.8.2-1.9.2-5.5.2-5.5s0-3.6-.2-5.5zM9.5 15.5V8.5l6 3.5-6 3.5z"
-                        fill="currentColor"
-                        data-v-e7d68f9b=""
-                      ></path></svg
-                  ></a>
+                <div class="swiper-slide" data-v-a4d37009="">
+                  <div class="product-image-container" data-v-a4d37009="">
+                    <img src="./assets/ex.png" alt="三文鱼牛排" class="product-image" data-v-a4d37009="" />
+                  </div>
+                </div>
+                <div class="swiper-slide" data-v-a4d37009="">
+                  <div class="product-image-container" data-v-a4d37009="">
+                    <img src="./assets/ex.png" alt="三文鱼寿司" class="product-image" data-v-a4d37009="" />
+                  </div>
+                </div>
+                <div class="swiper-slide" data-v-a4d37009="">
+                  <div class="product-image-container" data-v-a4d37009="">
+                    <img src="./assets/ex.png" alt="三文鱼沙拉" class="product-image" data-v-a4d37009="" />
+                  </div>
+                </div>
+                <div class="swiper-slide" data-v-a4d37009="">
+                  <div class="product-image-container" data-v-a4d37009="">
+                    <img src="./assets/ex.png" alt="三文鱼汤" class="product-image" data-v-a4d37009="" />
+                  </div>
+                </div>
+                <div class="swiper-slide" data-v-a4d37009="">
+                  <div class="product-image-container" data-v-a4d37009="">
+                    <img src="./assets/ex.png" alt="三文鱼卷" class="product-image" data-v-a4d37009="" />
+                  </div>
+                </div>
+                <div class="swiper-slide" data-v-a4d37009="">
+                  <div class="product-image-container" data-v-a4d37009="">
+                    <img src="./assets/ex.png" alt="三文鱼塔塔" class="product-image" data-v-a4d37009="" />
+                  </div>
                 </div>
               </div>
             </div>
-            <div class="m-divider" data-v-e7d68f9b=""></div>
-            <div class="search-copy-section" data-v-e7d68f9b="">
-              <div class="m-search" data-v-e7d68f9b="">
-                
+            <div class="products-custom-pagination" data-v-a4d37009=""></div>
+          </div>
+        </section>
+      </main>
+      <footer class="m-footer" data-v-36d2d450="" data-v-e7d68f9b="">
+        <div class="m-foot-wrap" data-v-e7d68f9b="">
+          <div class="top-section" data-v-e7d68f9b="">
+            <div class="m-brand" data-v-e7d68f9b="">
+              <div class="logo" data-v-e7d68f9b="">连深海洋</div>
+              <div class="sub" data-v-e7d68f9b="">LIANSHEN MARINE</div>
+            </div>
+            <nav class="m-links" data-v-e7d68f9b="">
+              <div class="col" data-v-e7d68f9b="">
+                <a href="./zh-cn.html" class="" data-v-e7d68f9b="">首页</a><a href="./zh-cn/about.html" class=""
+                  data-v-e7d68f9b="">关于我们</a><a href="./zh-cn/farming.html" class="" data-v-e7d68f9b="">养殖模式</a>
               </div>
-              <div class="m-copy" data-v-e7d68f9b="">
-                <span data-v-e7d68f9b="">Copyright 2025 © lianshen marine</span>
-                <div class="links" data-v-e7d68f9b="">
-                  <a href="#" data-v-e7d68f9b="">使用条款</a
-                  ><a href="#" data-v-e7d68f9b="">网站地图</a>
-                </div>
+              <div class="col" data-v-e7d68f9b="">
+                <a href="./zh-cn/research.html" class="" data-v-e7d68f9b="">科研平台</a><a href="./zh-cn/products.html"
+                  class="" data-v-e7d68f9b="">产品中心</a><a href="./zh-cn/news.html" class="" data-v-e7d68f9b="">新闻动态</a>
+              </div>
+              <div class="col" data-v-e7d68f9b="">
+                <a href="./zh-cn/about.html#join" data-v-e7d68f9b="">加入我们</a><a href="./zh-cn/contact.html" class=""
+                  data-v-e7d68f9b="">联系合作</a>
+              </div>
+            </nav>
+            <div class="m-social" data-v-e7d68f9b="">
+              <span data-v-e7d68f9b="">Follow our social media</span>
+              <div class="icons" data-v-e7d68f9b="">
+                <a href="#" aria-label="wechat" class="wechat-icon" data-v-e7d68f9b=""><svg viewBox="0 0 24 24"
+                    width="14" height="14" data-v-e7d68f9b="">
+                    <path d="M8.5 12c0-1.9 1.6-3.5 3.5-3.5s3.5 1.6 3.5 3.5-1.6 3.5-3.5 3.5-3.5-1.6-3.5-3.5z"
+                      fill="currentColor" data-v-e7d68f9b=""></path>
+                    <path
+                      d="M12 2C6.5 2 2 6.5 2 12c0 1.7.4 3.3 1.1 4.7L2 22l5.3-1.1C8.7 21.6 10.3 22 12 22c5.5 0 10-4.5 10-10S17.5 2 12 2z"
+                      fill="currentColor" data-v-e7d68f9b=""></path>
+                  </svg></a><a href="#" aria-label="weibo" class="weibo-icon" data-v-e7d68f9b=""><svg
+                    viewBox="0 0 24 24" width="14" height="14" data-v-e7d68f9b="">
+                    <path
+                      d="M12 2C6.5 2 2 6.5 2 12s4.5 10 10 10 10-4.5 10-10S17.5 2 12 2zm-1 17.9c-4.4-.4-7.9-4-7.9-8.4 0-4.4 3.5-8 7.9-8.4v16.8zm2 0V3.1c4.4.4 7.9 4 7.9 8.4 0 4.4-3.5 8-7.9 8.4z"
+                      fill="currentColor" data-v-e7d68f9b=""></path>
+                  </svg></a><a href="#" aria-label="linkedin" class="linkedin-icon" data-v-e7d68f9b=""><svg
+                    viewBox="0 0 24 24" width="14" height="14" data-v-e7d68f9b="">
+                    <path
+                      d="M20.5 2h-17A1.5 1.5 0 002 3.5v17A1.5 1.5 0 003.5 22h17a1.5 1.5 0 001.5-1.5v-17A1.5 1.5 0 0020.5 2zM8 19H5v-9h3zM6.5 8.25A1.75 1.75 0 118.3 6.5a1.78 1.78 0 01-1.8 1.75zM19 19h-3v-4.74c0-1.42-.6-1.93-1.38-1.93A1.74 1.74 0 0013 14.19a.66.66 0 000 .14V19h-3v-9h2.9v1.3a3.11 3.11 0 012.7-1.4c1.55 0 3.36.86 3.36 3.66z"
+                      fill="currentColor" data-v-e7d68f9b=""></path>
+                  </svg></a><a href="#" aria-label="youtube" class="youtube-icon" data-v-e7d68f9b=""><svg
+                    viewBox="0 0 24 24" width="14" height="14" data-v-e7d68f9b="">
+                    <path
+                      d="M23.5 6.5c-.3-1.1-1.2-1.8-2.3-1.8C19.4 4.5 12 4.5 12 4.5s-7.4 0-9.2.2c-1.1.1-2 .7-2.3 1.8C.2 8.4.2 12 .2 12s0 3.6.2 5.5c.3 1.1 1.2 1.8 2.3 1.8 1.8.2 9.2.2 9.2.2s7.4 0 9.2-.2c1.1-.1 2-.7 2.3-1.8.2-1.9.2-5.5.2-5.5s0-3.6-.2-5.5zM9.5 15.5V8.5l6 3.5-6 3.5z"
+                      fill="currentColor" data-v-e7d68f9b=""></path>
+                  </svg></a>
               </div>
             </div>
           </div>
-        </footer>
-      </div>
+          <div class="m-divider" data-v-e7d68f9b=""></div>
+          <div class="search-copy-section" data-v-e7d68f9b="">
+            <div class="m-search" data-v-e7d68f9b="">
+
+            </div>
+            <div class="m-copy" data-v-e7d68f9b="">
+              <span data-v-e7d68f9b="">Copyright 2025 © lianshen marine</span>
+              <div class="links" data-v-e7d68f9b="">
+                <a href="#" data-v-e7d68f9b="">使用条款</a><a href="#" data-v-e7d68f9b="">网站地图</a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </footer>
     </div>
-    <script src="./assets/static.js" defer></script>
-  </body>
+  </div>
+  <script src="./assets/static.js" defer></script>
+</body>
+
 </html>
