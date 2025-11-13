@@ -3769,6 +3769,7 @@ button.swiper-pagination-bullet {
 .about-intro .media img[data-v-76787693] {
   display: block;
   width: 100%;
+  max-width: 100%;
   height: auto;
   border-radius: .5rem;
   transition: transform 0.3s ease;
@@ -3794,8 +3795,9 @@ button.swiper-pagination-bullet {
   margin-bottom: 12.5rem;
 }
 .gallery img[data-v-76787693] {
-  width: 20.875rem;
-  height: 7rem;
+  width: 100%;
+  max-width: 100%;
+  height: auto;
   display: block;
   border-radius: .5rem;
   box-shadow: 0 .125rem .25rem #0000001a;
@@ -3831,8 +3833,9 @@ button.swiper-pagination-bullet {
   align-items: center;
 }
 .honors-gallery img[data-v-76787693] {
-  width: 21.75rem;
-  height: 15.375rem;
+  width: 100%;
+  max-width: 100%;
+  height: auto;
   -o-object-fit: cover;
   object-fit: cover;
   display: block;
@@ -3906,6 +3909,11 @@ button.swiper-pagination-bullet {
     grid-template-columns: repeat(3, 1fr);
     gap: 28px;
   }
+  .gallery img[data-v-76787693] {
+    width: 100%;
+    max-width: 100%;
+    height: auto;
+  }
   .honors-intro[data-v-76787693] {
     grid-template-columns: 480px 1fr;
     gap: 40px;
@@ -3915,7 +3923,10 @@ button.swiper-pagination-bullet {
     gap: 36px;
   }
   .honors-gallery img[data-v-76787693] {
-    height: 15.375rem;
+    width: 100%;
+    max-width: 100%;
+    height: auto;
+    aspect-ratio: 348 / 246;
   }
   .duty-intro[data-v-76787693] {
     grid-template-columns: 480px 1fr;
