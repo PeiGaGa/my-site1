@@ -171,6 +171,74 @@
         }
       });
     }
+    
+    // 返回 swiper 实例，供其他函数使用
+    return swiperInstance;
+  }
+
+  // 初始化产业模块点击切换功能（支持所有首页）
+  function initIndustryModules() {
+    // 查找所有包含 industry-modules 的容器（支持多个页面）
+    var industryLayouts = document.querySelectorAll('.industry-layout');
+    
+    if (!industryLayouts.length) return;
+    
+    industryLayouts.forEach(function(layout) {
+      var industryModules = layout.querySelectorAll('.industry-modules .industry-module');
+      var industryHero = layout.querySelector('.industry-hero .swiper');
+      
+      if (!industryModules.length || !industryHero) return;
+      
+      // 获取 swiper 实例，Swiper 会在初始化后将实例存储在 DOM 元素的 swiper 属性上
+      function getSwiperInstance() {
+        return industryHero.swiper || null;
+      }
+      
+      // 尝试获取 swiper 实例
+      var swiperInstance = getSwiperInstance();
+      
+      // 如果还没有初始化，等待一下再试（最多等待500ms）
+      if (!swiperInstance) {
+        var attempts = 0;
+        var maxAttempts = 10;
+        var checkInterval = setInterval(function() {
+          attempts++;
+          swiperInstance = getSwiperInstance();
+          if (swiperInstance || attempts >= maxAttempts) {
+            clearInterval(checkInterval);
+            if (swiperInstance) {
+              bindModuleClickEvents(industryModules, swiperInstance);
+            }
+          }
+        }, 50);
+        return;
+      }
+      
+      bindModuleClickEvents(industryModules, swiperInstance);
+    });
+  }
+  
+  function bindModuleClickEvents(modules, swiperInstance) {
+    modules.forEach(function(module, index) {
+      // 避免重复绑定事件
+      if (module.hasAttribute('data-module-click-bound')) return;
+      module.setAttribute('data-module-click-bound', 'true');
+      
+      // 设置鼠标样式为指针，提示可点击
+      module.style.cursor = 'pointer';
+      
+      // 添加点击事件
+      module.addEventListener('click', function() {
+        // 点击模块时切换到对应的图片（索引从0开始）
+        // 使用 slideToLoop 因为 swiper 是 loop 模式
+        if (swiperInstance && typeof swiperInstance.slideToLoop === 'function') {
+          swiperInstance.slideToLoop(index);
+        } else if (swiperInstance && typeof swiperInstance.slideTo === 'function') {
+          // 如果 slideToLoop 不可用，使用 slideTo
+          swiperInstance.slideTo(index);
+        }
+      });
+    });
   }
 
   // Minimal generic swiper for news lists with dots pagination
@@ -596,6 +664,7 @@
     var heroSwipers = document.querySelectorAll('.hero-swiper');
     heroSwipers.forEach(function (root) { initHeroSlider(root); });
     initIndustrySlider();
+    initIndustryModules(); // 初始化产业模块点击切换功能
     initProductsSwiper(); // 初始化产品中心轮播
     initHeaderScroll(); // 初始化导航栏滚动效果
     initNewsTabs(); // 初始化新闻动态tab切换
