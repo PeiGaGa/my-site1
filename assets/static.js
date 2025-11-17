@@ -1,4 +1,53 @@
 (function () {
+  var GLOBAL_SCOPE = typeof window !== 'undefined' ? window : {};
+  var DOC = typeof document !== 'undefined' ? document : null;
+  var AMAP_KEY = 'bf4becc879f5b42fbc73246f516cac3a';
+  var MAP_ICON_URL =
+    (GLOBAL_SCOPE && GLOBAL_SCOPE.MAP_ICON_URL) || '../assets/mapicon.png';
+  var amapLoaderPromise = null;
+
+  function loadAmapSdk() {
+    if (typeof window === 'undefined' || !DOC) {
+      return Promise.reject(new Error('AMap SDK cannot load outside browser'));
+    }
+    if (typeof window.AMap !== 'undefined') {
+      return Promise.resolve(window.AMap);
+    }
+    if (!AMAP_KEY || AMAP_KEY === 'REPLACE_WITH_YOUR_AMAP_WEB_KEY') {
+      console.warn('AMap key is missing. Set window.AMAP_KEY or update static.js');
+      return Promise.reject(new Error('Missing AMap key'));
+    }
+    if (amapLoaderPromise) {
+      return amapLoaderPromise;
+    }
+
+    amapLoaderPromise = new Promise(function (resolve, reject) {
+      var script = DOC.createElement('script');
+      script.type = 'text/javascript';
+      script.src =
+        'https://webapi.amap.com/maps?v=2.0&key=' +
+        encodeURIComponent(AMAP_KEY) +
+        '&plugin=AMap.Geocoder';
+      script.async = true;
+      script.defer = true;
+      script.onload = function () {
+        if (window.AMap) {
+          resolve(window.AMap);
+        } else {
+          amapLoaderPromise = null;
+          reject(new Error('AMap loaded without exposing API'));
+        }
+      };
+      script.onerror = function (err) {
+        amapLoaderPromise = null;
+        reject(err || new Error('Failed to load AMap SDK'));
+      };
+      DOC.head.appendChild(script);
+    });
+
+    return amapLoaderPromise;
+  }
+
   function initHeroSlider(root) {
     if (!root) return;
 
@@ -83,6 +132,105 @@
         }
       });
     }
+  }
+
+  function initContactMaps() {
+    if (!DOC) return;
+    var mapContainers = DOC.querySelectorAll('.contact-card .map');
+    if (!mapContainers.length) return;
+
+    loadAmapSdk()
+      .then(function (AMap) {
+        if (!AMap) return;
+
+        function bootstrapMaps() {
+          mapContainers.forEach(function (container) {
+            if (container.getAttribute('data-amap-ready') === 'true') return;
+            container.setAttribute('data-amap-ready', 'true');
+
+            var zoomAttr = parseInt(container.getAttribute('data-map-zoom'), 10);
+            var zoom = !isNaN(zoomAttr) ? zoomAttr : 14;
+            var title = container.getAttribute('data-map-title') || '';
+            var address = container.getAttribute('data-map-address') || '';
+            var lat = parseFloat(container.getAttribute('data-map-lat'));
+            var lng = parseFloat(container.getAttribute('data-map-lng'));
+            var city = container.getAttribute('data-map-city') || '';
+            var hasCoords = !isNaN(lat) && !isNaN(lng);
+            var center = hasCoords ? [lng, lat] : undefined;
+
+            var map = new AMap.Map(container, {
+              zoom: hasCoords ? zoom : 12,
+              viewMode: '2D',
+              center: center,
+            });
+
+            var markerIcon = null;
+            if (MAP_ICON_URL) {
+              markerIcon = new AMap.Icon({
+                image: MAP_ICON_URL,
+                imageSize: new AMap.Size(64, 64),
+                size: new AMap.Size(64, 64),
+              });
+            }
+
+            function placeMarker(position) {
+              if (!position) return;
+              map.setZoom(zoom);
+              map.setCenter(position);
+              // 使用默认图标创建标记
+              var marker = new AMap.Marker({
+                position: position,
+                title: title || address || '',
+                icon: markerIcon || undefined,
+                anchor: 'bottom-center',
+              });
+              map.add(marker);
+            }
+
+            if (hasCoords) {
+              placeMarker(center);
+              return;
+            }
+
+            if (!address || !AMap.Geocoder) {
+              console.warn(
+                'Map container missing address or Geocoder support',
+                container
+              );
+              return;
+            }
+
+            var geocoderOptions = {};
+            if (city) {
+              geocoderOptions.city = city;
+            }
+            var geocoder = new AMap.Geocoder(geocoderOptions);
+
+            geocoder.getLocation(address, function (status, result) {
+              if (
+                status === 'complete' &&
+                result &&
+                result.geocodes &&
+                result.geocodes.length
+              ) {
+                var loc = result.geocodes[0].location;
+                placeMarker([loc.lng, loc.lat]);
+              } else {
+                console.warn('AMap geocode failed', address, result);
+              }
+            });
+          });
+        }
+
+        if (AMap.plugin && typeof AMap.plugin === 'function') {
+          AMap.plugin('AMap.Geocoder', bootstrapMaps);
+        } else {
+          bootstrapMaps();
+        }
+      })
+      .catch(function (err) {
+        console.warn('Unable to initialize contact maps', err);
+      });
   }
 
   function initIndustrySlider() {
@@ -399,30 +547,42 @@
         type: 'custom',
         clickable: true,
         renderCustom: function (swiper, current, total) {
+          // 所有屏幕尺寸下，分页器都基于slide索引，每次只移动一张图
+          // 确保 current 和 total 都在有效范围内
+          var maxTotal = Math.max(1, total); // 确保至少为1
+          var currentIndex = Math.max(1, Math.min(current, maxTotal)); // 确保 current 在 1 到 maxTotal 之间
+          
           var maxVisible = 5; // 最多显示5个圆点和数字
           var html = '<div class="pagination-bullets">';
           
-          // 计算显示范围
+          // 计算显示范围（基于slide索引）
           var start, end;
-          if (total <= maxVisible) {
+          if (maxTotal <= maxVisible) {
             // 总数不超过最大显示数，显示全部
             start = 1;
-            end = total;
+            end = maxTotal;
           } else {
             // 总数超过最大显示数，计算显示范围
             var halfVisible = Math.floor(maxVisible / 2);
-            start = Math.max(1, current - halfVisible);
-            end = Math.min(total, start + maxVisible - 1);
+            start = Math.max(1, currentIndex - halfVisible);
+            end = Math.min(maxTotal, start + maxVisible - 1);
             
-            // 调整起始位置，确保始终显示maxVisible个
+            // 调整起始位置，确保始终显示maxVisible个（但不超过总数）
             if (end - start + 1 < maxVisible) {
+              // 如果显示的数量不足，调整起始位置
               start = Math.max(1, end - maxVisible + 1);
+              // 再次确保 end 不超过总数
+              end = Math.min(maxTotal, start + maxVisible - 1);
             }
           }
           
+          // 最终确保 end 不超过实际总数
+          end = Math.min(end, maxTotal);
+          start = Math.max(1, Math.min(start, maxTotal));
+          
           // 生成圆点（只显示范围内的）
           for (var i = start; i <= end; i++) {
-            if (i === current) {
+            if (i === currentIndex) {
               html += '<span class="pagination-bullet active" data-index="' + i + '"></span>';
             } else {
               html += '<span class="pagination-bullet" data-index="' + i + '"></span>';
@@ -434,7 +594,7 @@
           // 生成数字（只显示范围内的）
           for (var j = start; j <= end; j++) {
             var numStr = j < 10 ? '0' + j : '' + j;
-            if (j === current) {
+            if (j === currentIndex) {
               html += '<span class="pagination-number active" data-index="' + j + '">' + numStr + '</span>';
             } else {
               html += '<span class="pagination-number" data-index="' + j + '">' + numStr + '</span>';
@@ -446,16 +606,17 @@
         }
       },
       breakpoints: {
+        // 所有机型都显示4个产品，与CSS保持一致
         "@0.00": {
-          slidesPerView: 1,
+          slidesPerView: 4,
           spaceBetween: 0,
         },
         "@0.75": {
-          slidesPerView: 2,
+          slidesPerView: 4,
           spaceBetween: 0,
         },
         "@1.00": {
-          slidesPerView: 3,
+          slidesPerView: 4,
           spaceBetween: 0,
         },
         "@1.25": {
@@ -484,11 +645,43 @@
             target.classList.contains('pagination-number')) {
           var index = parseInt(target.getAttribute('data-index'));
           if (index && swiperInstance) {
-            swiperInstance.slideTo(index - 1); // 注意：slideTo的索引从0开始
+            // 获取实际的 slide 总数
+            var totalSlides = swiperInstance.slides ? swiperInstance.slides.length : 0;
+            // 排除重复的 slide（如果有 loop 模式）
+            var realSlides = 0;
+            if (swiperInstance.slides) {
+              for (var s = 0; s < swiperInstance.slides.length; s++) {
+                if (!swiperInstance.slides[s].classList.contains('swiper-slide-duplicate')) {
+                  realSlides++;
+                }
+              }
+            }
+            if (realSlides > 0) {
+              totalSlides = realSlides;
+            }
+            
+            // 确保索引在有效范围内
+            var slideIndex = index - 1; // index 是从1开始的，slideTo 的索引从0开始
+            slideIndex = Math.max(0, Math.min(slideIndex, totalSlides - 1));
+            
+            // 所有屏幕尺寸下，都只移动一张图（一个slide）
+            // Swiper 会根据当前屏幕尺寸下的 slide 实际宽度自动计算移动距离
+            swiperInstance.slideTo(slideIndex);
           }
         }
       });
     }
+    
+    // 监听窗口大小改变，确保 Swiper 能正确更新 slide 宽度
+    var resizeTimer;
+    window.addEventListener('resize', function() {
+      clearTimeout(resizeTimer);
+      resizeTimer = setTimeout(function() {
+        if (swiperInstance) {
+          swiperInstance.update();
+        }
+      }, 100);
+    });
   }
 
   function initLanguageSwitch() {
@@ -666,6 +859,7 @@
     initIndustrySlider();
     initIndustryModules(); // 初始化产业模块点击切换功能
     initProductsSwiper(); // 初始化产品中心轮播
+    initContactMaps(); // 初始化联系页面地图
     initHeaderScroll(); // 初始化导航栏滚动效果
     initNewsTabs(); // 初始化新闻动态tab切换
     // mobile drawer
