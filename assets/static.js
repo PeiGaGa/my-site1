@@ -684,69 +684,70 @@
     });
   }
 
-  function initLanguageSwitch() {
-    var switches = document.querySelectorAll('.language-switch');
-    switches.forEach(function (sw) {
-      var btns = sw.querySelectorAll('.lang-btn');
-      if (btns.length < 2) return;
-      var cnBtn = btns[0];
-      var enBtn = btns[1];
-      function resolveCounterpartPath(targetLang) {
-        var loc = window.location;
-        var path = loc.pathname || '';
-        var search = loc.search || '';
-        var hash = loc.hash || '';
+  // Language switching is now handled by <a> tags, no JavaScript needed
+  // function initLanguageSwitch() {
+  //   var switches = document.querySelectorAll('.language-switch');
+  //   switches.forEach(function (sw) {
+  //     var btns = sw.querySelectorAll('.lang-btn');
+  //     if (btns.length < 2) return;
+  //     var cnBtn = btns[0];
+  //     var enBtn = btns[1];
+  //     function resolveCounterpartPath(targetLang) {
+  //       var loc = window.location;
+  //       var path = loc.pathname || '';
+  //       var search = loc.search || '';
+  //       var hash = loc.hash || '';
 
-        // Inside language subfolder -> swap folder keep filename
-        var subMatch = path.match(/\/(zh-cn|en)\/([^\/]+\.html)$/);
-        if (subMatch) {
-          var filename = subMatch[2];
-          return '../' + targetLang + '/' + filename + search + hash;
-        }
+  //       // Inside language subfolder -> swap folder keep filename
+  //       var subMatch = path.match(/\/(zh-cn|en)\/([^\/]+\.html)$/);
+  //       if (subMatch) {
+  //         var filename = subMatch[2];
+  //         return '../' + targetLang + '/' + filename + search + hash;
+  //       }
 
-        // On root language file -> swap root file
-        var rootLangMatch = path.match(/\/(zh-cn|en)\.html$/);
-        if (rootLangMatch) {
-          return './' + targetLang + '.html' + search + hash;
-        }
+  //       // On root language file -> swap root file
+  //       var rootLangMatch = path.match(/\/(zh-cn|en)\.html$/);
+  //       if (rootLangMatch) {
+  //         return './' + targetLang + '.html' + search + hash;
+  //       }
 
-        // Otherwise (e.g., index.html or bare root) -> go to target root language file
-        return './' + targetLang + '.html' + search + hash;
-      }
+  //       // Otherwise (e.g., index.html or bare root) -> go to target root language file
+  //       return './' + targetLang + '.html' + search + hash;
+  //     }
 
-      function detectCurrentLang() {
-        var path = window.location.pathname || '';
-        if (/\/(en)(\/|\.html)/.test(path)) return 'en';
-        if (/\/(zh-cn)(\/|\.html)/.test(path)) return 'zh-cn';
-        // Fallback to stored preference or default zh-cn
-        var stored = null;
-        try { stored = localStorage.getItem('preferredLang'); } catch (e) {}
-        return stored === 'en' ? 'en' : 'zh-cn';
-      }
+  //     function detectCurrentLang() {
+  //       var path = window.location.pathname || '';
+  //       if (/\/(en)(\/|\.html)/.test(path)) return 'en';
+  //       if (/\/(zh-cn)(\/|\.html)/.test(path)) return 'zh-cn';
+  //       // Fallback to stored preference or default zh-cn
+  //       var stored = null;
+  //       try { stored = localStorage.getItem('preferredLang'); } catch (e) {}
+  //       return stored === 'en' ? 'en' : 'zh-cn';
+  //     }
 
-      function setActive(lang) {
-        if (!cnBtn || !enBtn) return;
-        cnBtn.classList.toggle('active', lang === 'zh-cn');
-        enBtn.classList.toggle('active', lang === 'en');
-      }
+  //     function setActive(lang) {
+  //       if (!cnBtn || !enBtn) return;
+  //       cnBtn.classList.toggle('active', lang === 'zh-cn');
+  //       enBtn.classList.toggle('active', lang === 'en');
+  //     }
 
-      // Initialize active state based on URL/preference and persist if URL encodes a lang
-      var currentLang = detectCurrentLang();
-      setActive(currentLang);
-      if (/\/(en|zh-cn)(\/|\.html)/.test(window.location.pathname || '')) {
-        try { localStorage.setItem('preferredLang', currentLang); } catch (e) {}
-      }
+  //     // Initialize active state based on URL/preference and persist if URL encodes a lang
+  //     var currentLang = detectCurrentLang();
+  //     setActive(currentLang);
+  //     if (/\/(en|zh-cn)(\/|\.html)/.test(window.location.pathname || '')) {
+  //       try { localStorage.setItem('preferredLang', currentLang); } catch (e) {}
+  //     }
 
-      if (cnBtn) cnBtn.addEventListener('click', function () {
-        try { localStorage.setItem('preferredLang', 'zh-cn'); } catch (e) {}
-        window.location.href = resolveCounterpartPath('zh-cn');
-      });
-      if (enBtn) enBtn.addEventListener('click', function () {
-        try { localStorage.setItem('preferredLang', 'en'); } catch (e) {}
-        window.location.href = resolveCounterpartPath('en');
-      });
-    });
-  }
+  //     if (cnBtn) cnBtn.addEventListener('click', function () {
+  //       try { localStorage.setItem('preferredLang', 'zh-cn'); } catch (e) {}
+  //       window.location.href = resolveCounterpartPath('zh-cn');
+  //     });
+  //     if (enBtn) enBtn.addEventListener('click', function () {
+  //       try { localStorage.setItem('preferredLang', 'en'); } catch (e) {}
+  //       window.location.href = resolveCounterpartPath('en');
+  //     });
+  //   });
+  // }
 
   function maybeRedirectToPreferredLang() {
     var path = window.location.pathname || '';
@@ -896,7 +897,7 @@
         });
       });
     } catch (e) {}
-    initLanguageSwitch();
+    // initLanguageSwitch(); // Language switching now handled by <a> tags
     initNewsSwipers();
     initProductSwipers();
     maybeRedirectToPreferredLang();
