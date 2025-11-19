@@ -7291,6 +7291,96 @@ NaNpx-96 {
 .drawer-slide-leave-to[data-v-96127a15] {
   transform: translate(100%);
 }
+@media (min-width: 769px) and (max-width: 1024px) {
+  .drawer[data-v-96127a15] {
+    width: 75vw;
+    max-width: 300px;
+    padding: 18px 14px calc(env(safe-area-inset-bottom, 0) + 14px) 18px;
+    gap: 10px;
+    box-shadow: -6px 0 20px #0003;
+  }
+  .drawer__header[data-v-96127a15] {
+    padding-bottom: 3px;
+  }
+  .drawer__close[data-v-96127a15] {
+    width: 36px;
+    font-size: 22px;
+    line-height: 36px;
+  }
+  .drawer__menu[data-v-96127a15] {
+    margin: 20px 0 0;
+    gap: 40px;
+  }
+  .drawer__menu a[data-v-96127a15] {
+    font-size: 15px;
+    padding: 10px 0;
+    min-height: 42px;
+  }
+  .drawer__lang[data-v-96127a15] {
+    gap: 5px;
+    padding-top: 6px;
+  }
+}
+@media (max-width: 768px) {
+  .drawer[data-v-96127a15] {
+    width: 72vw;
+    max-width: 280px;
+    padding: 16px 12px calc(env(safe-area-inset-bottom, 0) + 12px) 16px;
+    gap: 8px;
+    box-shadow: -4px 0 16px #0003;
+  }
+  .drawer__header[data-v-96127a15] {
+    padding-bottom: 3px;
+  }
+  .drawer__close[data-v-96127a15] {
+    width: 32px;
+    font-size: 20px;
+    line-height: 32px;
+  }
+  .drawer__menu[data-v-96127a15] {
+    margin: 16px 0 0;
+    gap: 32px;
+  }
+  .drawer__menu a[data-v-96127a15] {
+    font-size: 14px;
+    padding: 10px 0;
+    min-height: 40px;
+  }
+  .drawer__lang[data-v-96127a15] {
+    gap: 5px;
+    padding-top: 6px;
+  }
+}
+@media (max-width: 480px) {
+  .drawer[data-v-96127a15] {
+    width: 70vw;
+    max-width: 260px;
+    padding: 14px 10px calc(env(safe-area-inset-bottom, 0) + 10px) 14px;
+    gap: 6px;
+    box-shadow: -3px 0 12px #0003;
+  }
+  .drawer__header[data-v-96127a15] {
+    padding-bottom: 2px;
+  }
+  .drawer__close[data-v-96127a15] {
+    width: 28px;
+    font-size: 18px;
+    line-height: 28px;
+  }
+  .drawer__menu[data-v-96127a15] {
+    margin: 12px 0 0;
+    gap: 24px;
+  }
+  .drawer__menu a[data-v-96127a15] {
+    font-size: 13px;
+    padding: 8px 0;
+    min-height: 36px;
+  }
+  .drawer__lang[data-v-96127a15] {
+    gap: 4px;
+    padding-top: 4px;
+  }
+}
 @media (max-width: 480px) {
   .m-nav[data-v-96127a15] {
     padding: 0 24px;
