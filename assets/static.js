@@ -770,11 +770,26 @@
     var pcHeader = document.querySelector('.pc-header');
     var mHeader = document.querySelector('.m-header');
 
+    // 检查是否是新闻详情页面
+    var isNewsDetailPage = document.querySelector('.news-detail-page') !== null;
+    
     var scrollThreshold = 100; // 滚动阈值，可以根据需要调整
     
     function updateHeaderBackground() {
       var scrollTop = window.pageYOffset || document.documentElement.scrollTop || document.body.scrollTop;
       
+      // 如果是新闻详情页面，始终显示导航栏
+      if (isNewsDetailPage) {
+        if (pcHeader) {
+          pcHeader.classList.remove('is-transparent');
+        }
+        if (mHeader) {
+          mHeader.classList.remove('is-transparent');
+        }
+        return;
+      }
+      
+      // 其他页面的逻辑
       if (scrollTop > scrollThreshold) {
         
         if (pcHeader) {
