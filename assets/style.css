@@ -2598,11 +2598,37 @@ button.swiper-pagination-bullet {
 /* 确保 video 元素也能正确显示 */
 video.industry-features-image[data-v-a4d37009] {
   width: 100%;
+  max-width: 1200px;
   height: 560px;
   display: block;
   object-fit: cover;
+  margin: 0 auto;
   margin-bottom: 0;
   background: #000;
+}
+
+@media (min-width: 769px) and (max-width: 1024px) {
+  video.industry-features-image[data-v-a4d37009] {
+    height: 480px;
+    max-width: 1200px;
+    box-sizing: border-box;
+  }
+}
+
+@media (max-width: 768px) {
+  video.industry-features-image[data-v-a4d37009] {
+    height: 360px;
+    max-width: 100%;
+    box-sizing: border-box;
+  }
+}
+
+@media (max-width: 480px) {
+  video.industry-features-image[data-v-a4d37009] {
+    height: 320px;
+    max-width: 100%;
+    box-sizing: border-box;
+  }
 }
 
 .industry-features-container[data-v-a4d37009] {
@@ -3064,6 +3090,7 @@ video.industry-features-image[data-v-a4d37009] {
 
 .products-swiper[data-v-a4d37009] {
   width: 100%;
+  max-width: 1200px;
   height: 630px;
   margin: 0 auto;
   padding: 0;
