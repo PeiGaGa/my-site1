@@ -1765,6 +1765,7 @@ button.swiper-pagination-bullet {
   display: block;
   border-radius: 2px;
   aspect-ratio: 700/580;
+  object-fit: fill;
 }
 .processing .right[data-v-872c3d89] {
   padding-top: 14px;
@@ -2410,7 +2411,7 @@ button.swiper-pagination-bullet {
   width: 100%;
   height: 100%;
   display: block;
-  object-fit: cover;
+  object-fit: fill;
   aspect-ratio: 1200/620; /* 近似截图比例 */
 }
 
@@ -4102,7 +4103,7 @@ video.industry-features-image[data-v-a4d37009] {
   width: 100%;
   height: 742px;
   display: block;
-  object-fit: cover;
+  object-fit: fill;
 }
 .sub[data-v-4b20d276] {
   margin: 0 0 12px;
