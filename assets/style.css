@@ -694,7 +694,7 @@ button.swiper-pagination-bullet {
 .more[data-v-c8ca6fd6] {
   background: transparent;
   border: none;
-  color: #666;
+  color: #696868;
   padding: 0;
   cursor: pointer;
   text-decoration: underline;
@@ -728,12 +728,15 @@ button.swiper-pagination-bullet {
   cursor: pointer;
 }
 .item-date[data-v-c8ca6fd6] {
-  color: #8a8a8a;
+  color: #44403f;;
   font-size: 12px;
   margin-bottom: 6px;
 }
+.side-list a[data-v-c8ca6fd6]{
+  color: #44403f;;
+}
 .item-title[data-v-c8ca6fd6] {
-  font-size: 16px;
+  font-size: 18px;
   line-height: 1.6;
   letter-spacing: 0.5px;
   display: -webkit-box;
@@ -800,7 +803,7 @@ button.swiper-pagination-bullet {
     font-size: 15px;
   }
   .item-title[data-v-c8ca6fd6] {
-    font-size: 15px;
+    font-size: 16px;
   }
 }
 @media (max-width: 768px) {
@@ -817,14 +820,14 @@ button.swiper-pagination-bullet {
 }
 @media (max-width: 480px) {
   .feature-title[data-v-c8ca6fd6] {
-    font-size: 15px;
+    font-size: 14px;
   }
   .feature-excerpt[data-v-c8ca6fd6] {
-    font-size: 13px;
+    font-size: 12px;
     letter-spacing: 0.5px;
   }
   .item-title[data-v-c8ca6fd6] {
-    font-size: 13px;
+    font-size: 12px;
   }
 }
 .hero[data-v-2ad75555] {
@@ -2286,7 +2289,6 @@ button.swiper-pagination-bullet {
   position: relative;
   max-width: 1200px;
   margin: 0 auto 16px;
-  padding: 0 64px;
   margin-top: 80px;
   box-sizing: border-box;
   width: 100%;
@@ -2545,7 +2547,7 @@ button.swiper-pagination-bullet {
 }
 
 .industry-module p[data-v-a4d37009] {
-  font-size: 18px;
+  font-size: 16px;
   color: #666;
   line-height: 2.75;
   margin: 0;
@@ -2553,21 +2555,21 @@ button.swiper-pagination-bullet {
 }
 @media (min-width: 769px) and (max-width: 1024px) {
   .industry-module p[data-v-a4d37009] {
-    font-size: 16px;
+    font-size: 14px;
     line-height: 2.4;
     letter-spacing: 2.8px;
   }
 }
 @media (max-width: 768px) {
   .industry-module p[data-v-a4d37009] {
-    font-size: 14px;
+    font-size: 12px;
     line-height: 2;
     letter-spacing: 1.6px;
   }
 }
 @media (max-width: 480px) {
   .industry-module p[data-v-a4d37009] {
-    font-size: 12px;
+    font-size: 10px;
     line-height: 1.6;
     letter-spacing: 0.8px;
   }
