@@ -2610,11 +2610,31 @@ video.industry-features-image[data-v-a4d37009] {
   background: #000;
 }
 
+/* 确保 iframe 元素也能正确显示 */
+iframe.industry-features-image[data-v-a4d37009] {
+  width: 100%;
+  max-width: 1200px;
+  height: 675px;
+  display: block;
+  margin: 0 auto;
+  margin-bottom: 0;
+  background: #000;
+  border: none;
+  aspect-ratio: 16 / 9;
+}
+
 @media (min-width: 769px) and (max-width: 1024px) {
   video.industry-features-image[data-v-a4d37009] {
     height: 480px;
     max-width: 1200px;
     box-sizing: border-box;
+  }
+  
+  iframe.industry-features-image[data-v-a4d37009] {
+    height: 576px;
+    max-width: 1024px;
+    box-sizing: border-box;
+    aspect-ratio: 16 / 9;
   }
 }
 
@@ -2624,6 +2644,13 @@ video.industry-features-image[data-v-a4d37009] {
     max-width: 100%;
     box-sizing: border-box;
   }
+  
+  iframe.industry-features-image[data-v-a4d37009] {
+    height: 432px;
+    max-width: 100%;
+    box-sizing: border-box;
+    aspect-ratio: 16 / 9;
+  }
 }
 
 @media (max-width: 480px) {
@@ -2631,6 +2658,13 @@ video.industry-features-image[data-v-a4d37009] {
     height: 320px;
     max-width: 100%;
     box-sizing: border-box;
+  }
+  
+  iframe.industry-features-image[data-v-a4d37009] {
+    height: 270px;
+    max-width: 100%;
+    box-sizing: border-box;
+    aspect-ratio: 16 / 9;
   }
 }
 
