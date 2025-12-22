@@ -902,7 +902,7 @@
     initIndustryModules(); // 初始化产业模块点击切换功能
     initProductsSwiper(); // 初始化产品中心轮播
     initContactMaps(); // 初始化联系页面地图
-    initHeaderScroll(); // 初始化导航栏滚动效果
+    // initHeaderScroll(); // 初始化导航栏滚动效果 - 已禁用头部滚动变色功能
     initNewsTabs(); // 初始化新闻动态tab切换
     // mobile drawer
     try {
