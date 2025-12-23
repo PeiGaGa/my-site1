@@ -3128,25 +3128,25 @@ iframe.industry-features-image[data-v-a4d37009] {
 .products-swiper[data-v-a4d37009] {
   width: 100%;
   max-width: 1200px;
-  height: 630px;
+  height: 450px;
   margin: 0 auto;
   padding: 0;
   overflow: hidden;
 }
 @media (min-width: 769px) and (max-width: 1024px) {
   .products-swiper[data-v-a4d37009] {
-    height: 500px;
+    height: 380px;
     max-width: 100%;
   }
 }
 @media (max-width: 768px) {
   .products-swiper[data-v-a4d37009] {
-    height: 400px;
+    height: 300px;
   }
 }
 @media (max-width: 480px) {
   .products-swiper[data-v-a4d37009] {
-    height: 300px;
+    height: 220px;
   }
 }
 
@@ -3730,7 +3730,7 @@ iframe.industry-features-image[data-v-a4d37009] {
   }
   
   .products-swiper[data-v-a4d37009] {
-    height: 180px;
+    height: 140px;
   }
   
   .products-custom-pagination[data-v-a4d37009] {
@@ -3855,7 +3855,7 @@ iframe.industry-features-image[data-v-a4d37009] {
   }
   
   .products-swiper[data-v-a4d37009] {
-    height: 240px;
+    height: 180px;
   }
   
   .products-custom-pagination[data-v-a4d37009] {
@@ -3885,7 +3885,7 @@ iframe.industry-features-image[data-v-a4d37009] {
   }
   
   .products-swiper[data-v-a4d37009] {
-    height: 280px;
+    height: 220px;
   }
 }
 @media (min-width: 1025px) {
@@ -7173,6 +7173,17 @@ NaNpx-96 {
   -webkit-backdrop-filter: none;
   border-bottom-color: transparent;
 }
+
+/* 首页 hero 内的 header 往上移动 */
+.hero[data-v-a4d37009] .pc-header[data-v-36d2d450] {
+  top: calc(var(--pc-header-height) / 3);
+}
+
+/* 首页移动端 hero 内的 header 往上移动 */
+.hero[data-v-a4d37009] .m-header[data-v-d2e9f48d] {
+  top: 0;
+}
+
 .pc-header.is-hidden[data-v-36d2d450] {
   transform: translateY(-100%);
 }

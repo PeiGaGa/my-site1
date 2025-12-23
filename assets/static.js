@@ -55,7 +55,7 @@
       loop: true,
       speed: 800,
       autoplay: {
-        delay: 5000,
+        delay: 2500,
         disableOnInteraction: false,
         pauseOnMouseEnter: true
       },
@@ -249,7 +249,7 @@
     var swiperInstance = new Swiper(el, {
       speed: 600,
       loop: true,
-      autoplay: { delay: 4000, disableOnInteraction: false },
+      autoplay: { delay: 2500, disableOnInteraction: false },
       navigation: {
         nextEl: nextBtn,
         prevEl: prevBtn
@@ -419,7 +419,7 @@
         autoHeight: true,
         loop: hasMultipleSlides,
         allowTouchMove: hasMultipleSlides,
-        autoplay: hasMultipleSlides ? { delay: 3000, disableOnInteraction: false } : false,
+        autoplay: hasMultipleSlides ? { delay: 2500, disableOnInteraction: false } : false,
         pagination: hasMultipleSlides
           ? {
               el: paginationEl,
@@ -482,7 +482,7 @@
         effect: 'slide',
         loop: true,
         autoplay: {
-          delay: 3000,
+          delay: 2500,
           disableOnInteraction: false
         }
       });
@@ -564,7 +564,7 @@
       loop: false,
       centeredSlides: false,
       autoplay: {
-        delay: 4000,
+        delay: 2500,
         disableOnInteraction: false,
         pauseOnMouseEnter: true
       },
