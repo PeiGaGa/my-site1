@@ -561,10 +561,11 @@
     var swiperInstance = new Swiper(productsSwiper, {
       slidesPerView: 4,
       spaceBetween: 0,
-      loop: false,
+      loop: true,
       centeredSlides: false,
+      speed: 800,
       autoplay: {
-        delay: 2500,
+        delay: 2000,
         disableOnInteraction: false,
         pauseOnMouseEnter: true
       },
