@@ -907,38 +907,53 @@
     initNewsTabs(); // 初始化新闻动态tab切换
     // mobile drawer
     try {
-      var mNavs = document.querySelectorAll('.m-nav');
-      mNavs.forEach(function (nav) {
-        var root = nav.closest('.m-container') || document;
-        var hamburger = nav.querySelector('.hamburger');
-        var overlay = root.querySelector('.drawer-overlay');
-        var drawer = root.querySelector('.drawer');
-        if (!hamburger || !overlay || !drawer) return;
+      var mContainer = document.querySelector('.m-container');
+      if (!mContainer) return;
+      
+      var overlay = mContainer.querySelector('.drawer-overlay');
+      var drawer = mContainer.querySelector('.drawer');
+      if (!overlay || !drawer) return;
 
-        var open = false;
-        function setOpen(v) {
-          open = !!v;
-          if (open) {
-            drawer.classList.add('is-open');
-            overlay.classList.add('is-open');
-            document.body.classList.add('no-scroll');
-          } else {
-            drawer.classList.remove('is-open');
-            overlay.classList.remove('is-open');
-            document.body.classList.remove('no-scroll');
-          }
+      var open = false;
+      function setOpen(v) {
+        open = !!v;
+        if (open) {
+          drawer.classList.add('is-open');
+          overlay.classList.add('is-open');
+          document.body.classList.add('no-scroll');
+        } else {
+          drawer.classList.remove('is-open');
+          overlay.classList.remove('is-open');
+          document.body.classList.remove('no-scroll');
         }
+      }
 
-        hamburger.addEventListener('click', function () { setOpen(true); });
-        overlay.addEventListener('click', function () { setOpen(false); });
-        var closeBtn = root.querySelector('.drawer__close');
-        if (closeBtn) closeBtn.addEventListener('click', function () { setOpen(false); });
-        // ESC to close
-        document.addEventListener('keydown', function (e) {
-          if (e.key === 'Escape') setOpen(false);
+      // 绑定所有 hamburger 按钮
+      var hamburgers = document.querySelectorAll('.hamburger');
+      hamburgers.forEach(function (hamburger) {
+        hamburger.addEventListener('click', function (e) {
+          e.preventDefault();
+          e.stopPropagation();
+          setOpen(true);
         });
       });
-    } catch (e) {}
+
+      // 绑定关闭事件
+      overlay.addEventListener('click', function () { setOpen(false); });
+      var closeBtn = mContainer.querySelector('.drawer__close');
+      if (closeBtn) {
+        closeBtn.addEventListener('click', function () { setOpen(false); });
+      }
+      
+      // ESC to close
+      document.addEventListener('keydown', function (e) {
+        if (e.key === 'Escape' && open) {
+          setOpen(false);
+        }
+      });
+    } catch (e) {
+      console.error('Drawer init error:', e);
+    }
     // initLanguageSwitch(); // Language switching now handled by <a> tags
     initNewsSwipers();
     initProductSwipers();

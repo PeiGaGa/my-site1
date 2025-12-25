@@ -6591,7 +6591,7 @@ NaNpx-96 {
   }
 }
 .m-footer[data-v-e7d68f9b] {
-  background: #1E396E;
+  background: #1C2532;
   color: #c9d0da;
   padding: 24px 24px;
 }
@@ -6864,11 +6864,12 @@ NaNpx-96 {
   display: flex;
   flex-direction: row;
   align-items: center;
+  justify-content: space-between;
   color: #9aa6b2;
   font-size: 11px;
 }
 .m-copy span[data-v-e7d68f9b] {
-  margin-right: 30px;
+  margin-right: 0;
 }
 .m-copy .links[data-v-e7d68f9b] {
   display: flex;
