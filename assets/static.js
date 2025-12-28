@@ -48,92 +48,6 @@
     return amapLoaderPromise;
   }
 
-  function initHeroSlider(root) {
-    if (!root) return;
-
-    var swiperInstance = new Swiper(root, {
-      loop: true,
-      speed: 800,
-      autoplay: {
-        delay: 2500,
-        disableOnInteraction: false,
-        pauseOnMouseEnter: true
-      },
-      effect: 'fade',
-      fadeEffect: {
-        crossFade: true
-      },
-      navigation: {
-        nextEl: '.swiper-button-next',
-        prevEl: '.swiper-button-prev'
-      },
-      pagination: {
-        el: '.hero-custom-pagination',
-        type: 'custom',
-        clickable: true,
-        renderCustom: function (swiper, current, total) {
-          var maxVisible = 5; // 最多显示5个圆点和数字
-          var html = '<div class="pagination-bullets">';
-          
-          // 计算显示范围
-          var start, end;
-          if (total <= maxVisible) {
-            start = 1;
-            end = total;
-          } else {
-            var halfVisible = Math.floor(maxVisible / 2);
-            start = Math.max(1, current - halfVisible);
-            end = Math.min(total, start + maxVisible - 1);
-            
-            if (end - start + 1 < maxVisible) {
-              start = Math.max(1, end - maxVisible + 1);
-            }
-          }
-          
-          // 生成圆点
-          for (var i = start; i <= end; i++) {
-            if (i === current) {
-              html += '<span class="pagination-bullet active" data-index="' + i + '"></span>';
-            } else {
-              html += '<span class="pagination-bullet" data-index="' + i + '"></span>';
-            }
-          }
-          
-          html += '</div><div class="pagination-numbers">';
-          
-          // 生成数字
-          for (var j = start; j <= end; j++) {
-            var numStr = j < 10 ? '0' + j : '' + j;
-            if (j === current) {
-              html += '<span class="pagination-number active" data-index="' + j + '">' + numStr + '</span>';
-            } else {
-              html += '<span class="pagination-number" data-index="' + j + '">' + numStr + '</span>';
-            }
-          }
-          
-          html += '</div>';
-          return html;
-        }
-      }
-    });
-    
-    // 添加点击事件监听
-    var paginationEl = document.querySelector('.hero-custom-pagination');
-    if (paginationEl) {
-      paginationEl.addEventListener('click', function(e) {
-        var target = e.target;
-        
-        if (target.classList.contains('pagination-bullet') || 
-            target.classList.contains('pagination-number')) {
-          var index = parseInt(target.getAttribute('data-index'));
-          if (index && swiperInstance) {
-            swiperInstance.slideToLoop(index - 1); // 使用slideToLoop因为是loop模式
-          }
-        }
-      });
-    }
-  }
-
   function initContactMaps() {
     if (!DOC) return;
     var mapContainers = DOC.querySelectorAll('.contact-card .map');
@@ -1206,8 +1120,6 @@
   }
 
   function init() {
-    var heroSwipers = document.querySelectorAll('.hero-swiper');
-    heroSwipers.forEach(function (root) { initHeroSlider(root); });
     initIndustrySlider();
     initIndustryModules(); // 初始化产业模块点击切换功能
     initProductsSwiper(); // 初始化产品中心轮播

@@ -44,7 +44,8 @@
         <!--[-->
         <section class="hero" role="img" aria-label="home hero" data-v-a4d37009="">
           <img class="hero-background-img" src="./assets/ex.png" alt="背景图" data-v-a4d37009="" />
-          <div class="swiper hero-swiper" data-v-a4d37009="">
+          <div class="hero-mask" data-v-a4d37009=""></div>
+          <div class="hero-swiper" data-v-a4d37009="">
             <header class="m-header is-transparent" data-v-d2e9f48d="">
               <nav class="m-nav" data-v-d2e9f48d="" data-v-96127a15="">
                 <div class="m-nav__left" data-v-96127a15="">
@@ -110,36 +111,28 @@
                 </div>
               </nav>
             </header>
-            <!--[--><!--]-->
-            <div class="swiper-wrapper">
-              <!--[--><!--]--><!--[-->
-              <div class="swiper-slide" data-swiper-slide-index="0" data-v-a4d37009="">
-                <!--[--><a href="./zh-cn/about.html" style="display: block; width: 100%; height: 100%;"><img class="hero-img" src="./assets/ex.png" alt="连深海洋 一" data-v-a4d37009="" /></a><!--]--><!---->
-              </div>
-              <div class="swiper-slide" data-swiper-slide-index="1" data-v-a4d37009="">
-                <!--[--><a href="./zh-cn/products.html" style="display: block; width: 100%; height: 100%;"><img class="hero-img"
-                  src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAEUAAABFCAYAAAAcjSspAAAACXBIWXMAAAsSAAALEgHS3X78AAABIUlEQVR4nO3cQQrCMBBA0an0Xrqsp1JP1Sx7s7ipUPCDTi1o6n8gdpFA+IvCQLSrtcZ5GK6xX9NYypTZ0M/fl+3P8lOmzOJ+8XwbS7luepQvOw9DXbPvsPVB9sAowCjAKMAowCjAKMAowCigf73kWWOz0il53mlVlGhrVjrOn7etjRLRwKw0zz5vn/MxK/lOAUYBRgFGAUYBRgFGAUYBRgFGAUYBRgFGAUYBRgFGAUYBRgFGAUYBRgFGAUYBRgFGAUYBRgFGAUYBRgFGAUYBRgFGAUYBRgFGAUYBRgHLe7TZm8nZ9c1YRsneTE7fZG5FHxExltJlNmVvMrfGdwowCjAKMAowCjAKMAowCjAK+OQ3hH8x+2Ttdvbpal31ZzS7dgfVDy3yF7xX1AAAAABJRU5ErkJggg=="
-                  alt="连深海洋 二" data-v-a4d37009="" /></a><!--]--><!---->
-              </div>
-              <!--]--><!--[--><!--]-->
+            <div class="banner-content" data-v-a4d37009="">
+              <a href="./zh-cn/about.html" style="display: block; width: 100%; height: 100%;">
+                <img class="hero-img" src="./assets/ex.png" alt="连深海洋" data-v-a4d37009="" />
+              </a>
             </div>
-            <div class="swiper-button-next"></div>
-            <div class="swiper-button-prev"></div>
-            <div class="hero-mask" data-v-a4d37009=""></div>
-            <div class="hero-custom-pagination" data-v-a4d37009=""></div>
           </div>
         </section>
         <section class="section industry-layout" data-v-a4d37009="">
           <div class="industry-header" data-v-a4d37009="">
-            <h2 class="industry-title" data-v-a4d37009="">产业布局</h2>
+            <h2 class="industry-title" data-v-a4d37009="">
+              <span>产业布局</span>
+              <div class="header-decoration" data-v-a4d37009="">
+                <span class="square orange" data-v-a4d37009=""></span>
+                <span class="square light-gray" data-v-a4d37009=""></span>
+                <span class="square light-blue" data-v-a4d37009=""></span>
+              </div>
+            </h2>
             <p class="industry-desc" data-v-a4d37009="">
               向海图强 产业报国<br>
               从近海局限迈向深蓝无限
             </p>
             <div class="industry-underline" data-v-a4d37009=""></div>
-            <img class="header-icon"
-              src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAEUAAABFCAYAAAAcjSspAAAACXBIWXMAAAsSAAALEgHS3X78AAABIUlEQVR4nO3cQQrCMBBA0an0Xrqsp1JP1Sx7s7ipUPCDTi1o6n8gdpFA+IvCQLSrtcZ5GK6xX9NYypTZ0M/fl+3P8lOmzOJ+8XwbS7luepQvOw9DXbPvsPVB9sAowCjAKMAowCjAKMAowCigf73kWWOz0il53mlVlGhrVjrOn7etjRLRwKw0zz5vn/MxK/lOAUYBRgFGAUYBRgFGAUYBRgFGAUYBRgFGAUYBRgFGAUYBRgFGAUYBRgFGAUYBRgFGAUYBRgFGAUYBRgFGAUYBRgFGAUYBRgFGAUYBRgHLe7TZm8nZ9c1YRsneTE7fZG5FHxExltJlNmVvMrfGdwowCjAKMAowCjAKMAowCjAK+OQ3hH8x+2Ttdvbpal31ZzS7dgfVDy3yF7xX1AAAAABJRU5ErkJggg=="
-              alt="copy" data-v-a4d37009="" />
           </div>
           <div class="industry-hero" data-v-a4d37009="">
             <div class="swiper" data-v-a4d37009="">
@@ -268,14 +261,18 @@
         </section>
         <section class="section products-layout" data-v-a4d37009="">
           <div class="products-header" data-v-a4d37009="">
-            <h2 class="products-title" data-v-a4d37009="">产品中心</h2>
+            <h2 class="products-title" data-v-a4d37009="">
+              <span>产品中心</span>
+              <div class="header-decoration" data-v-a4d37009="">
+                <span class="square orange" data-v-a4d37009=""></span>
+                <span class="square light-gray" data-v-a4d37009=""></span>
+                <span class="square light-blue" data-v-a4d37009=""></span>
+              </div>
+            </h2>
             <p class="products-subtitle" data-v-a4d37009="">
               高品质三文鱼产品从深海到餐桌的全程把控
             </p>
             <div class="products-underline" data-v-a4d37009=""></div>
-            <img class="header-icon"
-              src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAEUAAABFCAYAAAAcjSspAAAACXBIWXMAAAsSAAALEgHS3X78AAABIUlEQVR4nO3cQQrCMBBA0an0Xrqsp1JP1Sx7s7ipUPCDTi1o6n8gdpFA+IvCQLSrtcZ5GK6xX9NYypTZ0M/fl+3P8lOmzOJ+8XwbS7luepQvOw9DXbPvsPVB9sAowCjAKMAowCjAKMAowCigf73kWWOz0il53mlVlGhrVjrOn7etjRLRwKw0zz5vn/MxK/lOAUYBRgFGAUYBRgFGAUYBRgFGAUYBRgFGAUYBRgFGAUYBRgFGAUYBRgFGAUYBRgFGAUYBRgFGAUYBRgFGAUYBRgFGAUYBRgFGAUYBRgHLe7TZm8nZ9c1YRsneTE7fZG5FHxExltJlNmVvMrfGdwowCjAKMAowCjAKMAowCjAK+OQ3hH8x+2Ttdvbpal31ZzS7dgfVDy3yF7xX1AAAAABJRU5ErkJggg=="
-              alt="copy" data-v-a4d37009="" />
           </div>
           <div class="products-gallery" data-v-a4d37009="">
             <div class="products-swiper" data-v-a4d37009="">
