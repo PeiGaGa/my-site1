@@ -508,13 +508,21 @@
     });
   }
 
-  // Product page: only image swiper, content is static
+  // Product page: sync image and content swipers
   function initProductSwipers() {
     if (typeof Swiper === 'undefined') return;
     var containers = document.querySelectorAll('.product-swiper-container');
     containers.forEach(function (container) {
       var imageEl = container.querySelector('.image-swiper');
-      if (!imageEl) return;
+      var contentEl = container.querySelector('.content-swiper');
+      if (!imageEl || !contentEl) return;
+
+      var contentSwiper = new Swiper(contentEl, {
+        speed: 400,
+        effect: 'slide',
+        loop: true,
+        allowTouchMove: false // content follows image
+      });
 
       var imageSwiper = new Swiper(imageEl, {
         speed: 400,
@@ -524,6 +532,11 @@
           delay: 2500,
           disableOnInteraction: false
         }
+      });
+
+      // Sync the two swipers
+      imageSwiper.on('slideChange', function () {
+        contentSwiper.slideToLoop(imageSwiper.realIndex);
       });
 
       // Custom pagination (windowed like homepage hero)
