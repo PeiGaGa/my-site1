@@ -7230,7 +7230,7 @@ NaNpx-96 {
 }
 .pc-header[data-v-36d2d450] {
   position: absolute;
-  top: var(--pc-header-height);
+  top: 0;
   left: 0;
   right: 0;
   z-index: 999;
@@ -7645,7 +7645,7 @@ NaNpx-96 {
 }
 .m-header[data-v-d2e9f48d] {
   position: absolute;
-  top: var(--pc-header-height);
+  top: 0;
   left: 0;
   right: 0;
   z-index: 999;
@@ -7659,7 +7659,7 @@ NaNpx-96 {
 /* 确保移动端头部在 hero section 中可见，不受 overflow 影响 */
 .hero[data-v-76787693] .m-header[data-v-d2e9f48d] {
   position: absolute;
-  top: var(--pc-header-height);
+  top: 0;
   left: 0;
   right: 0;
   z-index: 999;
