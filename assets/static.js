@@ -320,8 +320,40 @@
       });
     }
     
+    // 添加轮播切换事件监听，更新模块状态
+    swiperInstance.on('slideChange', function() {
+      updateIndustryModuleState(swiperInstance);
+    });
+    
+    // 初始化时设置模块状态
+    updateIndustryModuleState(swiperInstance);
+    
     // 返回 swiper 实例，供其他函数使用
     return swiperInstance;
+  }
+
+  // 更新产业模块的选中状态
+  function updateIndustryModuleState(swiperInstance) {
+    if (!swiperInstance) return;
+    
+    // 获取当前轮播的真实索引（考虑loop模式）
+    var realIndex = swiperInstance.realIndex !== undefined ? swiperInstance.realIndex : swiperInstance.activeIndex;
+    
+    // 查找对应的industry-layout容器
+    var industryLayout = swiperInstance.el.closest('.industry-layout');
+    if (!industryLayout) return;
+    
+    // 获取所有industry-module
+    var modules = industryLayout.querySelectorAll('.industry-modules .industry-module');
+    
+    // 更新所有模块的状态
+    modules.forEach(function(module, index) {
+      if (index === realIndex) {
+        module.classList.add('active');
+      } else {
+        module.classList.remove('active');
+      }
+    });
   }
 
   // 初始化产业模块点击切换功能（支持所有首页）
@@ -363,6 +395,11 @@
       }
       
       bindModuleClickEvents(industryModules, swiperInstance);
+      
+      // 设置初始状态
+      if (swiperInstance) {
+        updateIndustryModuleState(swiperInstance);
+      }
     });
   }
   
@@ -385,6 +422,8 @@
           // 如果 slideToLoop 不可用，使用 slideTo
           swiperInstance.slideTo(index);
         }
+        // 更新模块状态（slideChange事件也会触发，但这里确保立即更新）
+        updateIndustryModuleState(swiperInstance);
       });
     });
   }
@@ -865,14 +904,78 @@
     if (!newsSection) return;
 
     var navButtons = newsSection.querySelectorAll('.news-nav .nav-btn');
+    var newsGrid = newsSection.querySelector('.news-grid');
     var newsCards = newsSection.querySelectorAll('.news-card');
     
-    if (!navButtons.length || !newsCards.length) return;
+    if (!navButtons.length || !newsCards.length || !newsGrid) return;
+
+    // 将新闻卡片转换为数组并添加排序信息
+    var cardsArray = Array.from(newsCards).map(function(card) {
+      return {
+        element: card,
+        category: card.getAttribute('data-category'),
+        isPinned: card.getAttribute('data-pinned') === 'true',
+        date: card.querySelector('.news-date') ? card.querySelector('.news-date').textContent.trim() : '',
+        originalIndex: Array.from(newsCards).indexOf(card)
+      };
+    });
+
+    // 排序函数：置顶优先,然后按日期排序
+    function sortCards(cards) {
+      return cards.sort(function(a, b) {
+        // 首先按置顶排序
+        if (a.isPinned && !b.isPinned) return -1;
+        if (!a.isPinned && b.isPinned) return 1;
+        
+        // 如果置顶状态相同,按日期排序(最新的在前)
+        if (a.date && b.date) {
+          return b.date.localeCompare(a.date);
+        }
+        
+        // 如果没有日期,保持原顺序
+        return a.originalIndex - b.originalIndex;
+      });
+    }
+
+    // 显示卡片函数
+    function displayCards(category) {
+      var filteredCards = cardsArray;
+      
+      // 如果不是"全部",进行筛选
+      if (category !== '全部' && category !== 'All') {
+        filteredCards = cardsArray.filter(function(card) {
+          return card.category === category;
+        });
+      }
+      
+      // 排序
+      var sortedCards = sortCards(filteredCards.slice());
+      
+      // 只显示前3个
+      var displayCards = sortedCards.slice(0, 3);
+      
+      // 清空网格
+      newsGrid.innerHTML = '';
+      
+      // 添加卡片
+      displayCards.forEach(function(card) {
+        newsGrid.appendChild(card.element.cloneNode(true));
+      });
+      
+      // 如果没有卡片,显示提示
+      if (displayCards.length === 0) {
+        var emptyMsg = document.createElement('div');
+        emptyMsg.className = 'news-empty-message';
+        emptyMsg.textContent = '暂无相关新闻';
+        emptyMsg.style.cssText = 'grid-column: 1 / -1; text-align: center; padding: 40px; color: #999;';
+        newsGrid.appendChild(emptyMsg);
+      }
+    }
 
     // 为每个按钮添加点击事件
     navButtons.forEach(function(btn) {
       btn.addEventListener('click', function() {
-        var category = btn.textContent.trim();
+        var category = btn.getAttribute('data-category') || btn.textContent.trim();
         
         // 切换按钮的 active 状态
         navButtons.forEach(function(b) {
@@ -880,16 +983,49 @@
         });
         btn.classList.add('active');
         
-        // 筛选新闻卡片
-        newsCards.forEach(function(card) {
-          var cardCategory = card.getAttribute('data-category');
+        // 显示筛选后的卡片
+        displayCards(category);
+      });
+    });
+
+    // 初始化显示"全部"
+    displayCards('全部');
+  }
+
+  function initNewsListTabs() {
+    // 新闻列表页的标签切换
+    var tabsContainer = document.querySelector('.news-tabs-container');
+    if (!tabsContainer) return;
+    
+    var tabButtons = tabsContainer.querySelectorAll('.tab-btn');
+    var newsSections = document.querySelectorAll('.news-section');
+    
+    if (!tabButtons.length || !newsSections.length) return;
+    
+    tabButtons.forEach(function(btn) {
+      btn.addEventListener('click', function() {
+        var category = btn.getAttribute('data-category');
+        
+        // 切换按钮状态
+        tabButtons.forEach(function(b) {
+          b.classList.remove('active');
+        });
+        btn.classList.add('active');
+        
+        // 显示/隐藏对应的新闻区块
+        newsSections.forEach(function(section) {
+          var sectionTitle = section.querySelector('.sec-title');
+          if (!sectionTitle) return;
           
-          // 如果点击"全部"，显示所有卡片
-          // 否则只显示匹配的分类
-          if (category === '全部' || cardCategory === category) {
-            card.style.display = 'block';
+          var sectionCategory = sectionTitle.textContent.trim();
+          
+          // "全部"显示所有区块
+          if (category === '全部' || category === 'All') {
+            section.style.display = 'block';
+          } else if (sectionCategory === category) {
+            section.style.display = 'block';
           } else {
-            card.style.display = 'none';
+            section.style.display = 'none';
           }
         });
       });
@@ -905,6 +1041,7 @@
     initContactMaps(); // 初始化联系页面地图
     // initHeaderScroll(); // 初始化导航栏滚动效果 - 已禁用头部滚动变色功能
     initNewsTabs(); // 初始化新闻动态tab切换
+    initNewsListTabs(); // 初始化新闻列表页tab切换
     // mobile drawer
     try {
       var mContainer = document.querySelector('.m-container');
