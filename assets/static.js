@@ -1032,6 +1032,160 @@
     });
   }
 
+  function initSidebarNav() {
+    console.log('初始化侧边栏导航...');
+    var sidebarNav = document.querySelector('.sidebar-nav');
+    if (!sidebarNav) {
+      console.log('未找到 .sidebar-nav 元素');
+      return;
+    }
+    console.log('找到侧边栏导航元素');
+    
+    var navItems = sidebarNav.querySelectorAll('.sidebar-nav-item');
+    var sections = ['#intro', '#honors', '#duty'];
+    
+    console.log('找到', navItems.length, '个导航项');
+    
+    // 检查页面是否可滚动
+    var bodyHeight = document.body.scrollHeight;
+    var windowHeight = window.innerHeight;
+    console.log('页面高度:', bodyHeight, '窗口高度:', windowHeight, '可滚动:', bodyHeight > windowHeight);
+    
+    // 平滑滚动处理
+    navItems.forEach(function(item, index) {
+      item.addEventListener('click', function(e) {
+        e.preventDefault();
+        e.stopPropagation();
+        
+        var targetId = item.getAttribute('href');
+        var targetElement = document.querySelector(targetId);
+        
+        console.log('点击导航项:', targetId, '目标元素:', targetElement);
+        
+        if (targetElement) {
+          // 更新激活状态
+          navItems.forEach(function(nav) {
+            nav.classList.remove('active');
+          });
+          item.classList.add('active');
+          
+          // 使用 scrollIntoView 方法
+          try {
+            targetElement.scrollIntoView({
+              behavior: 'smooth',
+              block: 'start'
+            });
+            
+            // 调整偏移量（因为有固定头部）
+            setTimeout(function() {
+              var scrolledY = window.pageYOffset || document.documentElement.scrollTop;
+              if (scrolledY > 0) {
+                window.scrollTo({
+                  top: scrolledY - 120,
+                  behavior: 'smooth'
+                });
+              }
+            }, 100);
+            
+            console.log('滚动到:', targetId);
+          } catch (err) {
+            console.log('滚动失败:', err);
+          }
+        } else {
+          console.log('未找到目标元素:', targetId);
+        }
+      });
+    });
+    
+    // 滚动时更新激活状态
+    function updateActiveNav() {
+      var scrollPos = window.pageYOffset || document.documentElement.scrollTop;
+      
+      // 添加一个偏移量,当section进入视口上方时激活
+      var offset = 200;
+      var currentScrollPos = scrollPos + offset;
+      
+      var currentSection = -1;
+      
+      // 遍历所有section,找到当前应该激活的
+      for (var i = 0; i < sections.length; i++) {
+        var sectionId = sections[i];
+        var section = document.querySelector(sectionId);
+        if (!section) continue;
+        
+        // 获取section相对于文档的位置
+        var rect = section.getBoundingClientRect();
+        var sectionTop = rect.top + scrollPos;
+        var sectionBottom = sectionTop + section.offsetHeight;
+        
+        // 如果当前滚动位置在这个section范围内
+        if (currentScrollPos >= sectionTop && currentScrollPos < sectionBottom) {
+          currentSection = i;
+          break;
+        }
+      }
+      
+      // 如果没有找到匹配的section,检查是否在第一个section之前
+      if (currentSection === -1) {
+        var firstSection = document.querySelector(sections[0]);
+        if (firstSection) {
+          var firstRect = firstSection.getBoundingClientRect();
+          var firstTop = firstRect.top + scrollPos;
+          if (currentScrollPos < firstTop) {
+            currentSection = 0;
+          } else {
+            // 默认激活最后一个
+            currentSection = sections.length - 1;
+          }
+        }
+      }
+      
+      // 更新导航激活状态
+      navItems.forEach(function(nav, index) {
+        if (index === currentSection) {
+          nav.classList.add('active');
+        } else {
+          nav.classList.remove('active');
+        }
+      });
+    }
+    
+    // 滚动时更新激活状态 - 使用节流
+    var scrollTimer = null;
+    var lastScrollPos = -1;
+    
+    function handleScroll() {
+      var currentScrollPos = window.pageYOffset || document.documentElement.scrollTop || document.body.scrollTop || 0;
+      
+      // 只有当滚动位置真的改变时才更新
+      if (Math.abs(currentScrollPos - lastScrollPos) > 5) {
+        lastScrollPos = currentScrollPos;
+        
+        if (scrollTimer) {
+          clearTimeout(scrollTimer);
+        }
+        
+        scrollTimer = setTimeout(function() {
+          updateActiveNav();
+        }, 50);
+      }
+    }
+    
+    // 绑定多个滚动事件
+    window.addEventListener('scroll', handleScroll, { passive: true });
+    window.addEventListener('wheel', handleScroll, { passive: true });
+    window.addEventListener('touchmove', handleScroll, { passive: true });
+    
+    // 初始更新
+    setTimeout(function() {
+      updateActiveNav();
+      console.log('侧边栏导航初始化完成');
+      
+      // 强制触发一次滚动检测
+      handleScroll();
+    }, 500);
+  }
+
   function init() {
     var heroSwipers = document.querySelectorAll('.hero-swiper');
     heroSwipers.forEach(function (root) { initHeroSlider(root); });
@@ -1042,6 +1196,7 @@
     // initHeaderScroll(); // 初始化导航栏滚动效果 - 已禁用头部滚动变色功能
     initNewsTabs(); // 初始化新闻动态tab切换
     initNewsListTabs(); // 初始化新闻列表页tab切换
+    initSidebarNav(); // 初始化侧边栏导航
     // mobile drawer
     try {
       var mContainer = document.querySelector('.m-container');
