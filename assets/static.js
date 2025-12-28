@@ -1042,9 +1042,15 @@
     console.log('找到侧边栏导航元素');
     
     var navItems = sidebarNav.querySelectorAll('.sidebar-nav-item');
-    var sections = ['#intro', '#honors', '#duty'];
+    var sections = [];
+    navItems.forEach(function(item) {
+      var href = item.getAttribute('href');
+      if (href && href.startsWith('#')) {
+        sections.push(href);
+      }
+    });
     
-    console.log('找到', navItems.length, '个导航项');
+    console.log('找到', navItems.length, '个导航项, 对应区域:', sections);
     
     // 检查页面是否可滚动
     var bodyHeight = document.body.scrollHeight;
