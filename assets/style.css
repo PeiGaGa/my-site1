@@ -3761,29 +3761,52 @@ iframe.industry-features-image[data-v-a4d37009] {
   
   /* 新闻动态 */
   .news-section[data-v-a4d37009] {
-    padding: 32px 16px;
+    padding: 32px 0;
   }
   
   .news-header[data-v-a4d37009] {
     flex-direction: column;
-    gap: 16px;
-    padding: 0 16px;
+    gap: 12px;
+    padding: 0 12px;
+    align-items: flex-start;
+  }
+  
+  .news-header-left[data-v-a4d37009] {
+    text-align: left;
+    width: 100%;
   }
   
   .news-title[data-v-a4d37009] {
-    font-size: 24px;
+    font-size: 16px;
     margin-bottom: 8px;
+    text-align: left;
   }
   
   .news-subtitle[data-v-a4d37009] {
     font-size: 12px;
-    margin-bottom: 0;
+    margin-bottom: 12px;
+    text-align: left;
+  }
+  
+  .news-underline[data-v-a4d37009] {
+    width: 100px;
+    height: 2px;
+    margin: 0 0 12px 0; /* 左对齐margin */
   }
   
   .news-nav[data-v-a4d37009] {
     gap: 8px;
     margin-bottom: 0;
     align-self: flex-start;
+    width: 100%;
+    overflow-x: auto;
+    white-space: nowrap;
+    -webkit-overflow-scrolling: touch;
+    -ms-overflow-style: none;
+    scrollbar-width: none;
+  }
+  .news-nav[data-v-a4d37009]::-webkit-scrollbar {
+    display: none;
   }
   
   .nav-btn[data-v-a4d37009] {
@@ -3917,27 +3940,51 @@ iframe.industry-features-image[data-v-a4d37009] {
   
   /* 新闻动态 */
   .news-section[data-v-a4d37009] {
-    padding: 48px 24px;
+    padding: 48px 0;
   }
   
   .news-header[data-v-a4d37009] {
     flex-direction: column;
-    gap: 20px;
-    padding: 0 24px;
+    gap: 16px;
+    padding: 0 16px;
+    align-items: flex-start;
   }
   
+  .news-header-left[data-v-a4d37009] {
+    text-align: left;
+    width: 100%;
+  }
+
   .news-title[data-v-a4d37009] {
-    font-size: 32px;
+    font-size: 18px;
+    margin-bottom: 12px;
+    text-align: left;
   }
   
   .news-subtitle[data-v-a4d37009] {
     font-size: 14px;
+    text-align: left;
+  }
+  
+  .news-underline[data-v-a4d37009] {
+    width: 140px;
+    height: 2px;
+    margin: 12px 0 20px 0; /* 左对齐margin */
   }
   
   .news-nav[data-v-a4d37009] {
     gap: 10px;
     margin-bottom: 0;
     align-self: flex-start;
+    width: 100%;
+    overflow-x: auto;
+    white-space: nowrap;
+    -webkit-overflow-scrolling: touch;
+    -ms-overflow-style: none;
+    scrollbar-width: none;
+  }
+  .news-nav[data-v-a4d37009]::-webkit-scrollbar {
+    display: none;
   }
   
   .nav-btn[data-v-a4d37009] {
