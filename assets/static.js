@@ -525,7 +525,7 @@
     console.log('Initializing products swiper');
     
     var swiperInstance = new Swiper(productsSwiper, {
-      slidesPerView: 4,
+      slidesPerView: 'auto',  // 使用auto让breakpoints控制
       spaceBetween: 0,
       loop: true,
       centeredSlides: false,
@@ -599,29 +599,17 @@
         }
       },
       breakpoints: {
-        // 所有机型都显示4个产品，与CSS保持一致
-        "@0.00": {
-          slidesPerView: 4,
+        // 响应式断点配置 - 与CSS媒体查询保持一致
+        0: {
+          slidesPerView: 1,  // 小屏移动端1张
           spaceBetween: 0,
         },
-        "@0.75": {
-          slidesPerView: 4,
+        481: {
+          slidesPerView: 2,  // 移动端2张
           spaceBetween: 0,
         },
-        "@1.00": {
-          slidesPerView: 4,
-          spaceBetween: 0,
-        },
-        "@1.25": {
-          slidesPerView: 4,
-          spaceBetween: 0,
-        },
-        "@1.50": {
-          slidesPerView: 4,
-          spaceBetween: 0,
-        },
-        "@2.00": {
-          slidesPerView: 4,
+        769: {
+          slidesPerView: 4,  // 平板及以上4张
           spaceBetween: 0,
         },
       },
