@@ -542,49 +542,48 @@
         renderCustom: function (swiper, current, total) {
           // 所有屏幕尺寸下，分页器都基于slide索引，每次只移动一张图
           // 确保 current 和 total 都在有效范围内
+          
           var maxTotal = Math.max(1, total); // 确保至少为1
           var currentIndex = Math.max(1, Math.min(current, maxTotal)); // 确保 current 在 1 到 maxTotal 之间
-          
-          var maxVisible = 5; // 最多显示5个圆点和数字
           var html = '<div class="pagination-bullets">';
+          var maxVisible = 5; // 最多显示5个圆点和数字
           
-          // 计算显示范围（基于slide索引）
           var start, end;
+          // 计算显示范围（基于slide索引）
           if (maxTotal <= maxVisible) {
-            // 总数不超过最大显示数，显示全部
             start = 1;
+            // 总数不超过最大显示数，显示全部
             end = maxTotal;
           } else {
-            // 总数超过最大显示数，计算显示范围
             var halfVisible = Math.floor(maxVisible / 2);
             start = Math.max(1, currentIndex - halfVisible);
+            // 总数超过最大显示数，计算显示范围
             end = Math.min(maxTotal, start + maxVisible - 1);
+            if (end - start + 1 < maxVisible) {
+              start = Math.max(1, end - maxVisible + 1);
+              end = Math.min(maxTotal, start + maxVisible - 1);
             
             // 调整起始位置，确保始终显示maxVisible个（但不超过总数）
-            if (end - start + 1 < maxVisible) {
-              // 如果显示的数量不足，调整起始位置
-              start = Math.max(1, end - maxVisible + 1);
-              // 再次确保 end 不超过总数
-              end = Math.min(maxTotal, start + maxVisible - 1);
             }
           }
-          
-          // 最终确保 end 不超过实际总数
           end = Math.min(end, maxTotal);
+              // 如果显示的数量不足，调整起始位置
           start = Math.max(1, Math.min(start, maxTotal));
           
-          // 生成圆点（只显示范围内的）
+              // 再次确保 end 不超过总数
           for (var i = start; i <= end; i++) {
             if (i === currentIndex) {
               html += '<span class="pagination-bullet active" data-index="' + i + '"></span>';
             } else {
+          
+          // 最终确保 end 不超过实际总数
               html += '<span class="pagination-bullet" data-index="' + i + '"></span>';
             }
           }
           
           html += '</div><div class="pagination-numbers">';
+          // 生成圆点（只显示范围内的）
           
-          // 生成数字（只显示范围内的）
           for (var j = start; j <= end; j++) {
             var numStr = j < 10 ? '0' + j : '' + j;
             if (j === currentIndex) {
@@ -594,6 +593,7 @@
             }
           }
           
+          // 生成数字（只显示范围内的）
           html += '</div>';
           return html;
         }
