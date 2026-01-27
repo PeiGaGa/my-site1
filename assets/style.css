@@ -3148,7 +3148,8 @@ button.swiper-pagination-bullet {
   aspect-ratio: 16 / 9;
   /* 保持图片比例，不拉伸 */
   display: block;
-  object-fit: cover;
+  /* 使用 contain 确保完整显示内容，可能会出现上下或左右留黑边 */
+  object-fit: contain;
   margin-bottom: 0;
 }
 
@@ -3158,7 +3159,8 @@ video.industry-features-image[data-v-a4d37009] {
   aspect-ratio: 16 / 9;
   /* 保持视频比例 */
   display: block;
-  object-fit: cover;
+  /* 使用 contain 确保完整显示视频，不被裁剪 */
+  object-fit: contain;
   margin: 0 auto;
   margin-bottom: 0;
   background: #000;
