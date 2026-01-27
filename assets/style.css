@@ -10376,3 +10376,11 @@ video.industry-features-image[data-v-a4d37009] {
 .products-layout[data-v-a4d37009] .products-title[data-v-a4d37009] span {
   color: var(--primary-color);
 }
+
+/* Unify home page subtitle letter-spacing for CN/EN */
+.industry-desc[data-v-a4d37009],
+.industry-desc[data-v-872c3d89],
+.news-subtitle[data-v-a4d37009],
+.products-subtitle[data-v-a4d37009] {
+  letter-spacing: 0.2rem;
+}
