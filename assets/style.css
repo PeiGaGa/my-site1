@@ -3799,41 +3799,34 @@ iframe.industry-features-image[data-v-a4d37009] {
   padding: 0;
   box-sizing: border-box;
   overflow: hidden;
-  /* 使用vw单位实现响应式高度 */
-  height: calc(25vw * 1.1);
-  min-height: 200px;
-  max-height: 400px;
+  /* 高度由产品卡片自身 aspect-ratio 决定 */
+  height: auto;
 }
 
 @media (min-width: 769px) and (max-width: 1024px) {
   .products-swiper[data-v-a4d37009] {
-    height: calc(25vw * 1.15);
-    min-height: 180px;
+    height: auto;
   }
 }
 
 @media (max-width: 768px) {
   .products-swiper[data-v-a4d37009] {
-    height: calc(50vw * 1.1);
-    min-height: 180px;
-    max-height: 320px;
+    height: auto;
   }
 }
 
 @media (max-width: 480px) {
   .products-swiper[data-v-a4d37009] {
-    height: calc(100vw * 0.75);
-    min-height: 200px;
-    max-height: 350px;
+    height: auto;
   }
 }
 
 .products-swiper .swiper-wrapper[data-v-a4d37009] {
-  height: 100%;
+  align-items: stretch;
 }
 
 .products-swiper .swiper-slide[data-v-a4d37009] {
-  height: 100%;
+  height: auto;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -4491,9 +4484,8 @@ iframe.industry-features-image[data-v-a4d37009] {
   }
 
   .products-swiper[data-v-a4d37009] {
-    height: calc(100vw * 0.75);
-    min-height: 200px;
-    max-height: 350px;
+    /* 高度交给产品卡片的 aspect-ratio */
+    height: auto;
   }
 
   .products-custom-pagination[data-v-a4d37009] {
@@ -4650,9 +4642,8 @@ iframe.industry-features-image[data-v-a4d37009] {
   }
 
   .products-swiper[data-v-a4d37009] {
-    height: calc(50vw * 1.1);
-    min-height: 180px;
-    max-height: 320px;
+    /* 高度交给产品卡片的 aspect-ratio */
+    height: auto;
   }
 
   .products-custom-pagination[data-v-a4d37009] {
@@ -4680,9 +4671,8 @@ iframe.industry-features-image[data-v-a4d37009] {
   }
 
   .products-swiper[data-v-a4d37009] {
-    height: calc(25vw * 1.15);
-    min-height: 180px;
-    max-height: 320px;
+    /* 高度交给产品卡片的 aspect-ratio */
+    height: auto;
   }
 }
 
@@ -6068,6 +6058,32 @@ iframe.industry-features-image[data-v-a4d37009] {
   }
 }
 
+@media (max-width: 768px) {
+  .page[data-v-76787693] {
+    padding: 24px 16px;
+  }
+
+  .page-layout[data-v-76787693] {
+    display: block;
+  }
+
+  .page-sidebar[data-v-76787693] {
+    position: static;
+    margin-bottom: 24px;
+  }
+
+  .sidebar-nav[data-v-76787693] {
+    overflow-x: auto;
+    padding-bottom: 8px;
+  }
+
+  .sidebar-nav-item[data-v-76787693] {
+    flex: 0 0 auto;
+    min-width: 120px;
+    height: 44px;
+  }
+}
+
 @media (max-width: 480px) {
   .page[data-v-76787693] {
     max-width: 432px;
@@ -6462,7 +6478,6 @@ iframe.industry-features-image[data-v-a4d37009] {
   }
 
   .sidebar-nav[data-v-76787693] {
-    flex-direction: row;
     overflow-x: auto;
     padding: 12px 16px;
   }
@@ -6521,7 +6536,6 @@ iframe.industry-features-image[data-v-a4d37009] {
   }
 
   .sidebar-nav[data-v-76787693] {
-    flex-direction: row;
     overflow-x: auto;
     padding: 10px 12px;
   }
@@ -9805,9 +9819,13 @@ body.no-scroll {
   background: #fff;
 }
 
-.industry-header[data-v-a4d37009],
-.industry-header[data-v-872c3d89] {
+.industry-header[data-v-a4d37009]{
   padding: 0 var(--section-padding-x);
+  margin-top: clamp(32px, 5vw, 64px);
+  margin-bottom: clamp(24px, 4vw, 48px);
+}
+
+.industry-header[data-v-872c3d89] {
   margin-top: clamp(32px, 5vw, 64px);
   margin-bottom: clamp(24px, 4vw, 48px);
 }
@@ -10017,7 +10035,7 @@ video.industry-features-image[data-v-a4d37009] {
   height: clamp(2px, 0.3vw, 4px);
 }
 
-/* 产品轮播 - 使用Flex布局 + vw单位实现响应式 */
+/* 产品轮播 - Grid/Flex排版 + 固定宽高比(300:455) */
 .products-gallery[data-v-a4d37009] {
   padding: 0;
   width: 100%;
@@ -10026,36 +10044,22 @@ video.industry-features-image[data-v-a4d37009] {
 .products-swiper[data-v-a4d37009] {
   padding: 0;
   width: 100%;
-  /* 使用vw单位实现响应式高度，4张图并排时的最佳比例 */
-  height: calc(25vw * 1.1); /* 每张图占25vw宽度，高度略大于宽度 */
-  min-height: 160px;
-  max-height: 400px;
+  /* 让高度由卡片自身的 aspect-ratio 决定（更稳、更易两端适配） */
+  height: auto;
 }
 
-/* 移动端适配 - 2张图并排 */
-@media (max-width: 768px) {
-  .products-swiper[data-v-a4d37009] {
-    height: calc(50vw * 1.1);
-    min-height: 180px;
-    max-height: 300px;
-  }
-}
-
-/* 小屏移动端 - 1张图全宽 */
-@media (max-width: 480px) {
-  .products-swiper[data-v-a4d37009] {
-    height: calc(100vw * 0.75);
-    min-height: 200px;
-    max-height: 350px;
-  }
+.products-swiper .swiper-wrapper[data-v-a4d37009] {
+  /* 允许内容撑开高度，避免被 height:100% 锁死 */
+  align-items: stretch;
 }
 
 .products-swiper .swiper-slide[data-v-a4d37009] {
   width: 25% !important;
   max-width: 25% !important;
   min-width: 25% !important;
-  height: 100%;
+  height: auto;
   flex-shrink: 0;
+  display: flex;
 }
 
 /* 移动端slide宽度适配 */
@@ -10078,7 +10082,10 @@ video.industry-features-image[data-v-a4d37009] {
 .product-image-container[data-v-a4d37009] {
   border-radius: 0;
   width: 100%;
-  height: 100%;
+  /* 关键：锁定 300px : 455px 的显示宽高比 */
+  aspect-ratio: 300 / 455;
+  height: auto;
+  overflow: hidden;
 }
 
 .product-image[data-v-a4d37009] {
@@ -10173,11 +10180,6 @@ video.industry-features-image[data-v-a4d37009] {
     --section-padding-x: clamp(24px, 4vw, 48px);
   }
   
-  .hero[data-v-a4d37009] {
-    height: 85vh;
-    min-height: 500px;
-  }
-  
   .hero-swiper[data-v-a4d37009] {
     /* 平板端：等比缩小，使用vw单位保持统一比例 */
     width: calc(100% - 8.33vw);
@@ -10201,9 +10203,8 @@ video.industry-features-image[data-v-a4d37009] {
   }
   
   .products-swiper[data-v-a4d37009] {
-    height: calc(25vw * 1.1);
-    min-height: 200px;
-    max-height: 350px;
+    /* 高度交给产品卡片的 aspect-ratio */
+    height: auto;
   }
 }
 
@@ -10214,10 +10215,6 @@ video.industry-features-image[data-v-a4d37009] {
     --section-padding-y: clamp(32px, 6vw, 56px);
   }
   
-  .hero[data-v-a4d37009] {
-    height: 80vh;
-    min-height: 450px;
-  }
   
   .hero-swiper[data-v-a4d37009] {
     /* 手机横屏：等比缩小，使用vw单位保持统一比例 */
@@ -10251,9 +10248,8 @@ video.industry-features-image[data-v-a4d37009] {
   }
   
   .products-swiper[data-v-a4d37009] {
-    height: calc(50vw * 1.1);
-    min-height: 180px;
-    max-height: 320px;
+    /* 高度交给产品卡片的 aspect-ratio */
+    height: auto;
   }
   
   .top-section[data-v-e7d68f9b] {
@@ -10266,11 +10262,6 @@ video.industry-features-image[data-v-a4d37009] {
   :root {
     --section-padding-x: 16px;
     --section-padding-y: 32px;
-  }
-  
-  .hero[data-v-a4d37009] {
-    height: 75vh;
-    min-height: 400px;
   }
   
   .hero-swiper[data-v-a4d37009] {
@@ -10308,9 +10299,8 @@ video.industry-features-image[data-v-a4d37009] {
   }
   
   .products-swiper[data-v-a4d37009] {
-    height: calc(100vw * 0.75);
-    min-height: 200px;
-    max-height: 350px;
+    /* 高度交给产品卡片的 aspect-ratio */
+    height: auto;
   }
   
   .m-copy[data-v-e7d68f9b] {
