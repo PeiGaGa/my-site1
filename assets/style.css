@@ -8481,10 +8481,10 @@ NaNpx-96 {
   align-items: center;
   justify-content: space-between;
   width: 100%;
-  padding: 0 clamp(16px, 4vw, 40px);
+  /* 基于1920px设计稿：左33px, 右66px */
+  padding: 0 clamp(24px, 3.4375vw, 66px) 0 clamp(16px, 1.72vw, 33px);
   height: var(--pc-header-height);
   box-sizing: border-box;
-  margin-top: clamp(12px, 2vw, 22px);
 }
 
 .pc-nav__left[data-v-4c615095] {
@@ -8556,16 +8556,19 @@ NaNpx-96 {
   margin: 0;
   padding: 0;
   display: flex;
-  width: 736px;
+  /* 基于1920px设计稿：736px / 1920px * 100 = 38.33vw */
+  width: clamp(4px, 41vw, 800px);
   justify-content: space-between;
 }
 
 .pc-nav__menu a[data-v-4c615095] {
   color: #fff;
   text-decoration: none;
-  font-size: 16px;
+  /* 基于1920px设计稿：20px / 1920px * 100 = 1.04vw */
+  font-size: clamp(15px, 1.04vw, 20px);
   font-weight: 500;
   transition: opacity 0.2s ease;
+  white-space: nowrap;
 }
 
 .pc-nav__menu a[data-v-4c615095]:hover {
@@ -8613,17 +8616,19 @@ NaNpx-96 {
 .language-switch[data-v-4c615095] {
   display: flex;
   align-items: center;
-  margin-left: 16px;
+  /* 基于1920px设计稿：16px / 1920px * 100 = 0.833vw */
+  margin-left: clamp(12px, 0.833vw, 16px);
 }
 
 .lang-btn[data-v-4c615095] {
   background: transparent;
   border: none;
   color: #fff;
-  font-size: 14px;
+  /* 基于1920px设计稿：14px / 1920px * 100 = 0.729vw */
+  font-size: clamp(12px, 0.729vw, 14px);
   font-weight: 500;
   cursor: pointer;
-  padding: 4px 8px;
+  padding: clamp(3px, 0.208vw, 4px) clamp(6px, 0.417vw, 8px);
   border-radius: 4px;
   transition: all 0.2s ease;
   opacity: 0.7;
@@ -8702,12 +8707,13 @@ NaNpx-96 {
 
 /* 首页 hero 内的 header 往上移动 */
 .hero[data-v-a4d37009] .pc-header[data-v-36d2d450] {
-  top: calc(var(--pc-header-height) / 3);
+  /* 顶部间距很小，直接设为 0 或使用小的 vw 值 */
+  top: 0;
 }
 
 /* 首页移动端 hero 内的 header 往上移动 */
 .hero[data-v-a4d37009] .m-header[data-v-d2e9f48d] {
-  top: 0;
+  top: calc( -0.5 * var(--m-header-height));
 }
 
 .pc-header.is-hidden[data-v-36d2d450] {
@@ -9799,9 +9805,9 @@ body.no-scroll {
   --section-padding-y: clamp(40px, 8vw, 80px);
   --card-gap: clamp(16px, 2vw, 24px);
   
-  /* 导航栏高度 */
-  --pc-header-height: 80px;
-  --m-header-height: 60px;
+  /* 导航栏高度 - 基于1920px设计稿：136px / 1920px * 100 = 7.083vw */
+  --pc-header-height: clamp(80px, 7.083vw, 136px);
+  --m-header-height: clamp(60px, 5.208vw, 100px);
 }
 
 /* ===== Hero 区域优化 ===== */
