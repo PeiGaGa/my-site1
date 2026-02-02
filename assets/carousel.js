@@ -104,14 +104,21 @@
     var paginationEl = document.getElementById('productPagination');
     if (!el) return;
 
+    var slides = el.querySelectorAll('.swiper-slide');
+    var total = slides ? slides.length : 4;
+
     var swiper = new Swiper('#productImageSwiper', {
       loop: true,
       speed: 600,
-      slidesPerView: 1,
+      slidesPerView: 4,
       spaceBetween: 0,
       autoplay: {
         delay: 2000,
         disableOnInteraction: false
+      },
+      navigation: {
+        nextEl: '.product-pagination-next',
+        prevEl: '.product-pagination-prev'
       },
       on: {
         init: function () {
@@ -126,7 +133,6 @@
     if (!paginationEl) return;
 
     function setProductPaginationActive(realIndex) {
-      var total = 5;
       var prev2 = (realIndex - 2 + total) % total;
       var prev1 = (realIndex - 1 + total) % total;
       var next1 = (realIndex + 1) % total;
@@ -136,7 +142,7 @@
       orderMap[prev1] = 2;
       orderMap[realIndex] = 3;
       orderMap[next1] = 4;
-      orderMap[next2] = 5;
+      if (total > 4) orderMap[next2] = 5;
 
       var dots = paginationEl.querySelectorAll('.product-dot');
       var nums = paginationEl.querySelectorAll('.product-dot-num');
@@ -149,7 +155,6 @@
         num.style.order = orderMap[i] || 0;
       });
 
-      /* 联动：显示当前轮播对应的 product-tab-set */
       var tabSets = document.querySelectorAll('.product-tab-set');
       tabSets.forEach(function (set) {
         var idx = parseInt(set.getAttribute('data-slide-index'), 10);
@@ -167,6 +172,59 @@
       num.addEventListener('click', function () {
         var index = parseInt(num.getAttribute('data-index'), 10);
         swiper.slideToLoop(index);
+      });
+    });
+  }
+
+  function initNewsSideSwipers() {
+    var sides = document.querySelectorAll('.news-side');
+    sides.forEach(function (side) {
+      var swiperEl = side.querySelector('.news-side-swiper');
+      var paginationEl = side.querySelector('.news-side-pagination');
+      if (!swiperEl || !paginationEl) return;
+
+      var swiper = new Swiper(swiperEl, {
+        loop: true,
+        speed: 600,
+        slidesPerView: 1,
+        spaceBetween: 0,
+        autoplay: {
+          delay: 4000,
+          disableOnInteraction: false
+        },
+        on: {
+          init: function () {
+            setNewsSidePaginationActive(paginationEl, this.realIndex);
+          },
+          slideChangeTransitionEnd: function () {
+            setNewsSidePaginationActive(paginationEl, this.realIndex);
+          }
+        }
+      });
+
+      function setNewsSidePaginationActive(el, realIndex) {
+        var total = 5;
+        var dots = el.querySelectorAll('.product-dot');
+        var nums = el.querySelectorAll('.product-dot-num');
+        dots.forEach(function (dot, i) {
+          dot.classList.toggle('active', i === realIndex);
+        });
+        nums.forEach(function (num, i) {
+          num.classList.toggle('active', i === realIndex);
+        });
+      }
+
+      paginationEl.querySelectorAll('.product-dot').forEach(function (dot) {
+        dot.addEventListener('click', function () {
+          var index = parseInt(dot.getAttribute('data-index'), 10);
+          swiper.slideToLoop(index);
+        });
+      });
+      paginationEl.querySelectorAll('.product-dot-num').forEach(function (num) {
+        num.addEventListener('click', function () {
+          var index = parseInt(num.getAttribute('data-index'), 10);
+          swiper.slideToLoop(index);
+        });
       });
     });
   }
@@ -216,6 +274,7 @@
   function init() {
     initIndustryCarousel();
     initProductSwiper();
+    initNewsSideSwipers();
     initNewsTabs();
     initAboutPage();
     initResearchPage();
