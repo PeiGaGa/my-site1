@@ -5,12 +5,12 @@
  * 关于/科研平台：锚点高亮 + page-sidebar 距顶 100px 固定、滚回取消固定
  */
 (function () {
-  function initAboutPage() {
-    var blocks = document.querySelectorAll('.about-content-block');
-    var links = document.querySelectorAll('.about-anchor-link');
-    var nav = document.querySelector('.about-anchor-nav');
-    var sidebarWrap = document.querySelector('.page-sidebar');
-    var fixThreshold = 100;
+  function initAnchorNav(blockSelector, linkSelector, navSelector, fixThreshold) {
+    fixThreshold = fixThreshold == null ? 100 : fixThreshold;
+    var blocks = document.querySelectorAll(blockSelector);
+    var links = document.querySelectorAll(linkSelector);
+    var nav = document.querySelector(navSelector);
+    var sidebarWrap = nav ? nav.closest('.page-sidebar') : null;
 
     if (!blocks.length || !links.length) return;
 
@@ -54,6 +54,14 @@
       window.addEventListener('resize', updateNavFixed);
       updateNavFixed();
     }
+  }
+
+  function initAboutPage() {
+    initAnchorNav('.about-content-block', '.about-anchor-link', '.about-anchor-nav');
+  }
+
+  function initResearchPage() {
+    initAnchorNav('.research-content-block', '.research-anchor-link', '.research-anchor-nav');
   }
 
   function initNewsTabs() {
@@ -183,6 +191,7 @@
     initProductSwiper();
     initNewsTabs();
     initAboutPage();
+    initResearchPage();
   }
 
   if (document.readyState === 'loading') {
