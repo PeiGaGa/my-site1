@@ -1,6 +1,6 @@
 /**
- * 产业布局轮播：.image_4-swiper 与 .cards-container 配套联动
- * 产品中心轮播：.image-wrapper_2 一直往右、2 秒一张、无限轮播
+ * 产业布局轮播：#industryImageSwiper 与 .cards-container 配套联动（仅首页）
+ * 产品中心轮播：initProductCenterCarousel 仅针对 .product-center-swiper，一张一屏（仅产品页）
  * 新闻动态 tab：全部、企业新闻、行业动态、通知公告
  * 关于/科研平台：锚点高亮 + page-sidebar 距顶 100px 固定、滚回取消固定
  */
@@ -99,62 +99,47 @@
     filterByCategory('全部');
   }
 
-  function initProductSwiper() {
-    var el = document.getElementById('productImageSwiper');
-    var paginationEl = document.getElementById('productPagination');
+  /**
+   * 产品中心页专用：一张一屏轮播，仅当存在 .product-center-swiper 时执行（产品页独有，首页无此 class，不会误触）
+   */
+  function initProductCenterCarousel() {
+    var el = document.querySelector('.product-center-swiper');
     if (!el) return;
 
+    var paginationEl = document.getElementById('productPagination');
     var slides = el.querySelectorAll('.swiper-slide');
-    var total = slides ? slides.length : 4;
+    var total = slides ? slides.length : 5;
 
-    var swiper = new Swiper('#productImageSwiper', {
+    var swiper = new Swiper(el, {
       loop: true,
       speed: 600,
-      slidesPerView: 4,
+      slidesPerView: 1,
       spaceBetween: 0,
       autoplay: {
         delay: 2000,
         disableOnInteraction: false
       },
-      navigation: {
-        nextEl: '.product-pagination-next',
-        prevEl: '.product-pagination-prev'
-      },
       on: {
         init: function () {
-          setProductPaginationActive(this.realIndex);
+          setProductCenterPagination(this.realIndex);
         },
         slideChangeTransitionEnd: function () {
-          setProductPaginationActive(this.realIndex);
+          setProductCenterPagination(this.realIndex);
         }
       }
     });
 
-    if (!paginationEl) return;
-
-    function setProductPaginationActive(realIndex) {
-      var prev2 = (realIndex - 2 + total) % total;
-      var prev1 = (realIndex - 1 + total) % total;
-      var next1 = (realIndex + 1) % total;
-      var next2 = (realIndex + 2) % total;
-      var orderMap = {};
-      orderMap[prev2] = 1;
-      orderMap[prev1] = 2;
-      orderMap[realIndex] = 3;
-      orderMap[next1] = 4;
-      if (total > 4) orderMap[next2] = 5;
-
-      var dots = paginationEl.querySelectorAll('.product-dot');
-      var nums = paginationEl.querySelectorAll('.product-dot-num');
-      dots.forEach(function (dot, i) {
-        dot.classList.toggle('active', i === realIndex);
-        dot.style.order = orderMap[i] || 0;
-      });
-      nums.forEach(function (num, i) {
-        num.classList.toggle('active', i === realIndex);
-        num.style.order = orderMap[i] || 0;
-      });
-
+    function setProductCenterPagination(realIndex) {
+      if (paginationEl) {
+        var dots = paginationEl.querySelectorAll('.product-dot');
+        var nums = paginationEl.querySelectorAll('.product-dot-num');
+        dots.forEach(function (dot, i) {
+          dot.classList.toggle('active', i === realIndex);
+        });
+        nums.forEach(function (num, i) {
+          num.classList.toggle('active', i === realIndex);
+        });
+      }
       var tabSets = document.querySelectorAll('.product-tab-set');
       tabSets.forEach(function (set) {
         var idx = parseInt(set.getAttribute('data-slide-index'), 10);
@@ -162,18 +147,20 @@
       });
     }
 
-    paginationEl.querySelectorAll('.product-dot').forEach(function (dot) {
-      dot.addEventListener('click', function () {
-        var index = parseInt(dot.getAttribute('data-index'), 10);
-        swiper.slideToLoop(index);
+    if (paginationEl) {
+      paginationEl.querySelectorAll('.product-dot').forEach(function (dot) {
+        dot.addEventListener('click', function () {
+          var index = parseInt(dot.getAttribute('data-index'), 10);
+          swiper.slideToLoop(index);
+        });
       });
-    });
-    paginationEl.querySelectorAll('.product-dot-num').forEach(function (num) {
-      num.addEventListener('click', function () {
-        var index = parseInt(num.getAttribute('data-index'), 10);
-        swiper.slideToLoop(index);
+      paginationEl.querySelectorAll('.product-dot-num').forEach(function (num) {
+        num.addEventListener('click', function () {
+          var index = parseInt(num.getAttribute('data-index'), 10);
+          swiper.slideToLoop(index);
+        });
       });
-    });
+    }
   }
 
   function initNewsSideSwipers() {
@@ -273,7 +260,7 @@
 
   function init() {
     initIndustryCarousel();
-    initProductSwiper();
+    initProductCenterCarousel();
     initNewsSideSwipers();
     initNewsTabs();
     initAboutPage();

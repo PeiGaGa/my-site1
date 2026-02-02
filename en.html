@@ -1,410 +1,333 @@
 <!DOCTYPE html>
 <html lang="en">
-
-<head>
-  <meta charset="utf-8" />
-  <link rel="icon" type="image/svg+xml" href="./vite.svg" />
-  <link rel="icon" href="/favicon.ico" />
-  <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png" />
-  <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png" />
-  <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png" />
-  <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>Vite + Vue</title>
-  <link rel="stylesheet" href="https://unpkg.com/swiper@8/swiper-bundle.min.css">
-  <link rel="stylesheet" href="./assets/style.css" />
-  <script src="https://unpkg.com/swiper@8/swiper-bundle.min.js"></script>
-</head>
-
-<body>
-  <div id="app" data-server-rendered="true">
-    <div class="m-container" data-v-d2e9f48d="">
-      <div class="drawer-overlay" data-v-96127a15=""></div>
-      <div class="drawer" data-v-96127a15="">
-        <div class="drawer__header" data-v-96127a15="">
-          <button class="drawer__close" aria-label="Close menu" data-v-96127a15="">×</button>
-        </div>
-        <ul class="drawer__menu" data-v-96127a15="">
-          <li><a href="./en.html" data-v-96127a15="">Home</a></li>
-          <li><a href="./en/about.html" data-v-96127a15="">About</a></li>
-          <li><a href="./en/farming.html" data-v-96127a15="">Farming</a></li>
-          <li><a href="./en/research.html" data-v-96127a15="">Research</a></li>
-          <li><a href="./en/products.html" data-v-96127a15="">Products</a></li>
-          <li><a href="./en/news.html" data-v-96127a15="">News</a></li>
-          <li><a href="./en/contact.html" data-v-96127a15="">Contact</a></li>
-        </ul>
-        <div class="drawer__lang language-switch" data-v-96127a15="">
-          <a href="./zh-cn.html" class="lang-btn" data-v-96127a15="">CN</a>
-          <span class="lang-divider" data-v-96127a15="">|</span>
-          <span class="active lang-btn" data-v-96127a15="">EN</span>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <link rel="stylesheet" href="https://unpkg.com/swiper@8/swiper-bundle.min.css">
+    <link rel="stylesheet" type="text/css" href="./assets/style.css" />
+    <script src="https://unpkg.com/swiper@8/swiper-bundle.min.js"></script>
+    <script src="./assets/carousel.js"></script>
+  </head>
+  <body>
+    <div class="page flex-col">
+      <div class="box_1 flex-col">
+        <div class="box_2 flex-col">
+          <div class="group_1 flex-col">
+            <div class="section_1 flex-row justify-between align-center">
+              <span class="text_1">产业布局</span>
+              <div class="color-blocks">
+                <span class="color-block orange"></span>
+                <span class="color-block gray"></span>
+                <span class="color-block cyan"></span>
+              </div>
+            </div>
+            <span class="paragraph_1"
+              >向海图强&nbsp;产业报国&nbsp;<br />从近海局限迈向深蓝无限</span
+            >
+            <div class="image_3" aria-hidden="true"></div>
+            <div class="image_4-swiper swiper" id="industryImageSwiper">
+              <div class="swiper-wrapper">
+                <div class="swiper-slide">
+                  <img
+                    class="image_4"
+                    referrerpolicy="no-referrer"
+                    src="./assets/ex.png"
+                    alt="产业布局 1"
+                  />
+                </div>
+                <div class="swiper-slide">
+                  <img
+                    class="image_4"
+                    referrerpolicy="no-referrer"
+                    src="./assets/ex.png"
+                    alt="产业布局 2"
+                  />
+                </div>
+                <div class="swiper-slide">
+                  <img
+                    class="image_4"
+                    referrerpolicy="no-referrer"
+                    src="./assets/ex.png"
+                    alt="产业布局 3"
+                  />
+                </div>
+              </div>
+              <div class="swiper-button-prev image_4-nav image_4-nav-prev"></div>
+              <div class="swiper-button-next image_4-nav image_4-nav-next"></div>
+            </div>
+            <div class="cards-container flex-row justify-between" id="industryCardsContainer">
+              <div class="card flex-col card-active" data-slide-index="0">
+                <span class="card-title">岸海统筹&nbsp;&nbsp;打造陆海接力闭环</span>
+                <span class="card-desc">依托黄海冷水团资源与连云港沿海渔港经济区，建立"陆基培苗—近海盐化—深远海工船养成"的陆海接力养殖体系，实现从种苗到成鱼的全周期可控生产。</span>
+                <span class="card-link">&gt;&gt;</span>
+              </div>
+              <div class="card flex-col" data-slide-index="1">
+                <span class="card-title">工船引领&nbsp;&nbsp;革新深海养殖模式</span>
+                <span class="card-desc">全球首创十万吨级鲑鳟鱼养殖工船，以可移动式"海上牧场"突破养殖空间与季节限制，实现智能化、规模化、全年连续生产，建设工业化养殖新标杆。</span>
+                <span class="card-link">&gt;&gt;</span>
+              </div>
+              <div class="card flex-col" data-slide-index="2">
+                <span class="card-title">六芯协同&nbsp;&nbsp;贯通全产业链条</span>
+                <span class="card-desc">建设种业科研、苗种繁育、渔港后勤、产品加工、冷链储运、品牌营销六大功能中心，形成覆盖研发、养殖、加工、销售与品牌运营的完整产业链闭环。</span>
+                <span class="card-link">&gt;&gt;</span>
+              </div>
+            </div>
+            <video
+              class="image_8"
+              poster="./assets/video_poster.png"
+              controls
+              preload="metadata"
+            >
+              <source src="https://www.w3schools.com/html/mov_bbb.mp4" type="video/mp4" />
+              您的浏览器不支持视频播放
+            </video>
+            <img class="image_8-below" src="./assets/dw.jpg" alt="" />
+            <span class="text_11">新闻动态</span>
+            <div class="section_2 flex-row">
+              <span class="text_12">与深度见解同行，与产业未来共振</span>
+              <div class="news-tabs" id="newsTabs">
+                <button type="button" class="news-tab active" data-tab="全部">全部</button>
+                <button type="button" class="news-tab" data-tab="企业新闻">企业新闻</button>
+                <button type="button" class="news-tab" data-tab="行业动态">行业动态</button>
+                <button type="button" class="news-tab" data-tab="通知公告">通知公告</button>
+              </div>
+            </div>
+            <div class="image_10" aria-hidden="true"></div>
+            <div class="section_3" id="newsSection">
+              <div class="box_3 flex-col news-card" data-news-category="企业新闻">
+                <div class="section_4 flex-col">
+                  <img
+                    class="image_11"
+                    referrerpolicy="no-referrer"
+                    src="./assets/ex.png"
+                  />
+                  <span class="text_14"
+                    >2025-06-26&nbsp;&nbsp;&nbsp;企业新闻</span
+                  >
+                  <span class="text_15"
+                    >苏海1号工船首航成功，开启中国深远海三文鱼养殖新纪元。</span
+                  >
+                  <span class="text_16"
+                    >全球首批鲑鳟鱼养殖工船"苏海1号"顺利完成首航，标志着我国深远海三文鱼养殖技术取得重大突破。</span
+                  >
+                  <div class="group_2 flex-row justify-between">
+                    <a href="./zh-cn/news-detail.html" class="text_17 news-read-more">阅读全文 &nbsp;&nbsp;&nbsp;-&gt;</a>
+                  </div>
+                </div>
+              </div>
+              <div class="box_4 flex-col news-card" data-news-category="行业动态">
+                <div class="box_5 flex-col">
+                  <img
+                    class="image_14"
+                    referrerpolicy="no-referrer"
+                    src="./assets/ex.png"
+                  />
+                  <span class="text_18"
+                    >2025-06-26&nbsp;&nbsp;&nbsp;企业新闻</span
+                  >
+                  <span class="text_19"
+                    >苏海1号工船首航成功，开启中国深远海三文鱼养殖新纪元。</span
+                  >
+                  <span class="text_20"
+                    >全球首批鲑鳟鱼养殖工船"苏海1号"顺利完成首航，标志着我国深远海三文鱼养殖技术取得重大突破。</span
+                  >
+                  <div class="block_1 flex-row justify-between">
+                    <a href="./zh-cn/news-detail.html" class="text_21 news-read-more">阅读全文 &nbsp;&nbsp;&nbsp;-&gt;</a>
+                  </div>
+                </div>
+              </div>
+              <div class="box_6 flex-col news-card" data-news-category="通知公告">
+                <div class="box_7 flex-col">
+                  <img
+                    class="image_17"
+                    referrerpolicy="no-referrer"
+                    src="./assets/ex.png"
+                  />
+                  <span class="text_22"
+                    >2025-06-26&nbsp;&nbsp;&nbsp;企业新闻</span
+                  >
+                  <span class="text_23"
+                    >苏海1号工船首航成功，开启中国深远海三文鱼养殖新纪元。</span
+                  >
+                  <span class="text_24"
+                    >全球首批鲑鳟鱼养殖工船"苏海1号"顺利完成首航，标志着我国深远海三文鱼养殖技术取得重大突破。</span
+                  >
+                  <div class="box_8 flex-row justify-between">
+                    <a href="./zh-cn/news-detail.html" class="text_25 news-read-more">阅读全文 &nbsp;&nbsp;&nbsp;-&gt;</a>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="section_5 flex-row">
+              <a href="./zh-cn/news.html" class="text_26 news-more-link">查看更多新闻</a>
+            </div>
+            <span class="text_27">产品中心</span>
+            <div class="section_6 flex-row justify-between align-center">
+              <span class="text_28"
+                >涵盖切割品、创新研发“新中式”产品、健康零食等在内的全系列三文鱼产品</span
+              >
+              <div class="color-blocks">
+                <span class="color-block orange"></span>
+                <span class="color-block gray"></span>
+                <span class="color-block cyan"></span>
+              </div>
+            </div>
+            <div class="image_23" aria-hidden="true"></div>
+            <div class="image-wrapper_2 swiper" id="productImageSwiper">
+              <div class="swiper-wrapper">
+                <div class="swiper-slide">
+                  <img
+                    class="image_24"
+                    referrerpolicy="no-referrer"
+                    src="./assets/ex.png"
+                    alt="产品 1"
+                  />
+                </div>
+                <div class="swiper-slide">
+                  <img
+                    class="image_24"
+                    referrerpolicy="no-referrer"
+                    src="./assets/ex.png"
+                    alt="产品 2"
+                  />
+                </div>
+                <div class="swiper-slide">
+                  <img
+                    class="image_24"
+                    referrerpolicy="no-referrer"
+                    src="./assets/ex.png"
+                    alt="产品 3"
+                  />
+                </div>
+                <div class="swiper-slide">
+                  <img
+                    class="image_24"
+                    referrerpolicy="no-referrer"
+                    src="./assets/ex.png"
+                    alt="产品 4"
+                  />
+                </div>
+              </div>
+            </div>
+            <div class="section_7 flex-row align-center" id="productPagination">
+              <button type="button" class="product-pagination-prev" aria-label="上一张">
+                <span class="product-pagination-arrow" aria-hidden="true"></span>
+              </button>
+              <div class="product-pagination-dots" aria-hidden="true">
+                <span class="product-dot active" data-index="0"></span>
+                <span class="product-dot" data-index="1"></span>
+                <span class="product-dot" data-index="2"></span>
+                <span class="product-dot" data-index="3"></span>
+              </div>
+              <button type="button" class="product-pagination-next" aria-label="下一张">
+                <span class="product-pagination-arrow" aria-hidden="true"></span>
+              </button>
+            </div>
+            <div class="section_8 flex-col">
+              <div class="group_3 flex-row">
+                <div class="box_9 flex-col justify-between">
+                  <a href="./index.html" class="footer-logo-link" aria-label="首页">
+                    <img
+                      class="footer-logo"
+                      src="./assets/logo.svg"
+                      alt="连深海洋"
+                    />
+                  </a>
+                </div>
+                <span class="paragraph_2">
+                  <a href="./index.html" class="footer-nav-link">首页</a><br />
+                  <a href="./zh-cn/about.html" class="footer-nav-link">关于我们</a><br />
+                  <a href="./zh-cn/farming.html" class="footer-nav-link">养殖模式</a>
+                </span>
+                <span class="paragraph_3">
+                  <a href="./zh-cn/research.html" class="footer-nav-link">科研平台</a><br />
+                  <a href="./zh-cn/products.html" class="footer-nav-link">产品中心</a><br />
+                  <a href="./zh-cn/news.html" class="footer-nav-link">新闻动态</a>
+                </span>
+                <span class="paragraph_4">
+                  <a href="./zh-cn/contact.html" class="footer-nav-link">加入我们</a><br />
+                  <a href="./zh-cn/contact.html" class="footer-nav-link">联系合作</a>
+                </span>
+                <div class="box_10 flex-col justify-between">
+                  <span class="text_31"
+                    >Follow&nbsp;our&nbsp;social&nbsp;media</span
+                  >
+                  <div class="group_4 flex-row">
+                    <a href="#" class="social-icon-link" aria-label="微信">
+                      <img class="social-icon" src="./assets/wechat.png" alt="微信" />
+                      <span class="social-popup">
+                        <img src="./assets/lshywx.jpg" alt="连深海洋微信" />
+                      </span>
+                    </a>
+                    <a href="#" class="social-icon-link" aria-label="微博">
+                      <img class="social-icon" src="./assets/weibo.png" alt="微博" />
+                      <span class="social-popup">
+                        <img src="./assets/lshyviode.png" alt="连深海洋视频号" />
+                      </span>
+                    </a>
+                    <a href="#" class="social-icon-link" aria-label="小红书">
+                      <img class="social-icon" src="./assets/xhs.png" alt="小红书" />
+                      <span class="social-popup">
+                        <img src="./assets/lshyviode.png" alt="连深海洋视频号" />
+                      </span>
+                    </a>
+                    <a href="#" class="social-icon-link" aria-label="视频号">
+                      <img class="social-icon" src="./assets/viode.png" alt="视频号" />
+                      <span class="social-popup">
+                        <img src="./assets/lshyviode.png" alt="连深海洋视频号" />
+                      </span>
+                    </a>
+                  </div>
+                </div>
+              </div>
+              <div class="group_5 flex-row">
+                <span class="footer-copyright">Copyright 2026 © lianshen marine</span>
+                <span class="footer-beian-wrap">
+                  <a href="https://beian.miit.gov.cn/#/Integrated/index" class="footer-icp footer-beian-link" target="_blank" rel="noopener noreferrer">苏ICP备2026003372号-1</a>
+                  <a href="https://beian.mps.gov.cn/" class="footer-icp footer-beian-link" target="_blank" rel="noopener noreferrer">苏公网安备32070502011296号</a>
+                </span>
+              </div>
+            </div>
+            <div class="section_9 flex-col">
+              <img class="section_9-bg" src="./assets/ex.png" alt="背景图" />
+              <div class="top-toolbar">
+                <span class="toolbar-item" id="mediaBtn">Media</span>
+                <span class="toolbar-item" id="contactBtn">Contact</span>
+                <div class="lang-switch-btns">
+                  <a href="./index.html" class="lang-btn active" data-lang="cn">CN</a>
+                  <a href="./en.html" class="lang-btn" data-lang="en">EN</a>
+                </div>
+                <span class="toolbar-item" id="langBtn">Language</span>
+              </div>
+              <div class="block_2 flex-col">
+                <img class="block_2-bg" src="./assets/ex.png" alt="导航背景" />
+                <div class="box_11 flex-row">
+                  <img
+                    class="header-logo"
+                    src="./assets/logo.svg"
+                    alt="连深海洋"
+                  />
+                  <nav class="main-nav">
+                    <a href="./index.html" class="nav-link">首页</a>
+                    <a href="./zh-cn/about.html" class="nav-link">关于我们</a>
+                    <a href="./zh-cn/farming.html" class="nav-link">养殖模式</a>
+                    <a href="./zh-cn/research.html" class="nav-link">科研平台</a>
+                    <a href="./zh-cn/products.html" class="nav-link">产品中心</a>
+                    <a href="./zh-cn/news.html" class="nav-link">新闻动态</a>
+                    <a href="./zh-cn/contact.html" class="nav-link">联系合作</a>
+                  </nav>
+                  <div class="image_40 hamburger-icon" aria-label="菜单">
+                    <span class="hamburger-bar"></span>
+                    <span class="hamburger-bar"></span>
+                    <span class="hamburger-bar"></span>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
         </div>
       </div>
     </div>
-    <div class="pc-container" data-v-36d2d450="">
-      <main class="compact pc-main" data-v-36d2d450="">
-        <!--[-->
-        <section class="hero" role="img" aria-label="home hero" data-v-a4d37009="">
-          <img class="hero-background-img" src="./assets/ex.png" alt="背景图" data-v-a4d37009="" />
-          <div class="hero-mask" data-v-a4d37009=""></div>
-          <div class="hero-swiper" data-v-a4d37009="">
-            <header class="m-header is-transparent" data-v-d2e9f48d="">
-              <nav class="m-nav" data-v-d2e9f48d="" data-v-96127a15="">
-                <div class="m-nav__left" data-v-96127a15="">
-                  <a href="./en.html" class="logo" data-v-96127a15="">
-                    <img src="./assets/logo.svg" alt="Lianshen Marine" class="logo-img">
-                  </a>
-                </div>
-                <div class="m-nav__right" data-v-96127a15="">
-                  <div class="language-switch" data-v-96127a15="">
-                    <a href="./zh-cn.html" class="lang-btn" data-v-96127a15="">CN</a>
-                    <span class="lang-divider" data-v-96127a15="">|</span>
-                    <span class="active lang-btn" data-v-96127a15="">EN</span>
-                  </div>
-                  <button class="hamburger" aria-label="Open menu" data-v-96127a15="">
-                    <span data-v-96127a15=""></span>
-                    <span data-v-96127a15=""></span>
-                    <span data-v-96127a15=""></span>
-                  </button>
-                </div>
-              </nav>
-            </header>
-            <header class="pc-header is-transparent" data-v-36d2d450="">
-              <nav class="pc-nav" data-v-36d2d450="" data-v-4c615095="">
-                <div class="pc-nav__left" data-v-4c615095="">
-                  <a href="./en.html" class="logo" data-v-4c615095="">
-                    <img src="./assets/logo.svg" alt="Lianshen Marine" class="logo-img">
-                  </a>
-                </div>
-                <div class="pc-nav__right" data-v-4c615095="">
-                  <ul class="pc-nav__menu" data-v-4c615095="">
-                    <li data-v-4c615095="">
-                      <a href="./en.html" data-v-4c615095="" class="router-link-active router-link-exact-active">Home</a>
-                    </li>
-                    <li data-v-4c615095="">
-                      <a href="./en/about.html" class="" data-v-4c615095="">About Us</a>
-                    </li>
-                    <li data-v-4c615095="">
-                      <a href="./en/farming.html" class="" data-v-4c615095="">Farming</a>
-                    </li>
-                    <li data-v-4c615095="">
-                      <a href="./en/research.html" class="" data-v-4c615095="">Research</a>
-                    </li>
-                    <li data-v-4c615095="">
-                      <a href="./en/products.html" class="" data-v-4c615095="">Products</a>
-                    </li>
-                    <li data-v-4c615095="">
-                      <a href="./en/news.html" class="" data-v-4c615095="">News</a>
-                    </li>
-                    <li data-v-4c615095="">
-                      <a href="./en/contact.html" class="" data-v-4c615095="">Contact</a>
-                    </li>
-                  </ul>
-                  <div class="language-switch" data-v-4c615095="">
-                    <a href="./zh-cn.html" class="lang-btn" data-v-4c615095="">CN</a><span class="lang-divider"
-                      data-v-4c615095="">|</span><span class="active lang-btn" data-v-4c615095="">EN</span>
-                  </div>
-                </div>
-              </nav>
-            </header>
-            <div class="banner-content" data-v-a4d37009="">
-              <a href="./en/about.html" style="display: block; width: 100%; height: 100%;">
-                <img class="hero-img" src="./assets/ex.png" alt="Lianshen Marine" data-v-a4d37009="" />
-              </a>
-            </div>
-          </div>
-        </section>
-        <section class="section industry-layout" data-v-a4d37009="">
-          <div class="industry-header" data-v-a4d37009="">
-            <h2 class="industry-title" data-v-a4d37009="">
-              <span>产业布局</span>
-              <div class="header-decoration" data-v-a4d37009="">
-                <span class="square orange" data-v-a4d37009=""></span>
-                <span class="square light-gray" data-v-a4d37009=""></span>
-                <span class="square light-blue" data-v-a4d37009=""></span>
-              </div>
-            </h2>
-            <p class="industry-desc" data-v-a4d37009="">
-              向海图强 产业报国<br>
-              从近海局限迈向深蓝无限
-            </p>
-            <div class="industry-underline" data-v-a4d37009=""></div>
-          </div>
-          <div class="industry-hero" data-v-a4d37009="">
-            <div class="swiper" data-v-a4d37009="">
-              <div class="swiper-wrapper">
-                <div class="swiper-slide" data-v-a4d37009="">
-                  <img src="./assets/ex.png" alt="Industry image 1" data-v-a4d37009="" />
-                </div>
-                <div class="swiper-slide" data-v-a4d37009="">
-                  <img src="./assets/ex.png" alt="Industry image 2" data-v-a4d37009="" />
-                </div>
-                <div class="swiper-slide" data-v-a4d37009="">
-                  <img src="./assets/ex.png" alt="Industry image 3" data-v-a4d37009="" />
-                </div>
-              </div>
-              <div class="swiper-buttons-wrap" data-v-a4d37009="">
-                <div class="swiper-button-prev industry-swiper-button-prev" data-v-a4d37009=""></div>
-                <div class="swiper-button-next industry-swiper-button-next" data-v-a4d37009=""></div>
-              </div>
-              <div class="industry-custom-pagination" data-v-a4d37009=""></div>
-            </div>
-          </div>
-          <div class="industry-modules" data-v-a4d37009="">
-            <div class="industry-module" data-v-a4d37009="">
-              <h3 data-v-a4d37009="">一体</h3>
-              <p data-v-a4d37009="">岸海联动、陆海统筹打造全国最大的三文鱼工知养殖岸海一体化基地</p>
-              <span class="arrow" data-v-a4d37009="">>></span>
-            </div>
-            <div class="industry-module" data-v-a4d37009="">
-              <h3 data-v-a4d37009="">两船</h3>
-              <p data-v-a4d37009="">配备全球首鲜鱼养殖工船苏海1号,圳海1号</p>
-              <span class="arrow" data-v-a4d37009="">>></span>
-            </div>
-            <div class="industry-module" data-v-a4d37009="">
-              <h3 data-v-a4d37009="">六中心</h3>
-              <p data-v-a4d37009="">种业科研中心、苗种繁育中心、漁港及后勤补给中心,产品加工中心</p>
-              <span class="arrow" data-v-a4d37009="">>></span>
-            </div>
-          </div>
-          <div class="industry-features-wrap" data-v-a4d37009="">
-            <video class="industry-features-image" data-v-a4d37009="" autoplay muted loop playsinline>
-              <source src="./assets/video.mp4" type="video/mp4">
-              Your browser does not support video playback.
-            </video>
-            <img src="./assets/dw.jpg" alt="开创中国深远海三文鱼产业新纪元" class="industry-features-content-image" data-v-a4d37009="">
-          </div>
-        </section>
-        <section class="news-section" data-v-a4d37009="">
-          <div class="news-header" data-v-a4d37009="">
-            <div class="news-header-left" data-v-a4d37009="">
-              <h2 class="news-title" data-v-a4d37009="">News & Updates</h2>
-              <p class="news-subtitle" data-v-a4d37009="">Walking with deep insights, resonating with the future of the industry</p>
-              <div class="news-underline" data-v-a4d37009=""></div>
-            </div>
-            <div class="news-nav" data-v-a4d37009="">
-              <div class="nav-btn active" data-category="All" data-v-a4d37009="">All</div>
-              <div class="nav-btn" data-category="Enterprise News" data-v-a4d37009="">Enterprise News</div>
-              <div class="nav-btn" data-category="Industry News" data-v-a4d37009="">Industry News</div>
-              <div class="nav-btn" data-category="Announcements" data-v-a4d37009="">Announcements</div>
-            </div>
-          </div>
-          <div class="news-grid" data-v-a4d37009="">
-            <div class="news-card" data-category="Enterprise News" data-pinned="true" data-v-a4d37009="">
-              <img src="./assets/ex.png" alt="Su Hai No. 1 Workboat" class="news-image" data-v-a4d37009="" />
-              <div class="news-meta" data-v-a4d37009="">
-                <span class="news-date" data-v-a4d37009="">2025-12-28</span>
-                <span class="news-category" data-v-a4d37009="">Enterprise News</span>
-              </div>
-              <h3 class="news-card-title" data-v-a4d37009="">Su Hai No. 1 Workboat Successfully Completes Maiden Voyage</h3>
-              <p class="news-description" data-v-a4d37009="">The world's first salmon and trout farming workboat "Su Hai No. 1" successfully completed its maiden voyage, marking a major breakthrough in China's deep-sea salmon farming technology.</p>
-              <a href="#" class="news-link" data-v-a4d37009="">Read More →</a>
-            </div>
-            <div class="news-card" data-category="Industry News" data-pinned="false" data-v-a4d37009="">
-              <img src="./assets/ex.png" alt="Industry News" class="news-image" data-v-a4d37009="" />
-              <div class="news-meta" data-v-a4d37009="">
-                <span class="news-date" data-v-a4d37009="">2025-12-27</span>
-                <span class="news-category" data-v-a4d37009="">Industry News</span>
-              </div>
-              <h3 class="news-card-title" data-v-a4d37009="">Major Breakthrough in Deep-Sea Aquaculture Equipment Technology</h3>
-              <p class="news-description" data-v-a4d37009="">MIIT releases guidance on deep-sea aquaculture equipment, bringing policy benefits to the industry and promoting technological innovation.</p>
-              <a href="#" class="news-link" data-v-a4d37009="">Read More →</a>
-            </div>
-            <div class="news-card" data-category="Announcements" data-pinned="true" data-v-a4d37009="">
-              <img src="./assets/ex.png" alt="Announcement" class="news-image" data-v-a4d37009="" />
-              <div class="news-meta" data-v-a4d37009="">
-                <span class="news-date" data-v-a4d37009="">2025-12-26</span>
-                <span class="news-category" data-v-a4d37009="">Announcements</span>
-              </div>
-              <h3 class="news-card-title" data-v-a4d37009="">Notice on 2025 Annual Work Summary Meeting</h3>
-              <p class="news-description" data-v-a4d37009="">The annual work summary meeting is scheduled for December 30, 2025. All departments are requested to prepare and attend on time.</p>
-              <a href="#" class="news-link" data-v-a4d37009="">Read More →</a>
-            </div>
-            <div class="news-card" data-category="Enterprise News" data-pinned="false" data-v-a4d37009="">
-              <img src="./assets/ex.png" alt="Farming Facility" class="news-image" data-v-a4d37009="" />
-              <div class="news-meta" data-v-a4d37009="">
-                <span class="news-date" data-v-a4d37009="">2025-12-25</span>
-                <span class="news-category" data-v-a4d37009="">Enterprise News</span>
-              </div>
-              <h3 class="news-card-title" data-v-a4d37009="">Lianshen Ocean's Modern Farming Facility Put into Operation</h3>
-              <p class="news-description" data-v-a4d37009="">The company's newly built modern farming facility has been officially put into operation, adopting advanced recirculating aquaculture technology.</p>
-              <a href="#" class="news-link" data-v-a4d37009="">Read More →</a>
-            </div>
-            <div class="news-card" data-category="Industry News" data-pinned="false" data-v-a4d37009="">
-              <img src="./assets/ex.png" alt="Market News" class="news-image" data-v-a4d37009="" />
-              <div class="news-meta" data-v-a4d37009="">
-                <span class="news-date" data-v-a4d37009="">2025-12-24</span>
-                <span class="news-category" data-v-a4d37009="">Industry News</span>
-              </div>
-              <h3 class="news-card-title" data-v-a4d37009="">International Salmon Prices Rise, Boosting Farming Activity</h3>
-              <p class="news-description" data-v-a4d37009="">Driven by growing market demand, international salmon prices continue to rise, bringing new development opportunities for farming enterprises.</p>
-              <a href="#" class="news-link" data-v-a4d37009="">Read More →</a>
-            </div>
-            <div class="news-card" data-category="Announcements" data-pinned="false" data-v-a4d37009="">
-              <img src="./assets/ex.png" alt="Recruitment" class="news-image" data-v-a4d37009="" />
-              <div class="news-meta" data-v-a4d37009="">
-                <span class="news-date" data-v-a4d37009="">2025-12-23</span>
-                <span class="news-category" data-v-a4d37009="">Announcements</span>
-              </div>
-              <h3 class="news-card-title" data-v-a4d37009="">2026 Spring Campus Recruitment Announcement</h3>
-              <p class="news-description" data-v-a4d37009="">The company will launch spring campus recruitment in March 2026, inviting outstanding graduates to join the Lianshen Ocean family.</p>
-              <a href="#" class="news-link" data-v-a4d37009="">Read More →</a>
-            </div>
-          </div>
-          <div class="news-more" data-v-a4d37009="">
-            <a href="./en/news.html" class="more-btn" data-v-a4d37009="">View More Updates</a>
-          </div>
-        </section>
-        <section class="section products-layout" data-v-a4d37009="">
-          <div class="products-header" data-v-a4d37009="">
-            <h2 class="products-title" data-v-a4d37009="">
-              <span>Product Center</span>
-              <div class="header-decoration" data-v-a4d37009="">
-                <span class="square orange" data-v-a4d37009=""></span>
-                <span class="square light-gray" data-v-a4d37009=""></span>
-                <span class="square light-blue" data-v-a4d37009=""></span>
-              </div>
-            </h2>
-            <p class="products-subtitle" data-v-a4d37009="">
-              High-quality salmon products Full control from deep sea to table
-            </p>
-            <div class="products-underline" data-v-a4d37009=""></div>
-          </div>
-          <div class="products-gallery" data-v-a4d37009="">
-            <div class="products-swiper" data-v-a4d37009="">
-              <div class="swiper-wrapper">
-                <div class="swiper-slide" data-v-a4d37009="">
-                  <div class="product-image-container" data-v-a4d37009="">
-                    <a href="./en/products.html" target="_blank">
-                      <img src="./assets/ex.png" alt="Salmon Fillet" class="product-image" data-v-a4d37009="" />
-                    </a>
-                  </div>
-                </div>
-                <div class="swiper-slide" data-v-a4d37009="">
-                  <div class="product-image-container" data-v-a4d37009="">
-                    <a href="./en/products.html" target="_blank">
-                      <img src="./assets/ex.png" alt="Salmon Slicing" class="product-image" data-v-a4d37009="" />
-                    </a>
-                  </div>
-                </div>
-                <div class="swiper-slide" data-v-a4d37009="">
-                  <div class="product-image-container" data-v-a4d37009="">
-                    <a href="./en/products.html" target="_blank">
-                      <img src="./assets/ex.png" alt="Salmon Sashimi" class="product-image" data-v-a4d37009="" />
-                    </a>
-                  </div>
-                </div>
-                <div class="swiper-slide" data-v-a4d37009="">
-                  <div class="product-image-container" data-v-a4d37009="">
-                    <a href="./en/products.html" target="_blank">
-                      <img src="./assets/ex.png" alt="Salmon Steak" class="product-image" data-v-a4d37009="" />
-                    </a>
-                  </div>
-                </div>
-                <div class="swiper-slide" data-v-a4d37009="">
-                  <div class="product-image-container" data-v-a4d37009="">
-                    <a href="./en/products.html" target="_blank">
-                      <img src="./assets/ex.png" alt="Salmon Sushi" class="product-image" data-v-a4d37009="" />
-                    </a>
-                  </div>
-                </div>
-                <div class="swiper-slide" data-v-a4d37009="">
-                  <div class="product-image-container" data-v-a4d37009="">
-                    <a href="./en/products.html" target="_blank">
-                      <img src="./assets/ex.png" alt="Salmon Salad" class="product-image" data-v-a4d37009="" />
-                    </a>
-                  </div>
-                </div>
-                <div class="swiper-slide" data-v-a4d37009="">
-                  <div class="product-image-container" data-v-a4d37009="">
-                    <a href="./en/products.html" target="_blank">
-                      <img src="./assets/ex.png" alt="Salmon Soup" class="product-image" data-v-a4d37009="" />
-                    </a>
-                  </div>
-                </div>
-                <div class="swiper-slide" data-v-a4d37009="">
-                  <div class="product-image-container" data-v-a4d37009="">
-                    <a href="./en/products.html" target="_blank">
-                      <img src="./assets/ex.png" alt="Salmon Roll" class="product-image" data-v-a4d37009="" />
-                    </a>
-                  </div>
-                </div>
-                <div class="swiper-slide" data-v-a4d37009="">
-                  <div class="product-image-container" data-v-a4d37009="">
-                    <a href="./en/products.html" target="_blank">
-                      <img src="./assets/ex.png" alt="Salmon Tartare" class="product-image" data-v-a4d37009="" />
-                    </a>
-                  </div>
-                </div>
-              </div>
-            </div>
-            <div class="products-custom-pagination" data-v-a4d37009=""></div>
-          </div>
-        </section>
-      </main>
-      <footer class="m-footer" data-v-36d2d450="" data-v-e7d68f9b="">
-        <div class="m-foot-wrap" data-v-e7d68f9b="">
-          <div class="top-section" data-v-e7d68f9b="">
-            <div class="m-brand" data-v-e7d68f9b="">
-              <a href="./en.html" class="logo-link">
-                <img src="./assets/logo.svg" alt="Lianshen Marine" class="logo-img">
-              </a>
-            </div>
-            <nav class="m-links" data-v-e7d68f9b="">
-              <div class="col" data-v-e7d68f9b="">
-                <a href="./en.html" class="" data-v-e7d68f9b="">首页</a><a href="./en/about.html" class=""
-                  data-v-e7d68f9b="">关于我们</a><a href="./en/farming.html" class="" data-v-e7d68f9b="">养殖模式</a>
-              </div>
-              <div class="col" data-v-e7d68f9b="">
-                <a href="./en/research.html" class="" data-v-e7d68f9b="">科研平台</a><a href="./en/products.html" class=""
-                  data-v-e7d68f9b="">产品中心</a><a href="./en/news.html" class="" data-v-e7d68f9b="">新闻动态</a>
-              </div>
-              <div class="col" data-v-e7d68f9b="">
-                <a href="./en/about.html#join" data-v-e7d68f9b="">加入我们</a><a href="./en/contact.html" class=""
-                  data-v-e7d68f9b="">联系合作</a>
-              </div>
-            </nav>
-            <div class="m-social" data-v-e7d68f9b="">
-              <span data-v-e7d68f9b="">Follow our social media</span>
-              <div class="icons" data-v-e7d68f9b="">
-                <a href="#" aria-label="wechat" class="wechat-icon" data-v-e7d68f9b="">
-                  <img src="./assets/wechat.png" alt="wechat" data-v-e7d68f9b="" />
-                  <div class="qr-code-popup" data-v-e7d68f9b="">
-                    <img src="./assets/lshywx.jpg" alt="WeChat QR Code" data-v-e7d68f9b="" />
-                  </div>
-                </a>
-                <a href="#" aria-label="weibo" class="weibo-icon" data-v-e7d68f9b="">
-                  <img src="./assets/weibo.png" alt="weibo" data-v-e7d68f9b="" />
-                  <div class="qr-code-popup" data-v-e7d68f9b="">
-                    <img src="./assets/lshyweibo.png" alt="Weibo QR Code" data-v-e7d68f9b="" />
-                  </div>
-                </a>
-                <a href="#" aria-label="xhs" class="xhs-icon" data-v-e7d68f9b="">
-                  <img src="./assets/xhs.png" alt="xhs" data-v-e7d68f9b="" />
-                  <div class="qr-code-popup" data-v-e7d68f9b="">
-                    <img src="./assets/lshyxhs.png" alt="Xiaohongshu QR Code" data-v-e7d68f9b="" />
-                  </div>
-                </a>
-                <a href="#" aria-label="viode" class="viode-icon" data-v-e7d68f9b="">
-                  <img src="./assets/viode.png" alt="viode" data-v-e7d68f9b="" />
-                  <div class="qr-code-popup" data-v-e7d68f9b="">
-                    <img src="./assets/lshyviode.png" alt="Viode QR Code" data-v-e7d68f9b="" />
-                  </div>
-                </a>
-              </div>
-            </div>
-          </div>
-          <div class="m-divider" data-v-e7d68f9b=""></div>
-          <div class="m-copy" data-v-e7d68f9b="">
-            <span data-v-e7d68f9b="">Copyright 2025 © lianshen marine</span>
-            <div class="links" data-v-e7d68f9b="">
-              <a href="https://beian.miit.gov.cn/" target="_blank" rel="noopener noreferrer" data-v-e7d68f9b="">苏ICP备2026003372号-1</a>
-              <a href="https://beian.miit.gov.cn/" target="_blank" rel="noopener noreferrer" data-v-e7d68f9b="">ICP备案号</a>
-            </div>
-          </div>
-        </div>
-      </footer>
-    </div>
-  </div>
-  <script src="./assets/static.js" defer></script>
-</body>
-
+  </body>
 </html>
