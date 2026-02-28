@@ -333,6 +333,33 @@
     }
   }
 
+  function initMobileNav() {
+    var btn = document.getElementById('hamburgerBtn');
+    var drawer = document.getElementById('navDrawer');
+    var overlay = document.getElementById('navDrawerOverlay');
+    var closeBtn = document.getElementById('navDrawerClose');
+    if (!btn || !drawer || !overlay) return;
+
+    function open() {
+      drawer.classList.add('active');
+      overlay.classList.add('active');
+      document.body.style.overflow = 'hidden';
+    }
+    function close() {
+      drawer.classList.remove('active');
+      overlay.classList.remove('active');
+      document.body.style.overflow = '';
+    }
+
+    btn.addEventListener('click', open);
+    overlay.addEventListener('click', close);
+    if (closeBtn) closeBtn.addEventListener('click', close);
+
+    drawer.querySelectorAll('.nav-drawer-link').forEach(function (link) {
+      link.addEventListener('click', close);
+    });
+  }
+
   function init() {
     initIndustryCarousel();
     initHomeProductCarousel();
@@ -341,6 +368,7 @@
     initNewsTabs();
     initAboutPage();
     initResearchPage();
+    initMobileNav();
   }
 
   if (document.readyState === 'loading') {

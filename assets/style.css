@@ -4015,3 +4015,170 @@ button:active {
   }
 }
 
+/* ========== 移动端导航：汉堡按钮 + 抽屉菜单 ========== */
+
+.nav-drawer-overlay {
+  display: none;
+  position: fixed;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.45);
+  z-index: 998;
+  opacity: 0;
+  transition: opacity 0.3s ease;
+}
+
+.nav-drawer-overlay.active {
+  display: block;
+  opacity: 1;
+}
+
+.nav-drawer {
+  display: none;
+  position: fixed;
+  top: 0;
+  right: -80vw;
+  width: 70vw;
+  max-width: 320px;
+  height: 100vh;
+  height: 100dvh;
+  background: #1e2532;
+  z-index: 999;
+  flex-direction: column;
+  padding: 0;
+  box-shadow: -4px 0 24px rgba(0, 0, 0, 0.3);
+  transition: right 0.35s cubic-bezier(0.4, 0, 0.2, 1);
+  overflow-y: auto;
+}
+
+.nav-drawer.active {
+  right: 0;
+}
+
+.nav-drawer-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 5vw 5vw 4vw;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.nav-drawer-logo {
+  width: 28vw;
+  max-width: 120px;
+  height: auto;
+}
+
+.nav-drawer-close {
+  width: 10vw;
+  height: 10vw;
+  max-width: 40px;
+  max-height: 40px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 7vw;
+  color: rgba(255, 255, 255, 0.85);
+  background: none;
+  border: none;
+  cursor: pointer;
+  line-height: 1;
+  padding: 0;
+}
+
+.nav-drawer-links {
+  display: flex;
+  flex-direction: column;
+  padding: 3vw 0;
+}
+
+.nav-drawer-link {
+  display: block;
+  padding: 3.5vw 6vw;
+  font-size: 4vw;
+  font-family: HarmonyOS_Sans_SC, Microsoft YaHei, sans-serif;
+  color: rgba(255, 255, 255, 0.9);
+  text-decoration: none;
+  transition: background 0.2s, color 0.2s;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.06);
+}
+
+.nav-drawer-link:hover,
+.nav-drawer-link:active {
+  background: rgba(255, 255, 255, 0.08);
+  color: rgba(226, 128, 0, 1);
+}
+
+.nav-drawer-lang {
+  display: flex;
+  align-items: center;
+  gap: 2vw;
+  padding: 4vw 6vw;
+  margin-top: auto;
+}
+
+.nav-drawer-lang .lang-btn {
+  width: 10vw;
+  max-width: 44px;
+  height: 8vw;
+  max-height: 34px;
+  font-size: 3.5vw;
+}
+
+@media (max-width: 900px) {
+  .main-nav {
+    display: none !important;
+  }
+
+  .nav-drawer {
+    display: flex;
+  }
+
+  .hamburger-icon {
+    display: flex !important;
+    width: 5.5vw !important;
+    height: 4vw !important;
+    margin: 0 0 0 auto !important;
+    padding: 0.4vw;
+  }
+
+  .hamburger-icon .hamburger-bar {
+    height: 0.5vw !important;
+    min-height: 1.5px;
+  }
+
+  .header-logo {
+    width: 12vw !important;
+    transform: scale(2) !important;
+    transform-origin: left center;
+  }
+
+  .box_11 {
+    align-items: center;
+    height: auto !important;
+    padding: 2vw 0;
+  }
+
+  .top-toolbar {
+    margin: 3vw 0 0 5vw;
+  }
+
+  .lang-switch-btns {
+    gap: 0.5vw;
+  }
+
+  .lang-btn {
+    width: 6.5vw;
+    max-width: 30px;
+    height: 5vw;
+    max-height: 24px;
+    font-size: 2.6vw;
+  }
+}
+
+@media (min-width: 901px) {
+  .nav-drawer,
+  .nav-drawer-overlay {
+    display: none !important;
+  }
+}
+
