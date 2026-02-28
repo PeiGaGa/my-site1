@@ -333,80 +333,6 @@
     }
   }
 
-  /**
-   * 移动端汉堡菜单：点击汉堡图标打开导航抽屉，点击遮罩或关闭按钮关闭
-   */
-  function initMobileNav() {
-    var hamburger = document.querySelector('.hamburger-icon');
-    var overlay = document.getElementById('mobileNavOverlay');
-    var closeBtn = document.getElementById('mobileNavClose');
-    var drawer = document.getElementById('mobileNavDrawer');
-    if (!hamburger || !overlay) return;
-
-    function openNav() {
-      overlay.classList.add('is-open');
-      overlay.setAttribute('aria-hidden', 'false');
-      document.body.style.overflow = 'hidden';
-    }
-
-    function closeNav() {
-      overlay.classList.remove('is-open');
-      overlay.setAttribute('aria-hidden', 'true');
-      document.body.style.overflow = '';
-    }
-
-    hamburger.addEventListener('click', openNav);
-    if (closeBtn) closeBtn.addEventListener('click', closeNav);
-
-    overlay.addEventListener('click', function (e) {
-      if (drawer && !drawer.contains(e.target)) closeNav();
-    });
-
-    /* 点击移动端导航链接后自动关闭 */
-    var mobileLinks = overlay ? overlay.querySelectorAll('.mobile-nav-link') : [];
-    mobileLinks.forEach(function (link) {
-      link.addEventListener('click', closeNav);
-    });
-
-    /* ESC 键关闭 */
-    document.addEventListener('keydown', function (e) {
-      if (e.key === 'Escape') closeNav();
-    });
-  }
-
-  /**
-   * 移动端社交图标：触控设备改用点击显示/隐藏二维码弹窗
-   */
-  function initMobileSocialPopup() {
-    var isTouchDevice = 'ontouchstart' in window || navigator.maxTouchPoints > 0;
-    if (!isTouchDevice) return;
-
-    var links = document.querySelectorAll('.social-icon-link');
-    links.forEach(function (link) {
-      var popup = link.querySelector('.social-popup');
-      if (!popup) return;
-
-      link.addEventListener('click', function (e) {
-        e.preventDefault();
-        var isOpen = popup.style.display === 'block';
-        /* 先关闭所有弹窗 */
-        document.querySelectorAll('.social-popup').forEach(function (p) {
-          p.style.display = '';
-        });
-        if (!isOpen) popup.style.display = 'block';
-      });
-    });
-
-    /* 点击空白处关闭弹窗 */
-    document.addEventListener('click', function (e) {
-      if (!e.target.closest('.social-icon-link')) {
-        document.querySelectorAll('.social-popup').forEach(function (p) {
-          p.style.display = '';
-        });
-      }
-    });
-  }
-
   function init() {
     initIndustryCarousel();
     initHomeProductCarousel();
@@ -415,8 +341,6 @@
     initNewsTabs();
     initAboutPage();
     initResearchPage();
-    initMobileNav();
-    initMobileSocialPopup();
   }
 
   if (document.readyState === 'loading') {
