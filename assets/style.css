@@ -345,15 +345,6 @@ button:active {
   position: relative;
 }
 
-.news-read-more::after {
-  content: '';
-  display: block;
-  width: 6vw;
-  height: 0.1vw;
-  margin-top: 0.5vw;
-  background-color: rgba(226, 128, 0, 1);
-}
-
 .news-read-more:hover {
   color: rgba(226, 128, 0, 1);
 }
@@ -574,6 +565,15 @@ button:active {
   margin-top: 1vw;
 }
 
+.product-swiper-wrap .product-pagination {
+  position: absolute;
+  bottom: 1.2vw;
+  left: 0;
+  right: 0;
+  margin-top: 0;
+  z-index: 10;
+}
+
 .product-dots {
   display: flex;
   align-items: center;
@@ -623,7 +623,6 @@ button:active {
 /* 产品选项卡与轮播联动：多组选项卡，只显示当前轮播对应的一组 */
 .product-tabs-wrapper {
   width: 100%;
-  margin-top: 1.5vw;
   position: relative;
 }
 
@@ -637,55 +636,62 @@ button:active {
   justify-content: center;
 }
 
-/* 产品信息选项卡：上深蓝标题 + 下白底灰字描述，等宽、小间距 */
+/* 产品信息选项卡：深色背景 + 竖线分隔 */
 .product-tabs {
   width: 72.1vw;
-  margin: 1.5vw auto 0;
-  gap: 0.4vw;
+  margin: -0.5px auto 0;
+  gap: 0;
   flex-wrap: nowrap;
-  justify-content: center;
+  justify-content: stretch;
   position: relative;
   z-index: 0;
+  background: #1a1a1a;
 }
 
 .product-tab {
-  flex: 0 1 12vw;
-  max-width: 12vw;
+  flex: 1;
   min-width: 0;
   display: flex;
   flex-direction: column;
-  align-items: stretch;
+  align-items: center;
+  justify-content: flex-start;
   cursor: default;
   box-sizing: border-box;
+  padding: 1.2vw 1vw;
+  border-right: 1px solid rgba(255, 255, 255, 0.15);
+}
+
+.product-tab:last-child {
+  border-right: none;
 }
 
 .product-tab-title {
-  background: #2F446F;
+  background: transparent;
   color: #fff;
   font-size: 0.95vw;
   font-family: HarmonyOS_Sans_SC_Bold, sans-serif;
   font-weight: 700;
   text-align: center;
-  padding: 0.9vw 0.5vw;
+  padding: 0 0 0.5vw 0;
   line-height: 1.35;
   flex-shrink: 0;
 }
 
 .product-tab-desc {
-  background: #fff;
-  color: #666;
+  background: transparent;
+  color: rgba(255, 255, 255, 0.55);
   font-size: 0.78vw;
   font-family: HarmonyOS_Sans_SC_Thin, sans-serif;
   font-weight: 400;
   text-align: center;
-  line-height: 1.5;
-  padding: 1vw 0.6vw;
-  border: 1px solid #ccc;
+  line-height: 1.6;
+  padding: 0;
+  border: none;
   flex: 1;
-  min-height: 2.8vw;
+  min-height: 0;
   box-sizing: border-box;
   display: flex;
-  align-items: center;
+  align-items: flex-start;
   justify-content: center;
 }
 
@@ -1016,11 +1022,16 @@ button:active {
   border-top: 0.05vw dashed rgba(200, 200, 200, 1);
   margin: 0 0 1.5vw 0;
 }
-/* 荣誉资质：8 枚徽章 2 行 4 列，红边金底 */
+/* 荣誉资质：3 列 3 行（3x3），行列间距统一，图片区域上下左右留白 */
 .about-honor-grid {
   display: grid;
-  grid-template-columns: repeat(4, 1fr);
-  gap: 1.2vw;
+  grid-template-columns: repeat(3, 1fr);
+  column-gap: 1.2vw;
+  row-gap: 1.5vw;
+  margin-top: 3vw;
+  margin-bottom: 0;
+  margin-left: 3.2vw;
+  margin-right: 3.2vw;
 }
 .about-honor-item {
   display: flex;
@@ -1146,8 +1157,9 @@ button:active {
     max-height: 35vw;
   }
   .about-honor-grid {
-    grid-template-columns: repeat(2, 1fr);
-    gap: 3vw;
+    grid-template-columns: repeat(3, 1fr);
+    column-gap: 1.5vw;
+    row-gap: 1.5vw;
   }
   .about-responsibility-subtitle {
     font-size: 3.8vw;
@@ -1181,6 +1193,11 @@ button:active {
   gap: 3vw;
   align-items: flex-start;
   box-sizing: border-box;
+}
+
+/* 科研平台：左侧导航与标题「科研平台」顶部对齐 */
+.research-content-section .page-sidebar {
+  margin-top: 0;
 }
 
 .research-anchor-nav {
@@ -1828,12 +1845,37 @@ button:active {
   margin-left: 2.37vw;
 }
 
+.video-poster-wrap {
+  position: relative;
+  width: 71.91vw;
+  margin: 6.02vw auto 0;
+}
+
+.video-poster-img {
+  width: 100%;
+  height: auto;
+  display: block;
+  vertical-align: top;
+}
+
+.video-poster-wrap .image_8 {
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  margin: 0;
+  aspect-ratio: unset;
+  object-fit: contain;
+  background: #000;
+}
+
 .image_8 {
   width: 71.91vw;
   height: auto;
   aspect-ratio: 16 / 9;
   margin: 6.02vw auto 0;
-  object-fit: cover;
+  object-fit: contain;
   background: #000;
 }
 
@@ -1880,7 +1922,7 @@ button:active {
   margin-top: 0.31vw;
 }
 
-/* 新闻动态 tab：全部、企业新闻、行业动态、通知公告 */
+/* 新闻动态 tab：全部、企业新闻、媒体报道、通知公告 */
 .news-tabs {
   display: flex;
   align-items: center;
@@ -2271,10 +2313,38 @@ button:active {
 
 /* 产品中心轮播：四张一屏、一直往右、2 秒一张、无限轮播 */
 .image-wrapper_2 {
+  position: relative;
   width: 88.07vw;
   height: 33.02vw;
   margin: 2.39vw auto 0;
   overflow: hidden;
+}
+
+/* 产品轮播左右箭头：与产业布局轮播同款 */
+.image-wrapper_2 .image_4-nav {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 2.5vw;
+  height: 2.5vw;
+  margin-top: 0;
+  color: #fff;
+  border-radius: 50%;
+  transition: background 0.2s;
+  z-index: 10;
+}
+.image-wrapper_2 .image_4-nav::after {
+  font-size: 1.2vw;
+  font-weight: bold;
+}
+.image-wrapper_2 .image_4-nav:hover {
+  background: rgba(226, 128, 0, 0.85);
+}
+.image-wrapper_2 .image_4-nav-prev {
+  left: 1vw;
+}
+.image-wrapper_2 .image_4-nav-next {
+  right: 1vw;
 }
 
 .image-wrapper_2.swiper .swiper-wrapper {
@@ -3003,8 +3073,7 @@ button:active {
 .breeding-mode-block_1 {
   width: 100vw;
   height: 270vw;
-  background: url(https://lanhu-oss-proxy.lanhuapp.com/9c0995827b3cc7beaae363bb73257b0d)
-    100% no-repeat;
+  background: #fff;
   background-size: 100% 100%;
 }
 
@@ -3030,8 +3099,7 @@ button:active {
 
 .breeding-mode-text-wrapper_1 {
   height: 1.04vw;
-  background: url(https://lanhu-oss-proxy.lanhuapp.com/35863b1ff33a29df2b711e70a0fa618f)
-    100% no-repeat;
+  background: #fff;
   background-size: 100% 100%;
   width: 1.27vw;
   position: absolute;
@@ -3055,8 +3123,7 @@ button:active {
 
 .breeding-mode-text-wrapper_2 {
   height: 1.04vw;
-  background: url(https://lanhu-oss-proxy.lanhuapp.com/6a067465b7f68023a26aef639c2bf9c1)
-    100% no-repeat;
+  background: #354785;
   background-size: 100% 100%;
   width: 1.29vw;
   position: absolute;
@@ -3080,8 +3147,6 @@ button:active {
 
 .breeding-mode-box_2 {
   height: 262.21vw;
-  background: url(https://lanhu-oss-proxy.lanhuapp.com/9dcd9d5c239fba9a22f965cd047c0dc4)
-    100% no-repeat;
   background-size: 100% 100%;
   width: 94.5vw;
   margin: 3.89vw 2.76vw 0 -97.25vw;
@@ -3091,16 +3156,12 @@ button:active {
   position: relative;
   width: 88.12vw;
   height: 255.81vw;
-  background: url(https://lanhu-oss-proxy.lanhuapp.com/067ae1f95de89e933ccab46791497fd5)
-    100% no-repeat;
   background-size: 100% 100%;
   margin: 3.2vw 0 0 3.18vw;
 }
 
 .breeding-mode-section_2 {
   height: 55.29vw;
-  background: url(https://lanhu-oss-proxy.lanhuapp.com/fedf0e2316d256be812bb6e5769bebb2)
-    100% no-repeat;
   background-size: 100% 100%;
   width: 96.38vw;
   margin: -0.28vw 0 0 -5.93vw;
@@ -3513,8 +3574,6 @@ button:active {
 .breeding-mode-section_6 {
   width: 88.12vw;
   height: 24.69vw;
-  background: url(https://lanhu-oss-proxy.lanhuapp.com/f885f691bce4961ae83af6a357cd0719)
-    100% no-repeat;
   background-size: 100% 100%;
   margin-top: 39.67vw;
 }
@@ -3625,8 +3684,6 @@ button:active {
 
 .breeding-mode-image-wrapper_5 {
   height: 1.39vw;
-  background: url(https://lanhu-oss-proxy.lanhuapp.com/9bc5cfcf56d8dcb33fc09ac8f6e390a3)
-    100% no-repeat;
   background-size: 100% 100%;
   width: 1.54vw;
 }
@@ -3704,8 +3761,6 @@ button:active {
 
 .breeding-mode-image-wrapper_6 {
   height: 2.31vw;
-  background: url(https://lanhu-oss-proxy.lanhuapp.com/f9cc7ddfd6ff671b5a9a5853225a93fd)
-    100% no-repeat;
   background-size: 100% 100%;
   width: 18.67vw;
   position: absolute;
@@ -3721,8 +3776,6 @@ button:active {
 
 .breeding-mode-section_7 {
   height: 36.83vw;
-  background: url(https://lanhu-oss-proxy.lanhuapp.com/8a726ab0e370f387d531dc2551768175)
-    100% no-repeat;
   background-size: 100% 100%;
   width: 100%;
   margin-top: -5vw;
@@ -3733,8 +3786,7 @@ button:active {
 .breeding-mode-block_6 {
   width: 31.68vw;
   height: 33.14vw;
-  background: url(https://lanhu-oss-proxy.lanhuapp.com/cb0c6b84b0ac412026c4dfceff6fb0a1)
-    100% no-repeat;
+  background: #fff;
   background-size: 100% 100%;
   margin: 1.84vw 0 0 1.86vw;
 }
@@ -3774,8 +3826,6 @@ button:active {
 
 .breeding-mode-section_8 {
   height: 36.83vw;
-  background: url(https://lanhu-oss-proxy.lanhuapp.com/1f117b4b1985357eb31a6e1619af4854)
-    100% no-repeat;
   background-size: 100% 100%;
   width: 100%;
   margin-top: -5vw;
@@ -3786,8 +3836,7 @@ button:active {
 .breeding-mode-group_3 {
   width: 31.68vw;
   height: 33.14vw;
-  background: url(https://lanhu-oss-proxy.lanhuapp.com/d7511a6436171dadbb9e6662ac1db28e)
-    100% no-repeat;
+  background: #fff;
   background-size: 100% 100%;
   margin: 1.84vw 0 0 1.84vw;
 }

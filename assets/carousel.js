@@ -1,7 +1,8 @@
 /**
  * 产业布局轮播：#industryImageSwiper 与 .cards-container 配套联动（仅首页）
- * 产品中心轮播：initProductCenterCarousel 仅针对 .product-center-swiper，一张一屏（仅产品页）
- * 新闻动态 tab：全部、企业新闻、行业动态、通知公告
+ * 首页产品中心轮播：initHomeProductCarousel 针对 #productImageSwiper，多张一屏、>3 张时自动轮播、一张一张、无限循环
+ * 产品中心页专用：initProductCenterCarousel 仅针对 .product-center-swiper，一张一屏（仅产品页）
+ * 新闻动态 tab：全部、企业新闻、媒体报道、通知公告
  * 关于/科研平台：锚点高亮 + page-sidebar 距顶 100px 固定、滚回取消固定
  */
 (function () {
@@ -115,6 +116,10 @@
       speed: 600,
       slidesPerView: 1,
       spaceBetween: 0,
+      navigation: {
+        nextEl: '.product-center-swiper .swiper-button-next',
+        prevEl: '.product-center-swiper .swiper-button-prev'
+      },
       autoplay: {
         delay: 2000,
         disableOnInteraction: false
@@ -258,8 +263,79 @@
     });
   }
 
+  /**
+   * 首页产品中心轮播：多张一屏（非一张一屏），仅当 >4 张时开启自动轮播，每次移动一张，无限循环
+   * 容器 #productImageSwiper（.image-wrapper_2），分页 #productPagination .product-pagination-dots
+   */
+  function initHomeProductCarousel() {
+    var el = document.getElementById('productImageSwiper');
+    if (!el || el.classList.contains('product-center-swiper')) return;
+
+    var paginationWrap = document.getElementById('productPagination');
+    var dotsContainer = paginationWrap ? paginationWrap.querySelector('.product-pagination-dots') : null;
+    var slides = el.querySelectorAll('.swiper-slide');
+    var total = slides ? slides.length : 0;
+    var enableAutoplay = total > 3;
+
+    if (dotsContainer) {
+      var existingDots = dotsContainer.querySelectorAll('.product-dot');
+      if (existingDots.length !== total) {
+        dotsContainer.innerHTML = '';
+        for (var i = 0; i < total; i++) {
+          var dot = document.createElement('span');
+          dot.className = 'product-dot' + (i === 0 ? ' active' : '');
+          dot.setAttribute('data-index', String(i));
+          dot.setAttribute('aria-hidden', 'true');
+          dotsContainer.appendChild(dot);
+        }
+      }
+    }
+
+    var swiper = new Swiper('#productImageSwiper', {
+      loop: true,
+      speed: 500,
+      slidesPerView: 'auto',
+      slidesPerGroup: 1,
+      spaceBetween: 0,
+      navigation: {
+        nextEl: '#productImageSwiper .swiper-button-next',
+        prevEl: '#productImageSwiper .swiper-button-prev'
+      },
+      autoplay: enableAutoplay
+        ? { delay: 2000, disableOnInteraction: false }
+        : false,
+      on: {
+        init: function () {
+          syncHomeProductDots(this.realIndex, total);
+        },
+        slideChangeTransitionEnd: function () {
+          syncHomeProductDots(this.realIndex, total);
+        }
+      }
+    });
+
+    function syncHomeProductDots(realIndex, count) {
+      if (!dotsContainer) return;
+      var dots = dotsContainer.querySelectorAll('.product-dot');
+      dots.forEach(function (dot, i) {
+        dot.classList.toggle('active', i === realIndex);
+      });
+    }
+
+    if (dotsContainer) {
+      var dots = dotsContainer.querySelectorAll('.product-dot');
+      dots.forEach(function (dot) {
+        dot.addEventListener('click', function () {
+          var index = parseInt(dot.getAttribute('data-index'), 10);
+          if (!isNaN(index)) swiper.slideToLoop(index);
+        });
+      });
+    }
+  }
+
   function init() {
     initIndustryCarousel();
+    initHomeProductCarousel();
     initProductCenterCarousel();
     initNewsSideSwipers();
     initNewsTabs();
