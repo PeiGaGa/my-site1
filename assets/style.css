@@ -520,6 +520,73 @@ button:active {
   margin: 0 0 0.8vw 0;
 }
 
+/* ========== 新闻详情页内容区移动端适配 ========== */
+@media (max-width: 900px) {
+  .news-detail-page {
+    padding-top: 58vw;
+  }
+
+  .news-detail-content {
+    width: 90vw;
+    max-width: 100%;
+    margin-left: auto;
+    margin-right: auto;
+    padding: 0 2vw 8vw;
+    box-sizing: border-box;
+  }
+
+  .news-detail-title {
+    font-size: clamp(18px, 5vw, 24px);
+    line-height: 1.4;
+    margin: 0 0 3vw 0;
+  }
+
+  .news-detail-meta {
+    font-size: clamp(12px, 3.2vw, 14px);
+    margin: 0 0 4vw 0;
+  }
+
+  .news-detail-hero-wrap {
+    margin-bottom: 4vw;
+  }
+
+  .news-detail-body {
+    gap: 3vw;
+  }
+
+  .news-detail-text {
+    font-size: clamp(14px, 3.8vw, 16px);
+    line-height: 1.8;
+  }
+
+  .news-detail-placeholder {
+    margin: 3vw 0;
+  }
+
+  .news-detail-heading-wrap {
+    gap: 2vw;
+    margin: 4vw 0 1vw 0;
+  }
+
+  .news-detail-heading-icon {
+    width: 6vw;
+    min-width: 24px;
+  }
+
+  .news-detail-heading {
+    font-size: clamp(16px, 4.2vw, 18px);
+  }
+
+  .news-detail-subheading {
+    font-size: clamp(14px, 3.5vw, 16px);
+    margin: 0 0 2vw 0;
+  }
+
+  .news-detail-placeholder-text {
+    font-size: clamp(11px, 2.8vw, 13px);
+  }
+}
+
 /* 产品中心轮播区域：固定高度避免塌陷，防止下方蓝色选项卡上移遮挡 */
 .product-swiper-wrap {
   width: 72.1vw;
