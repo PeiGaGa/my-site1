@@ -1545,6 +1545,72 @@ button:active {
   }
   .research-main-content {
     order: 2;
+    width: 100%;
+    min-width: 0;
+  }
+  .research-main-content .section_1 {
+    width: 100%;
+  }
+  .research-main-content .text_1 {
+    width: auto;
+    max-width: 100%;
+    font-size: clamp(14px, 4.5vw, 18px);
+    line-height: 1.4;
+    white-space: normal;
+    overflow-wrap: break-word;
+    word-break: break-word;
+  }
+  .research-main-content .about-title-decor {
+    margin-bottom: 3vw;
+  }
+  .research-platform-list {
+    width: 100%;
+    margin-top: 2vw;
+  }
+  .research-platform-list > .research-platform-divider:first-child {
+    margin-top: 3vw;
+  }
+  .research-platform-item {
+    width: 100%;
+    min-width: 0;
+    margin-top: 4vw;
+  }
+  .research-platform-item:first-child {
+    margin-top: 0;
+  }
+  .research-platform-item-img {
+    width: 100%;
+    max-width: 100%;
+    height: auto;
+    max-height: none;
+    min-height: 40vw;
+    object-fit: cover;
+    margin-bottom: 3vw;
+  }
+  .research-platform-item-title {
+    font-size: clamp(14px, 3.8vw, 18px);
+    line-height: 1.45;
+    white-space: normal;
+    overflow-wrap: break-word;
+    word-break: break-word;
+    padding-bottom: 1vw;
+  }
+  .research-platform-item-title::after {
+    margin-top: 2vw;
+    min-width: 8vw;
+    height: 0.3vw;
+  }
+  .research-platform-item-text {
+    font-size: clamp(13px, 3.2vw, 16px);
+    line-height: 1.65;
+    margin: 2vw 0 0 0;
+    white-space: normal;
+    overflow-wrap: break-word;
+    word-break: break-word;
+    text-align: justify;
+  }
+  .research-platform-divider {
+    margin: 4vw 0 0 0;
   }
   .research-content-block {
     margin-top: 5vw;
