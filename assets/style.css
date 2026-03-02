@@ -2974,6 +2974,11 @@ button:active {
   opacity: 0.7;
 }
 
+.nav-link.active {
+  border-bottom: 2px solid rgba(255, 255, 255, 1);
+  padding-bottom: 2px;
+}
+
 .image_40 {
   width: 2.21vw;
   height: 1.46vw;
@@ -3872,6 +3877,7 @@ button:active {
   background: #fff;
   background-size: 100% 100%;
   margin: 1.84vw 0 0 1.86vw;
+  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.08);
 }
 
 .breeding-mode-text_15 {
@@ -3922,6 +3928,7 @@ button:active {
   background: #fff;
   background-size: 100% 100%;
   margin: 1.84vw 0 0 1.84vw;
+  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.08);
 }
 
 .breeding-mode-text_16 {
@@ -4055,46 +4062,112 @@ button:active {
 }
 
 @media (max-width: 900px) {
+  /* ========== 联系我们页内容区移动端适配 ========== */
   .contact-content-section {
-    padding: 5vw 5vw 4vw;
+    width: 90vw;
+    max-width: 100%;
+    margin-left: auto;
+    margin-right: auto;
+    padding: 0 2vw 8vw;
+    box-sizing: border-box;
   }
+
+  .contact-page-header {
+    width: 100%;
+    margin-bottom: 2vw;
+    flex-wrap: wrap;
+    gap: 2vw;
+  }
+
+  .contact-page-title {
+    font-size: clamp(18px, 5vw, 22px);
+    line-height: 1.35;
+  }
+
+  .contact-page-header .color-blocks {
+    gap: 1.5vw;
+  }
+
+  .contact-page-header .color-block {
+    width: 4vw;
+    height: 4vw;
+    min-width: 14px;
+    min-height: 14px;
+  }
+
+  .contact-title-decor {
+    width: 50vw;
+    max-width: 200px;
+    height: 3px;
+    margin-bottom: 5vw;
+  }
+
   .contact-company-block {
     flex-direction: column;
     min-height: auto;
+    margin-bottom: 6vw;
+    gap: 0;
   }
+
+  .contact-company-block:last-child {
+    margin-bottom: 0;
+  }
+
   .contact-info-panel {
     flex: none;
     width: 100%;
     min-width: 0;
-    padding: 5vw;
+    padding: 4vw 4.5vw;
+    box-sizing: border-box;
   }
+
   .contact-company-name {
-    font-size: 4.2vw;
+    font-size: clamp(15px, 4vw, 18px);
+    line-height: 1.4;
+    margin: 0 0 1.5vw 0;
+    word-wrap: break-word;
+    overflow-wrap: break-word;
   }
+
   .contact-company-underline {
-    max-width: 40%;
+    width: 20%;
+    max-width: 80px;
+    height: 2px;
+    margin: 0 0 2.5vw 0;
   }
+
   .contact-address,
   .contact-address-sub,
   .contact-phone {
-    font-size: 3.2vw;
+    font-size: clamp(13px, 3.2vw, 15px);
+    line-height: 1.6;
+    margin: 0;
+    word-wrap: break-word;
+    overflow-wrap: break-word;
   }
+
   .contact-address-sub {
-    font-size: 2.8vw;
+    font-size: clamp(12px, 2.9vw, 14px);
+    margin-top: 0.5vw;
   }
+
+  .contact-phone {
+    margin-top: 2vw;
+  }
+
   .contact-map-wrap {
     flex: none;
     width: 100%;
-    min-height: 50vw;
+    min-height: 45vw;
+    border-radius: 6px;
+    overflow: hidden;
   }
+
   .contact-map-img {
-    min-height: 50vw;
-  }
-  .contact-page-title {
-    font-size: 5vw;
-  }
-  .contact-title-decor {
-    margin-bottom: 5vw;
+    width: 100%;
+    height: auto;
+    min-height: 45vw;
+    object-fit: cover;
   }
 }
 
@@ -4191,6 +4264,12 @@ button:active {
   color: rgba(226, 128, 0, 1);
 }
 
+.nav-drawer-link.active {
+  color: rgba(226, 128, 0, 1);
+  border-bottom-color: rgba(226, 128, 0, 0.6);
+  box-shadow: inset 0 -2px 0 rgba(226, 128, 0, 0.8);
+}
+
 .nav-drawer-lang {
   display: flex;
   align-items: center;
@@ -4243,6 +4322,7 @@ button:active {
 
   .top-toolbar {
     margin: 3vw 0 0 5vw;
+    margin-top: 20px !important;
   }
 
   .lang-switch-btns {
