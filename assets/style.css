@@ -1153,13 +1153,30 @@ button:active {
     height: 4vw;
     min-height: 12px;
   }
+  .about-intro-images {
+    flex-direction: column;
+    align-items: center;
+    gap: 3vw;
+  }
   .about-intro-img {
-    max-height: 35vw;
+    max-width: 100%;
+    max-height: none;
+    width: 100%;
+    flex: none;
   }
   .about-honor-grid {
-    grid-template-columns: repeat(3, 1fr);
-    column-gap: 1.5vw;
-    row-gap: 1.5vw;
+    grid-template-columns: repeat(2, 1fr);
+    column-gap: 2.5vw;
+    row-gap: 2.5vw;
+    margin-left: 0;
+    margin-right: 0;
+  }
+  .about-honor-item {
+    aspect-ratio: auto;
+  }
+  .about-honor-img {
+    width: 100%;
+    height: auto;
   }
   .about-responsibility-subtitle {
     font-size: 3.8vw;
