@@ -4909,6 +4909,152 @@ button:active {
     display: block;
   }
 
+  /* ========== 新闻动态页内容区移动端适配 ========== */
+  .news-content {
+    width: 90vw;
+    max-width: 100%;
+    margin-left: auto;
+    margin-right: auto;
+    padding: 0 2vw 8vw;
+    box-sizing: border-box;
+  }
+
+  .news-content .news-section {
+    margin-top: 7vw;
+  }
+
+  .news-content .news-section:first-child {
+    margin-top: 0;
+  }
+
+  .news-content .section_1 {
+    width: 100%;
+    margin-top: 0;
+    flex-wrap: wrap;
+    gap: 2vw;
+  }
+
+  .news-content .section_1 .text_1 {
+    font-size: clamp(18px, 5vw, 22px);
+    line-height: 1.35;
+  }
+
+  .news-content .section_1 .color-blocks {
+    gap: 1.5vw;
+  }
+
+  .news-content .section_1 .color-block {
+    width: 4vw;
+    height: 4vw;
+    min-width: 14px;
+    min-height: 14px;
+  }
+
+  .news-content .image_3.news-title-line {
+    width: 50vw;
+    max-width: 200px;
+    height: 3px;
+    margin-top: 2.5vw;
+  }
+
+  .news-content .news-section-block {
+    margin-top: 6vw;
+  }
+
+  .news-content .news-section-title {
+    font-size: clamp(16px, 4.2vw, 20px);
+    margin: 0 0 3vw 0;
+    line-height: 1.4;
+  }
+
+  /* 新闻行：移动端改为上下布局（主推文在上，侧边列表在下） */
+  .news-content .news-row {
+    flex-direction: column;
+    gap: 5vw;
+  }
+
+  .news-content .news-main {
+    width: 100%;
+  }
+
+  .news-content .news-main-image-wrap {
+    margin-bottom: 2vw;
+    overflow: hidden;
+  }
+
+  .news-content .news-main-date {
+    font-size: clamp(12px, 3vw, 14px);
+    margin-bottom: 1.5vw;
+  }
+
+  .news-content .news-main-title {
+    font-size: clamp(15px, 4vw, 18px);
+    line-height: 1.5;
+    margin: 0 0 2vw 0;
+  }
+
+  .news-content .news-main-excerpt {
+    font-size: clamp(13px, 3.2vw, 14px);
+    line-height: 1.65;
+    margin: 0 0 2vw 0;
+  }
+
+  .news-content .news-read-more {
+    font-size: clamp(14px, 3.5vw, 16px);
+  }
+
+  .news-content .news-side {
+    width: 100%;
+  }
+
+  .news-content .news-side-swiper {
+    min-height: auto;
+  }
+
+  .news-content .news-side-list {
+    border-bottom: none;
+  }
+
+  .news-content .news-side-item {
+    padding: 3vw 0;
+    border-bottom: 1px dashed rgba(220, 220, 220, 0.5);
+    gap: 0.8vw;
+  }
+
+  .news-content .news-side-item:first-child {
+    padding-top: 0;
+  }
+
+  .news-content .news-side-date {
+    font-size: clamp(11px, 2.8vw, 13px);
+  }
+
+  .news-content .news-side-title {
+    font-size: clamp(13px, 3.2vw, 15px);
+    line-height: 1.5;
+  }
+
+  .news-content .news-side-pagination {
+    margin-top: 4vw;
+    flex-wrap: wrap;
+    gap: 2vw;
+  }
+
+  .news-content .news-side-pagination .product-dots {
+    gap: 2vw;
+  }
+
+  .news-content .news-side-pagination .product-dot {
+    width: 2.5vw;
+    height: 2.5vw;
+    min-width: 10px;
+    min-height: 10px;
+  }
+
+  .news-content .news-side-pagination .product-dot-numbers {
+    font-size: clamp(12px, 3vw, 14px);
+  }
+
   /* ========== 养殖模式页内容移动端 ========== */
   .breeding-mode-title-wrap {
     width: 90vw;
