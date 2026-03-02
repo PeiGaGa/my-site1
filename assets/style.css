@@ -4182,3 +4182,421 @@ button:active {
   }
 }
 
+/* ========== 首页 section_9 以下内容移动端适配 ========== */
+@media (max-width: 900px) {
+
+  .group_1 {
+    box-shadow: none;
+    padding-bottom: 5vw;
+  }
+
+  /* 产业布局标题行 */
+  .section_1 {
+    width: 80vw;
+    height: auto;
+    margin: 4vw auto 0;
+  }
+
+  .text_1 {
+    width: auto;
+    height: auto;
+    font-size: 5vw;
+    line-height: 1.4;
+  }
+
+  .color-blocks {
+    gap: 1.2vw;
+  }
+
+  .color-block {
+    width: 3.5vw;
+    height: 3.5vw;
+  }
+
+  /* 副标题 */
+  .paragraph_1 {
+    width: auto;
+    height: auto;
+    font-size: 3.2vw;
+    line-height: 1.6;
+    margin: 3vw 0 0 4vw;
+  }
+
+  /* 装饰线 */
+  .image_3 {
+    width: 40vw;
+    height: 0.6vw;
+    margin: 2.5vw 0 0 4vw;
+  }
+
+  /* 产业布局轮播 */
+  .image_4-swiper {
+    width: 80vw;
+    margin: 3vw auto 0;
+  }
+
+  .image_4-swiper .image_4 {
+    height: 55vw;
+  }
+
+  .image_4-swiper .image_4-nav {
+    width: 7vw;
+    height: 7vw;
+  }
+
+  .image_4-swiper .image_4-nav::after {
+    font-size: 3vw;
+  }
+
+  .image_4 {
+    width: 80vw;
+    height: 55vw;
+    margin: 3vw auto 0;
+  }
+
+  /* 三个卡片 -> 纵向排列 */
+  .cards-container {
+    width: 80vw;
+    flex-direction: column;
+    gap: 0;
+    margin: 4vw auto 0;
+  }
+
+  .card {
+    padding: 3vw 0;
+  }
+
+  .card-title {
+    font-size: 3.8vw;
+    margin-bottom: 1.5vw;
+  }
+
+  .card-desc {
+    font-size: 3vw;
+    line-height: 1.6;
+    margin-bottom: 2vw;
+  }
+
+  .card-link {
+    font-size: 3.5vw;
+  }
+
+  /* 视频区域 */
+  .video-poster-wrap {
+    width: 80vw;
+    margin: 6vw auto 0;
+  }
+
+  .image_8 {
+    width: 80vw;
+    margin: 6vw auto 0;
+  }
+
+  /* 新闻动态标题 */
+  .text_11 {
+    width: auto;
+    height: auto;
+    font-size: 5vw;
+    line-height: 1.4;
+    margin: 8vw 0 0 4vw;
+  }
+
+  /* 新闻动态副标题 + tabs */
+  .section_2 {
+    width: 80vw;
+    height: auto;
+    margin: 2vw 0 0 4vw;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 2vw;
+  }
+
+  .text_12 {
+    width: auto;
+    height: auto;
+    font-size: 3.2vw;
+    line-height: 1.5;
+    white-space: normal;
+  }
+
+  .news-tabs {
+    margin: 0;
+    gap: 1.5vw;
+    flex-wrap: wrap;
+  }
+
+  .news-tab {
+    padding: 1vw 2.5vw;
+    font-size: 3vw;
+  }
+
+  /* 新闻装饰线 */
+  .image_10 {
+    width: 40vw;
+    height: 0.6vw;
+    margin: 2vw 0 0 4vw;
+  }
+
+  /* 新闻卡片 grid -> 单列 */
+  .section_3 {
+    grid-template-columns: 1fr;
+    gap: 4vw;
+    width: 80vw;
+    margin: 3vw auto 0;
+  }
+
+  #newsSection .news-card {
+    box-shadow: 0 1vw 3vw rgba(0, 0, 0, 0.08);
+  }
+
+  .image_11,
+  .image_14,
+  .image_17 {
+    width: 100%;
+    height: auto;
+    aspect-ratio: 3 / 2;
+    object-fit: cover;
+  }
+
+  .text_14,
+  .text_18,
+  .text_22 {
+    width: auto;
+    height: auto;
+    font-size: 2.8vw;
+    line-height: 1.5;
+    margin: 3vw 0 0 4vw;
+    white-space: normal;
+  }
+
+  .text_15,
+  .text_19,
+  .text_23 {
+    width: auto;
+    height: auto;
+    font-size: 3.5vw;
+    line-height: 1.5;
+    margin: 2vw 0 0 4vw;
+    padding-right: 4vw;
+  }
+
+  .text_16,
+  .text_20,
+  .text_24 {
+    width: auto;
+    height: auto;
+    font-size: 3vw;
+    line-height: 1.6;
+    margin: 2vw 0 0 4vw;
+    padding-right: 4vw;
+  }
+
+  .group_2,
+  .block_1,
+  .box_8 {
+    width: auto;
+    height: auto;
+    margin: 3vw 4vw 3vw auto;
+  }
+
+  .text_17,
+  .text_21,
+  .text_25 {
+    width: auto;
+    height: auto;
+    font-size: 3vw;
+    line-height: 1.5;
+  }
+
+  /* 查看更多新闻 */
+  .section_5 {
+    margin: 4vw auto 0;
+  }
+
+  .text_26 {
+    font-size: 3.2vw;
+    padding: 2vw 5vw;
+    line-height: 1.5;
+  }
+
+  /* 产品中心标题 */
+  .text_27 {
+    width: auto;
+    height: auto;
+    font-size: 5vw;
+    line-height: 1.4;
+    margin: 8vw 0 0 4vw;
+  }
+
+  /* 产品中心副标题行 */
+  .section_6 {
+    width: 80vw;
+    height: auto;
+    margin: 2vw 0 0 4vw;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 2vw;
+  }
+
+  .text_28 {
+    width: auto;
+    height: auto;
+    font-size: 3vw;
+    line-height: 1.5;
+    white-space: normal;
+  }
+
+  /* 产品中心装饰线 */
+  .image_23 {
+    width: 40vw;
+    height: 0.6vw;
+    margin: 2vw 0 0 4vw;
+  }
+
+  /* 产品中心轮播 */
+  .image-wrapper_2 {
+    width: 88vw;
+    height: 60vw;
+    margin: 4vw auto 0;
+  }
+
+  .image-wrapper_2.swiper .swiper-slide {
+    width: 45vw;
+    height: 60vw;
+  }
+
+  .image-wrapper_2 .image_4-nav {
+    width: 7vw;
+    height: 7vw;
+  }
+
+  .image-wrapper_2 .image_4-nav::after {
+    font-size: 3vw;
+  }
+
+  /* 产品轮播分页 */
+  .section_7 {
+    margin: 3vw auto 0;
+  }
+
+  .product-dot {
+    width: 2vw;
+    height: 2vw;
+  }
+
+  .product-dot.active {
+    width: 2.5vw;
+    height: 2.5vw;
+  }
+
+  .product-pagination-dots {
+    gap: 1.5vw;
+  }
+
+  /* footer */
+  .section_8 {
+    width: 88.1vw;
+    height: auto;
+    margin-top: 8vw;
+    padding: 6vw 4vw;
+    box-sizing: border-box;
+  }
+
+  .group_3 {
+    flex-direction: column;
+    gap: 5vw;
+    margin: 0;
+  }
+
+  .box_9 {
+    width: auto;
+    height: auto;
+  }
+
+  .footer-logo-link {
+    width: 25vw;
+  }
+
+  .footer-logo {
+    width: 25vw;
+    transform: scale(1.2);
+  }
+
+  .paragraph_2,
+  .paragraph_3,
+  .paragraph_4 {
+    width: auto;
+    height: auto;
+    font-size: 3.2vw;
+    line-height: 2;
+    margin: 0;
+    white-space: normal;
+  }
+
+  .box_10 {
+    width: auto;
+    height: auto;
+    margin: 0;
+  }
+
+  .text_31 {
+    width: auto;
+    height: auto;
+    font-size: 3.5vw;
+    line-height: 1.4;
+  }
+
+  .group_4 {
+    gap: 3vw;
+    margin: 2vw 0 0 0;
+  }
+
+  .group_4 .social-icon {
+    width: 8vw;
+    height: 8vw;
+  }
+
+  .group_4 .social-popup img {
+    width: 30vw;
+    max-height: 40vw;
+  }
+
+  .group_5 {
+    flex-direction: column;
+    align-items: center;
+    gap: 2vw;
+    margin: 4vw 0 0 0;
+    padding: 4vw 4vw 2vw;
+  }
+
+  .group_5::before {
+    left: 4vw;
+    right: 4vw;
+  }
+
+  .group_5 .footer-copyright {
+    font-size: 2.8vw;
+    text-align: center;
+  }
+
+  .group_5 .footer-icp {
+    font-size: 2.5vw;
+  }
+
+  .group_5 .footer-beian-wrap {
+    flex-direction: column;
+    gap: 0.5em;
+    text-align: center;
+  }
+
+  /* box_1, box_2 容器 */
+  .box_1 {
+    width: 100%;
+  }
+
+  .box_2 {
+    margin: 0 auto;
+  }
+
+}
+
