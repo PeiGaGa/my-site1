@@ -294,9 +294,14 @@
     var swiper = new Swiper('#productImageSwiper', {
       loop: true,
       speed: 500,
-      slidesPerView: 'auto',
+      slidesPerView: 1,
       slidesPerGroup: 1,
       spaceBetween: 0,
+      breakpoints: {
+        901: {
+          slidesPerView: 'auto'
+        }
+      },
       navigation: {
         nextEl: '#productImageSwiper .swiper-button-next',
         prevEl: '#productImageSwiper .swiper-button-prev'

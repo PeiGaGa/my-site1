@@ -4453,16 +4453,21 @@ button:active {
     margin: 2vw 0 0 4vw;
   }
 
-  /* 产品中心轮播 */
+  /* 产品中心轮播：一张一屏 */
   .image-wrapper_2 {
-    width: 88vw;
-    height: 60vw;
+    width: 80vw;
+    height: auto;
     margin: 4vw auto 0;
   }
 
   .image-wrapper_2.swiper .swiper-slide {
-    width: 45vw;
-    height: 60vw;
+    width: 100% !important;
+    height: auto;
+  }
+
+  .image-wrapper_2 .image_24 {
+    height: auto;
+    aspect-ratio: 2 / 3;
   }
 
   .image-wrapper_2 .image_4-nav {
