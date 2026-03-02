@@ -4620,5 +4620,179 @@ button:active {
     margin: 0 auto;
   }
 
+  /* ========== 养殖模式页内容移动端 ========== */
+  .breeding-mode-title-wrap {
+    width: 90vw;
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 4vw;
+  }
+
+  .breeding-mode-title-wrap .section_1 {
+    width: 100%;
+    flex-wrap: wrap;
+  }
+
+  .breeding-mode-title-wrap .text_1 {
+    width: auto;
+    max-width: 100%;
+    height: auto;
+    font-size: clamp(14px, 4.5vw, 18px);
+    line-height: 1.4;
+    white-space: normal;
+    overflow-wrap: break-word;
+    word-break: break-word;
+  }
+
+  .breeding-mode-title-wrap .image_3 {
+    width: 50vw;
+    margin-top: 2vw;
+  }
+
+  .breeding-mode-title-img-wrap {
+    width: 90vw;
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 3vw;
+  }
+
+  .breeding-mode-section_4 {
+    flex-direction: column;
+    width: 90vw;
+    margin: 4vw auto 0;
+    height: auto;
+    align-items: stretch;
+  }
+
+  .breeding-mode-section_4 .breeding-mode-image_13 {
+    width: 100%;
+    height: auto;
+    min-height: 45vw;
+    object-fit: cover;
+  }
+
+  .breeding-mode-section_4 .breeding-mode-group_1 {
+    width: 100%;
+    min-width: 0;
+    height: auto;
+    margin-top: 3vw;
+  }
+
+  .breeding-mode-section_4 .breeding-mode-text_10 {
+    width: 100%;
+    max-width: 100%;
+    height: auto;
+    font-size: clamp(14px, 3.8vw, 18px);
+    line-height: 1.5;
+    white-space: normal;
+    margin-left: 0;
+    overflow-wrap: break-word;
+    word-break: break-word;
+  }
+
+  .breeding-mode-section_4 .breeding-mode-paragraph_4 {
+    width: 100%;
+    max-width: 100%;
+    height: auto;
+    font-size: clamp(13px, 3.2vw, 16px);
+    line-height: 1.65;
+    margin: 2vw 0 0 0;
+    white-space: normal;
+    overflow-wrap: break-word;
+    word-break: break-word;
+    text-align: justify;
+  }
+
+  .breeding-mode-section_4 .breeding-mode-title-line {
+    margin-top: 2vw;
+  }
+
+  .breeding-mode-dashed-line {
+    width: 90vw;
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 5vw;
+  }
+
+  .breeding-mode-cards-row {
+    flex-direction: column;
+    width: 90vw;
+    margin: 4vw auto 5vw;
+    gap: 5vw;
+    align-items: stretch;
+  }
+
+  .breeding-mode-card {
+    width: 100%;
+    min-width: 0;
+    max-width: none;
+    position: relative;
+  }
+
+  .breeding-mode-image_19,
+  .breeding-mode-image_20 {
+    width: 100%;
+    height: auto;
+    min-height: 50vw;
+    object-fit: cover;
+    display: block;
+  }
+
+  /* 与 PC 一致：文字区域负 margin 上移，与图片部分重叠 */
+  .breeding-mode-section_7,
+  .breeding-mode-section_8 {
+    width: 100%;
+    min-width: 0;
+    height: auto;
+    margin-top: -10vw;
+    padding: 0;
+    position: relative;
+    z-index: 1;
+  }
+
+  .breeding-mode-block_6,
+  .breeding-mode-group_3 {
+    width: calc(100% - 8vw);
+    max-width: 100%;
+    min-width: 0;
+    height: auto;
+    margin: 2vw 4vw 0 4vw;
+    padding: 3vw 4vw 4vw;
+    box-sizing: border-box;
+    background: #fff;
+  }
+
+  .breeding-mode-block_6 .breeding-mode-title-line,
+  .breeding-mode-group_3 .breeding-mode-title-line {
+    margin: 2vw 0 0 0;
+  }
+
+  .breeding-mode-text_15,
+  .breeding-mode-text_16 {
+    width: auto;
+    max-width: 100%;
+    height: auto;
+    font-size: clamp(14px, 3.8vw, 18px);
+    line-height: 1.4;
+    white-space: normal;
+    margin: 0;
+    overflow-wrap: break-word;
+    word-break: break-word;
+  }
+
+  .breeding-mode-paragraph_8,
+  .breeding-mode-paragraph_9 {
+    width: 100%;
+    max-width: 100%;
+    height: auto;
+    font-size: clamp(13px, 3.2vw, 16px);
+    line-height: 1.65;
+    margin: 2vw 0 0 0;
+    white-space: normal;
+    overflow-wrap: break-word;
+    word-break: break-word;
+    text-align: justify;
+  }
+
 }
 
