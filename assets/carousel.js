@@ -39,16 +39,29 @@
     });
 
     if (nav && sidebarWrap) {
+      var footerEl = document.querySelector('.section_8');
+      var topOffsetVw = 5.2;
+      function px(vw) { return (window.innerWidth * vw) / 100; }
       function updateNavFixed() {
         var wrapRect = sidebarWrap.getBoundingClientRect();
         if (wrapRect.top <= fixThreshold) {
           nav.classList.add('is-fixed');
           nav.style.left = wrapRect.left + 'px';
           nav.style.width = wrapRect.width + 'px';
+          var topOffsetPx = px(topOffsetVw);
+          var maxH = window.innerHeight - topOffsetPx - 16;
+          if (footerEl) {
+            var fr = footerEl.getBoundingClientRect();
+            if (fr.top < window.innerHeight) {
+              maxH = Math.min(maxH, Math.max(0, fr.top - topOffsetPx - 12));
+            }
+          }
+          nav.style.maxHeight = maxH + 'px';
         } else {
           nav.classList.remove('is-fixed');
           nav.style.left = '';
           nav.style.width = '';
+          nav.style.maxHeight = '';
         }
       }
       window.addEventListener('scroll', updateNavFixed, { passive: true });
@@ -81,9 +94,18 @@
     }
 
     function filterByCategory(category) {
+      var totalShown = 0;
+      var categoryCount = {};
       cards.forEach(function (card) {
         var cardCategory = card.getAttribute('data-news-category');
-        var show = category === '全部' || cardCategory === category;
+        var show = false;
+        if (category === '全部') {
+          totalShown++;
+          show = totalShown <= 3;
+        } else if (cardCategory === category) {
+          categoryCount[category] = (categoryCount[category] || 0) + 1;
+          show = categoryCount[category] <= 3;
+        }
         card.style.display = show ? '' : 'none';
       });
     }

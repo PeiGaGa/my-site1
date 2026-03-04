@@ -92,7 +92,7 @@ button:active {
 
 .card {
   flex: 1;
-  padding: 1.5vw 0;
+  padding: 1.5vw 0 0.2vw;
   border-bottom: 1px dashed rgba(200, 200, 200, 0.3);
 }
 
@@ -113,14 +113,27 @@ button:active {
   color: rgba(111, 111, 111, 1);
 }
 
+.card-desc-link-wrap {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: flex-end;
+}
+
 .card-desc {
+  flex: 1 1 auto;
+  min-width: 0;
+  text-align: justify;
   font-size: 0.71vw;
   font-family: HarmonyOS_Sans_SC_Thin;
   font-weight: 100;
   color: rgba(219, 219, 219, 1);
   line-height: 1.35vw;
   text-align: justify;
-  margin-bottom: 1vw;
+  display: -webkit-box;
+  -webkit-line-clamp: 3;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+  text-overflow: ellipsis;
 }
 
 .card-active .card-desc {
@@ -128,10 +141,11 @@ button:active {
 }
 
 .card-link {
+  flex-shrink: 0;
+  margin-left: auto;
   font-size: 0.95vw;
   font-family: zihun57hao-chuangxihei-Regular;
   color: rgba(219, 219, 219, 1);
-  align-self: flex-end;
   cursor: pointer;
 }
 
@@ -620,6 +634,14 @@ button:active {
   display: block;
 }
 
+/* 产品中心页轮播：删除选项卡后放大图片（仅产品页，不影响首页产业轮播） */
+.products-content .product-center-swiper {
+  height: 48vw;
+}
+.products-content .product-center-swiper .image_4 {
+  height: 48vw;
+}
+
 /* 产品轮播圆点 + 数字 01-05 */
 /* 产品轮播分页：同一行，居中，只显示选中及左右两项 */
 .product-pagination {
@@ -639,6 +661,12 @@ button:active {
   right: 0;
   margin-top: 0;
   z-index: 10;
+}
+
+/* 产品中心页：分页放在图片下方，不叠加在图片上 */
+.products-content .product-swiper-wrap .product-pagination {
+  position: static;
+  margin-top: 1.5vw;
 }
 
 .product-dots {
@@ -896,6 +924,8 @@ button:active {
   position: fixed;
   top: 5.2vw;
   z-index: 10;
+  max-height: calc(100vh - 5.2vw - 2rem);
+  overflow-y: auto;
 }
 
 /* 每一行三块（如图）：① 最左空浅灰块 | ② 中间深蓝竖条 | ③ 右侧文字浅灰区 */
@@ -1300,6 +1330,8 @@ button:active {
   position: fixed;
   top: 5.2vw;
   z-index: 10;
+  max-height: calc(100vh - 5.2vw - 2rem);
+  overflow-y: auto;
 }
 
 .research-anchor-link {
@@ -2136,6 +2168,11 @@ button:active {
   flex-direction: column;
 }
 
+#newsSection .news-card-link {
+  text-decoration: none;
+  color: inherit;
+}
+
 #newsSection .news-card-img {
   width: 23.56vw;
   height: 15.69vw;
@@ -2174,7 +2211,6 @@ button:active {
 
 #newsSection .news-card-desc {
   width: 18.7vw;
-  height: 1.73vw;
   overflow-wrap: break-word;
   margin: 1.19vw 0 0 2.43vw;
   padding: 0;
@@ -2185,6 +2221,11 @@ button:active {
   font-weight: 100;
   text-align: justifyLeft;
   line-height: 1.12vw;
+  display: -webkit-box;
+  -webkit-line-clamp: 3;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+  text-overflow: ellipsis;
 }
 
 #newsSection .news-card-footer {
@@ -2699,6 +2740,8 @@ button:active {
   height: 24.69vw;
   background: #1e2532;
   margin-top: 4.78vw;
+  position: relative;
+  z-index: 20;
 }
 
 .group_3 {
@@ -4578,10 +4621,18 @@ button:active {
     margin-bottom: 1.5vw;
   }
 
+  .card-desc-link-wrap {
+    margin-top: 0.5vw;
+  }
+
   .card-desc {
     font-size: 3vw;
     line-height: 1.6;
-    margin-bottom: 2vw;
+    display: -webkit-box;
+    -webkit-line-clamp: 3;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+    text-overflow: ellipsis;
   }
 
   .card-link {
@@ -4687,6 +4738,11 @@ button:active {
     line-height: 1.6;
     margin: 2vw 0 0 4vw;
     padding-right: 4vw;
+    display: -webkit-box;
+    -webkit-line-clamp: 3;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+    text-overflow: ellipsis;
   }
 
   #newsSection .news-card-footer {
@@ -5031,13 +5087,13 @@ button:active {
   }
 
   .products-content .product-center-swiper {
-    height: 52vw;
-    min-height: 200px;
+    height: 68vw;
+    min-height: 260px;
   }
 
   .products-content .product-center-swiper .image_4 {
-    height: 52vw;
-    min-height: 200px;
+    height: 68vw;
+    min-height: 260px;
     object-fit: cover;
   }
 
@@ -5053,9 +5109,8 @@ button:active {
   }
 
   .products-content .product-pagination {
-    bottom: 2vw;
-    left: 0;
-    right: 0;
+    position: static;
+    margin-top: 2vw;
   }
 
   .products-content .product-dots {
