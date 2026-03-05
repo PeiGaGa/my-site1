@@ -630,7 +630,7 @@ button:active {
   width: 100%;
   height: 34vw;
   margin: 0;
-  object-fit: cover;
+  object-fit: contain;
   display: block;
 }
 
@@ -640,6 +640,7 @@ button:active {
 }
 .products-content .product-center-swiper .image_4 {
   height: 48vw;
+  object-fit: contain;
 }
 
 /* 产品轮播圆点 + 数字 01-05 */
@@ -1337,6 +1338,7 @@ button:active {
 .research-anchor-link {
   display: flex;
   align-items: stretch;
+  min-width: 0;
   padding: 0;
   font-size: 0.95vw;
   font-family: HarmonyOS_Sans_SC, Microsoft YaHei, sans-serif;
@@ -1613,6 +1615,8 @@ button:active {
   }
   .research-anchor-link {
     width: 100%;
+    min-width: 0;
+    overflow: hidden;
     box-sizing: border-box;
     font-size: 3.2vw;
     margin-top: 0;
@@ -1625,15 +1629,14 @@ button:active {
     display: none;
   }
   .research-anchor-link .research-anchor-text {
-    display: flex;
-    align-items: center;
-    justify-content: flex-start;
+    display: block;
+    width: 100%;
     padding: 2.5vw 4vw;
     white-space: nowrap;
     overflow: hidden;
     text-overflow: ellipsis;
     text-align: left;
-    flex: 1;
+    box-sizing: border-box;
   }
   .research-anchor-link:first-child .research-anchor-text {
     padding-top: 2.5vw;
@@ -5094,7 +5097,7 @@ button:active {
   .products-content .product-center-swiper .image_4 {
     height: 68vw;
     min-height: 260px;
-    object-fit: cover;
+    object-fit: contain;
   }
 
   .products-content .product-swiper-wrap .image_4-nav {
