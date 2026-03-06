@@ -2196,10 +2196,11 @@ button:active {
   position: relative;
   width: 71.91vw;
   margin: 6.02vw auto 0;
+  overflow: hidden;
 }
 
 .video-poster-img {
-  width: 100%;
+  width: 99.5%;
   height: auto;
   display: block;
   vertical-align: top;
@@ -2213,8 +2214,11 @@ button:active {
   height: 100%;
   margin: 0;
   aspect-ratio: unset;
-  object-fit: contain;
-  background: #000;
+  object-fit: cover;
+  background: #fff;
+  display: block;
+  border: none;
+  outline: none;
 }
 
 .image_8 {
@@ -2222,8 +2226,11 @@ button:active {
   height: auto;
   aspect-ratio: 16 / 9;
   margin: 6.02vw auto 0;
-  object-fit: contain;
-  background: #000;
+  object-fit: cover;
+  background: #fff;
+  display: block;
+  border: none;
+  outline: none;
 }
 
 .image_8-below {
