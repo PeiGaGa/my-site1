@@ -338,8 +338,9 @@ button:active {
   min-width: 0;
   text-align: justify;
   font-size: 0.71vw;
-  font-family: HarmonyOS_Sans_SC_Thin;
-  font-weight: 100;
+  font-family: HarmonyOS_Sans_SC_Regular, "HarmonyOS Sans SC", -apple-system,
+    BlinkMacSystemFont, "Segoe UI", "Microsoft YaHei", sans-serif;
+  font-weight: 400;
   color: rgba(219, 219, 219, 1);
   line-height: 1.35vw;
   text-align: justify;
@@ -1075,7 +1076,8 @@ button:active {
   align-items: center;
   gap: 1.2vw;
   font-size: 0.85vw;
-  font-family: HarmonyOS_Sans_SC_Thin, sans-serif;
+  font-family: HarmonyOS_Sans_SC_Regular, "HarmonyOS Sans SC", -apple-system,
+    BlinkMacSystemFont, "Segoe UI", "Microsoft YaHei", sans-serif;
   color: #C8C9CA;
 }
 
@@ -1151,7 +1153,8 @@ button:active {
   background: transparent;
   color: rgba(255, 255, 255, 0.55);
   font-size: 0.78vw;
-  font-family: HarmonyOS_Sans_SC_Thin, sans-serif;
+  font-family: HarmonyOS_Sans_SC_Regular, "HarmonyOS Sans SC", -apple-system,
+    BlinkMacSystemFont, "Segoe UI", "Microsoft YaHei", sans-serif;
   font-weight: 400;
   text-align: center;
   line-height: 1.6;
@@ -1230,7 +1233,8 @@ button:active {
 
 .offshore-stat-desc {
   font-size: 0.85vw;
-  font-family: HarmonyOS_Sans_SC_Thin, sans-serif;
+  font-family: HarmonyOS_Sans_SC_Regular, "HarmonyOS Sans SC", -apple-system,
+    BlinkMacSystemFont, "Segoe UI", "Microsoft YaHei", sans-serif;
   font-weight: 400;
   color: rgba(80, 80, 80, 1);
   line-height: 1.4;
@@ -1238,7 +1242,8 @@ button:active {
 
 .offshore-note {
   font-size: 0.78vw;
-  font-family: HarmonyOS_Sans_SC_Thin, sans-serif;
+  font-family: HarmonyOS_Sans_SC_Regular, "HarmonyOS Sans SC", -apple-system,
+    BlinkMacSystemFont, "Segoe UI", "Microsoft YaHei", sans-serif;
   color: rgba(120, 120, 120, 1);
   line-height: 1.6;
   margin: 0;
@@ -2180,8 +2185,9 @@ button:active {
   overflow-wrap: break-word;
   color: rgba(111, 111, 111, 1);
   font-size: 0.95vw;
-  font-family: HarmonyOS_Sans_SC_Thin;
-  font-weight: 100;
+  font-family: HarmonyOS_Sans_SC_Regular, "HarmonyOS Sans SC", -apple-system,
+    BlinkMacSystemFont, "Segoe UI", "Microsoft YaHei", sans-serif;
+  font-weight: 400;
   text-align: left;
   line-height: 1.6vw;
   margin: 1.34vw 0 0 8.04vw;
@@ -2213,7 +2219,7 @@ button:active {
   width: 100%;
   height: 34vw;
   margin: 0;
-  object-fit: cover;
+  object-fit: contain;
   display: block;
 }
 
@@ -2313,9 +2319,10 @@ button:active {
   overflow-wrap: break-word;
   color: rgba(219, 219, 219, 1);
   font-size: 0.71vw;
-  font-family: HarmonyOS_Sans_SC_Thin;
-  font-weight: 100;
-  text-align: justifyLeft;
+  font-family: HarmonyOS_Sans_SC_Regular, "HarmonyOS Sans SC", -apple-system,
+    BlinkMacSystemFont, "Segoe UI", "Microsoft YaHei", sans-serif;
+  font-weight: 400;
+  text-align: justify;
   line-height: 1.35vw;
   margin-top: 0.02vw;
 }
@@ -2340,9 +2347,10 @@ button:active {
   overflow-wrap: break-word;
   color: rgba(111, 111, 111, 1);
   font-size: 0.71vw;
-  font-family: HarmonyOS_Sans_SC_Thin;
-  font-weight: 100;
-  text-align: justifyLeft;
+  font-family: HarmonyOS_Sans_SC_Regular, "HarmonyOS Sans SC", -apple-system,
+    BlinkMacSystemFont, "Segoe UI", "Microsoft YaHei", sans-serif;
+  font-weight: 400;
+  text-align: justify;
   line-height: 1.35vw;
   margin: 0.01vw 0 0 2.3vw;
 }
@@ -2367,9 +2375,10 @@ button:active {
   overflow-wrap: break-word;
   color: rgba(219, 219, 219, 1);
   font-size: 0.71vw;
-  font-family: HarmonyOS_Sans_SC_Thin;
-  font-weight: 100;
-  text-align: justifyLeft;
+  font-family: HarmonyOS_Sans_SC_Regular, "HarmonyOS Sans SC", -apple-system,
+    BlinkMacSystemFont, "Segoe UI", "Microsoft YaHei", sans-serif;
+  font-weight: 400;
+  text-align: justify;
   line-height: 1.35vw;
   margin-left: 2.86vw;
 }
@@ -2487,8 +2496,9 @@ button:active {
   overflow-wrap: break-word;
   color: rgba(111, 111, 111, 1);
   font-size: 0.95vw;
-  font-family: HarmonyOS_Sans_SC_Thin;
-  font-weight: 100;
+  font-family: HarmonyOS_Sans_SC_Regular, "HarmonyOS Sans SC", -apple-system,
+    BlinkMacSystemFont, "Segoe UI", "Microsoft YaHei", sans-serif;
+  font-weight: 400;
   text-align: left;
   white-space: nowrap;
   line-height: 1.6vw;
@@ -2506,8 +2516,9 @@ button:active {
 .news-tab {
   padding: 0.2vw 1vw;
   font-size: 0.95vw;
-  font-family: HarmonyOS_Sans_SC_Thin, sans-serif;
-  font-weight: 100;
+  font-family: HarmonyOS_Sans_SC_Regular, "HarmonyOS Sans SC", -apple-system,
+    BlinkMacSystemFont, "Segoe UI", "Microsoft YaHei", sans-serif;
+  font-weight: 400;
   color: rgba(111, 111, 111, 1);
   background: #fff;
   border: 1px solid rgba(200, 200, 200, 0.8);
@@ -2577,8 +2588,9 @@ button:active {
   overflow-wrap: break-word;
   color: rgba(111, 111, 111, 1);
   font-size: 0.55vw;
-  font-family: HarmonyOS_Sans_SC_Thin;
-  font-weight: 100;
+  font-family: HarmonyOS_Sans_SC_Regular, "HarmonyOS Sans SC", -apple-system,
+    BlinkMacSystemFont, "Segoe UI", "Microsoft YaHei", sans-serif;
+  font-weight: 400;
   text-align: left;
   white-space: nowrap;
   line-height: 1.6vw;
@@ -2594,9 +2606,10 @@ button:active {
   border: 0;
   color: rgba(72, 71, 71, 1);
   font-size: 0.78vw;
-  font-family: HarmonyOS_Sans_SC_Bold;
+  font-family: HarmonyOS_Sans_SC_Bold, "HarmonyOS Sans SC", -apple-system,
+    BlinkMacSystemFont, "Segoe UI", "Microsoft YaHei", sans-serif;
   font-weight: 700;
-  text-align: justifyLeft;
+  text-align: justify;
   line-height: 1.2vw;
 }
 
@@ -2608,9 +2621,10 @@ button:active {
   border: 0;
   color: rgba(72, 71, 71, 1);
   font-size: 0.63vw;
-  font-family: HarmonyOS_Sans_SC_Thin;
-  font-weight: 100;
-  text-align: justifyLeft;
+  font-family: HarmonyOS_Sans_SC_Regular, "HarmonyOS Sans SC", -apple-system,
+    BlinkMacSystemFont, "Segoe UI", "Microsoft YaHei", sans-serif;
+  font-weight: 400;
+  text-align: justify;
   line-height: 1.12vw;
   display: -webkit-box;
   -webkit-line-clamp: 3;
@@ -2631,9 +2645,10 @@ button:active {
   overflow-wrap: break-word;
   color: rgba(72, 71, 71, 1);
   font-size: 0.63vw;
-  font-family: HarmonyOS_Sans_SC_Thin;
-  font-weight: 100;
-  text-align: justifyLeft;
+  font-family: HarmonyOS_Sans_SC_Regular, "HarmonyOS Sans SC", -apple-system,
+    BlinkMacSystemFont, "Segoe UI", "Microsoft YaHei", sans-serif;
+  font-weight: 400;
+  text-align: justify;
   white-space: nowrap;
   line-height: 1.12vw;
 }
@@ -2650,8 +2665,9 @@ button:active {
   overflow-wrap: break-word;
   color: rgba(111, 111, 111, 1);
   font-size: 0.55vw;
-  font-family: HarmonyOS_Sans_SC_Thin;
-  font-weight: 100;
+  font-family: HarmonyOS_Sans_SC_Regular, "HarmonyOS Sans SC", -apple-system,
+    BlinkMacSystemFont, "Segoe UI", "Microsoft YaHei", sans-serif;
+  font-weight: 400;
   text-align: left;
   white-space: nowrap;
   line-height: 1.6vw;
@@ -2664,9 +2680,10 @@ button:active {
   overflow-wrap: break-word;
   color: rgba(72, 71, 71, 1);
   font-size: 0.78vw;
-  font-family: HarmonyOS_Sans_SC_Bold;
+  font-family: HarmonyOS_Sans_SC_Bold, "HarmonyOS Sans SC", -apple-system,
+    BlinkMacSystemFont, "Segoe UI", "Microsoft YaHei", sans-serif;
   font-weight: 700;
-  text-align: justifyLeft;
+  text-align: justify;
   line-height: 1.2vw;
   margin: 1.65vw 0 0 2.45vw;
 }
@@ -2677,9 +2694,10 @@ button:active {
   overflow-wrap: break-word;
   color: rgba(72, 71, 71, 1);
   font-size: 0.63vw;
-  font-family: HarmonyOS_Sans_SC_Thin;
-  font-weight: 100;
-  text-align: justifyLeft;
+  font-family: HarmonyOS_Sans_SC_Regular, "HarmonyOS Sans SC", -apple-system,
+    BlinkMacSystemFont, "Segoe UI", "Microsoft YaHei", sans-serif;
+  font-weight: 400;
+  text-align: justify;
   line-height: 1.12vw;
   margin: 1.19vw 0 0 2.43vw;
 }
@@ -2707,9 +2725,10 @@ button:active {
   overflow-wrap: break-word;
   color: rgba(72, 71, 71, 1);
   font-size: 0.63vw;
-  font-family: HarmonyOS_Sans_SC_Thin;
-  font-weight: 100;
-  text-align: justifyLeft;
+  font-family: HarmonyOS_Sans_SC_Regular, "HarmonyOS Sans SC", -apple-system,
+    BlinkMacSystemFont, "Segoe UI", "Microsoft YaHei", sans-serif;
+  font-weight: 400;
+  text-align: justify;
   white-space: nowrap;
   line-height: 1.12vw;
 }
@@ -2740,8 +2759,9 @@ button:active {
   overflow-wrap: break-word;
   color: rgba(111, 111, 111, 1);
   font-size: 0.55vw;
-  font-family: HarmonyOS_Sans_SC_Thin;
-  font-weight: 100;
+  font-family: HarmonyOS_Sans_SC_Regular, "HarmonyOS Sans SC", -apple-system,
+    BlinkMacSystemFont, "Segoe UI", "Microsoft YaHei", sans-serif;
+  font-weight: 400;
   text-align: left;
   white-space: nowrap;
   line-height: 1.6vw;
@@ -2754,9 +2774,10 @@ button:active {
   overflow-wrap: break-word;
   color: rgba(72, 71, 71, 1);
   font-size: 0.78vw;
-  font-family: HarmonyOS_Sans_SC_Bold;
+  font-family: HarmonyOS_Sans_SC_Bold, "HarmonyOS Sans SC", -apple-system,
+    BlinkMacSystemFont, "Segoe UI", "Microsoft YaHei", sans-serif;
   font-weight: 700;
-  text-align: justifyLeft;
+  text-align: justify;
   line-height: 1.2vw;
   margin: 1.65vw 0 0 2.45vw;
 }
@@ -2767,9 +2788,10 @@ button:active {
   overflow-wrap: break-word;
   color: rgba(72, 71, 71, 1);
   font-size: 0.63vw;
-  font-family: HarmonyOS_Sans_SC_Thin;
-  font-weight: 100;
-  text-align: justifyLeft;
+  font-family: HarmonyOS_Sans_SC_Regular, "HarmonyOS Sans SC", -apple-system,
+    BlinkMacSystemFont, "Segoe UI", "Microsoft YaHei", sans-serif;
+  font-weight: 400;
+  text-align: justify;
   line-height: 1.12vw;
   margin: 1.19vw 0 0 2.45vw;
 }
@@ -2786,9 +2808,10 @@ button:active {
   overflow-wrap: break-word;
   color: rgba(72, 71, 71, 1);
   font-size: 0.63vw;
-  font-family: HarmonyOS_Sans_SC_Thin;
-  font-weight: 100;
-  text-align: justifyLeft;
+  font-family: HarmonyOS_Sans_SC_Regular, "HarmonyOS Sans SC", -apple-system,
+    BlinkMacSystemFont, "Segoe UI", "Microsoft YaHei", sans-serif;
+  font-weight: 400;
+  text-align: justify;
   white-space: nowrap;
   line-height: 1.12vw;
 }
@@ -2819,8 +2842,9 @@ button:active {
   overflow-wrap: break-word;
   color: rgba(111, 111, 111, 1);
   font-size: 0.55vw;
-  font-family: HarmonyOS_Sans_SC_Thin;
-  font-weight: 100;
+  font-family: HarmonyOS_Sans_SC_Regular, "HarmonyOS Sans SC", -apple-system,
+    BlinkMacSystemFont, "Segoe UI", "Microsoft YaHei", sans-serif;
+  font-weight: 400;
   text-align: left;
   white-space: nowrap;
   line-height: 1.6vw;
@@ -2833,9 +2857,10 @@ button:active {
   overflow-wrap: break-word;
   color: rgba(72, 71, 71, 1);
   font-size: 0.78vw;
-  font-family: HarmonyOS_Sans_SC_Bold;
+  font-family: HarmonyOS_Sans_SC_Bold, "HarmonyOS Sans SC", -apple-system,
+    BlinkMacSystemFont, "Segoe UI", "Microsoft YaHei", sans-serif;
   font-weight: 700;
-  text-align: justifyLeft;
+  text-align: justify;
   line-height: 1.2vw;
   margin: 1.65vw 0 0 2.45vw;
 }
@@ -2846,9 +2871,10 @@ button:active {
   overflow-wrap: break-word;
   color: rgba(72, 71, 71, 1);
   font-size: 0.63vw;
-  font-family: HarmonyOS_Sans_SC_Thin;
-  font-weight: 100;
-  text-align: justifyLeft;
+  font-family: HarmonyOS_Sans_SC_Regular, "HarmonyOS Sans SC", -apple-system,
+    BlinkMacSystemFont, "Segoe UI", "Microsoft YaHei", sans-serif;
+  font-weight: 400;
+  text-align: justify;
   line-height: 1.12vw;
   margin: 1.19vw 0 0 2.45vw;
 }
@@ -2865,9 +2891,10 @@ button:active {
   overflow-wrap: break-word;
   color: rgba(72, 71, 71, 1);
   font-size: 0.63vw;
-  font-family: HarmonyOS_Sans_SC_Thin;
-  font-weight: 100;
-  text-align: justifyLeft;
+  font-family: HarmonyOS_Sans_SC_Regular, "HarmonyOS Sans SC", -apple-system,
+    BlinkMacSystemFont, "Segoe UI", "Microsoft YaHei", sans-serif;
+  font-weight: 400;
+  text-align: justify;
   white-space: nowrap;
   line-height: 1.12vw;
 }
@@ -2906,8 +2933,9 @@ button:active {
   overflow-wrap: break-word;
   color: rgba(111, 111, 111, 1);
   font-size: 0.95vw;
-  font-family: HarmonyOS_Sans_SC_Thin;
-  font-weight: 100;
+  font-family: HarmonyOS_Sans_SC_Regular, "HarmonyOS Sans SC", -apple-system,
+    BlinkMacSystemFont, "Segoe UI", "Microsoft YaHei", sans-serif;
+  font-weight: 400;
   text-align: left;
   white-space: nowrap;
   line-height: 1.6vw;
@@ -2942,8 +2970,9 @@ button:active {
   overflow-wrap: break-word;
   color: rgba(111, 111, 111, 1);
   font-size: 0.95vw;
-  font-family: HarmonyOS_Sans_SC_Thin;
-  font-weight: 100;
+  font-family: HarmonyOS_Sans_SC_Regular, "HarmonyOS Sans SC", -apple-system,
+    BlinkMacSystemFont, "Segoe UI", "Microsoft YaHei", sans-serif;
+  font-weight: 400;
   text-align: left;
   white-space: nowrap;
   line-height: 1.6vw;
@@ -3159,6 +3188,11 @@ button:active {
   overflow: visible;
 }
 
+.footer-nav {
+  display: flex;
+  align-items: flex-start;
+}
+
 .footer-logo {
   display: block;
   width: 9vw;
@@ -3174,8 +3208,9 @@ button:active {
   white-space: nowrap;
   color: rgba(255, 255, 255, 1);
   font-size: 0.9vw;
-  font-family: HarmonyOS_Sans_SC;
-  font-weight: normal;
+  font-family: HarmonyOS_Sans_SC_Regular, "HarmonyOS Sans SC", -apple-system,
+    BlinkMacSystemFont, "Segoe UI", "Microsoft YaHei", sans-serif;
+  font-weight: 400;
   text-align: left;
   line-height: 3.25vw;
   margin: 0.42vw 0 0 11.17vw;
@@ -3188,8 +3223,9 @@ button:active {
   white-space: nowrap;
   color: rgba(255, 255, 255, 1);
   font-size: 0.9vw;
-  font-family: HarmonyOS_Sans_SC;
-  font-weight: normal;
+  font-family: HarmonyOS_Sans_SC_Regular, "HarmonyOS Sans SC", -apple-system,
+    BlinkMacSystemFont, "Segoe UI", "Microsoft YaHei", sans-serif;
+  font-weight: 400;
   text-align: left;
   line-height: 3.25vw;
   margin: 0.4vw 0 0 8.4vw;
@@ -3202,8 +3238,9 @@ button:active {
   white-space: nowrap;
   color: rgba(255, 255, 255, 1);
   font-size: 0.9vw;
-  font-family: HarmonyOS_Sans_SC;
-  font-weight: normal;
+  font-family: HarmonyOS_Sans_SC_Regular, "HarmonyOS Sans SC", -apple-system,
+    BlinkMacSystemFont, "Segoe UI", "Microsoft YaHei", sans-serif;
+  font-weight: 400;
   text-align: left;
   line-height: 3.25vw;
   margin: 0.4vw 0 0 8.36vw;
@@ -3231,8 +3268,9 @@ button:active {
   overflow-wrap: break-word;
   color: rgba(255, 255, 255, 1);
   font-size: 1.19vw;
-  font-family: HarmonyOS_Sans_SC_Light;
-  font-weight: 300;
+  font-family: HarmonyOS_Sans_SC_Regular, "HarmonyOS Sans SC", -apple-system,
+    BlinkMacSystemFont, "Segoe UI", "Microsoft YaHei", sans-serif;
+  font-weight: 400;
   text-align: left;
   white-space: nowrap;
   line-height: 1.2vw;
@@ -3405,8 +3443,9 @@ button:active {
 .toolbar-item {
   color: rgba(255, 255, 255, 1);
   font-size: 0.95vw;
-  font-family: HarmonyOS_Sans_SC_Light;
-  font-weight: 300;
+  font-family: HarmonyOS_Sans_SC_Regular, "HarmonyOS Sans SC", -apple-system,
+    BlinkMacSystemFont, "Segoe UI", "Microsoft YaHei", sans-serif;
+  font-weight: 400;
   cursor: pointer;
   transition: opacity 0.3s ease;
 }
@@ -3477,7 +3516,8 @@ button:active {
   display: block;
   color: rgba(255, 255, 255, 1);
   font-size: 0.85vw;
-  font-family: HarmonyOS_Sans_SC_Light;
+  font-family: HarmonyOS_Sans_SC_Regular, "HarmonyOS Sans SC", -apple-system,
+    BlinkMacSystemFont, "Segoe UI", "Microsoft YaHei", sans-serif;
   text-decoration: none;
   padding: 0.4vw 1vw;
   transition: background 0.3s ease;
@@ -3763,8 +3803,9 @@ button:active {
   overflow-wrap: break-word;
   color: rgba(43, 62, 128, 1);
   font-size: 0.95vw;
-  font-family: HarmonyOS_Sans_SC_Light;
-  font-weight: 300;
+  font-family: HarmonyOS_Sans_SC_Regular, "HarmonyOS Sans SC", -apple-system,
+    BlinkMacSystemFont, "Segoe UI", "Microsoft YaHei", sans-serif;
+  font-weight: 400;
   text-align: left;
   white-space: nowrap;
   line-height: 0.83vw;
@@ -3920,8 +3961,9 @@ button:active {
   overflow-wrap: break-word;
   color: rgba(255, 255, 255, 1);
   font-size: 1.07vw;
-  font-family: HarmonyOS_Sans_SC;
-  font-weight: normal;
+  font-family: HarmonyOS_Sans_SC_Regular, "HarmonyOS Sans SC", -apple-system,
+    BlinkMacSystemFont, "Segoe UI", "Microsoft YaHei", sans-serif;
+  font-weight: 400;
   text-align: center;
   white-space: nowrap;
   line-height: 1.08vw;
@@ -3972,8 +4014,9 @@ button:active {
   overflow-wrap: break-word;
   color: rgba(255, 255, 255, 1);
   font-size: 1.07vw;
-  font-family: HarmonyOS_Sans_SC;
-  font-weight: normal;
+  font-family: HarmonyOS_Sans_SC_Regular, "HarmonyOS Sans SC", -apple-system,
+    BlinkMacSystemFont, "Segoe UI", "Microsoft YaHei", sans-serif;
+  font-weight: 400;
   text-align: center;
   line-height: 1.08vw;
   margin-top: -2.05vw;
@@ -4056,7 +4099,8 @@ button:active {
   background-color: #fff;
   color: #9F9F9F;
   font-size: 0.95vw;
-  font-family: HarmonyOS_Sans_SC_Thin, sans-serif;
+  font-family: HarmonyOS_Sans_SC_Regular, "HarmonyOS Sans SC", -apple-system,
+    BlinkMacSystemFont, "Segoe UI", "Microsoft YaHei", sans-serif;
   text-decoration: none;
   box-sizing: border-box;
 }
@@ -4197,9 +4241,10 @@ button:active {
   overflow-wrap: break-word;
   color: rgba(96, 96, 96, 1);
   font-size: 0.78vw;
-  font-family: HarmonyOS_Sans_SC_Thin;
-  font-weight: 100;
-  text-align: justifyLeft;
+  font-family: HarmonyOS_Sans_SC_Regular, "HarmonyOS Sans SC", -apple-system,
+    BlinkMacSystemFont, "Segoe UI", "Microsoft YaHei", sans-serif;
+  font-weight: 400;
+  text-align: justify;
   line-height: 2.04vw;
   margin: 3.11vw 0 0 0.01vw;
 }
@@ -4335,8 +4380,9 @@ button:active {
   overflow-wrap: break-word;
   color: rgba(255, 255, 255, 1);
   font-size: 0.9vw;
-  font-family: HarmonyOS_Sans_SC;
-  font-weight: normal;
+  font-family: HarmonyOS_Sans_SC_Regular, "HarmonyOS Sans SC", -apple-system,
+    BlinkMacSystemFont, "Segoe UI", "Microsoft YaHei", sans-serif;
+  font-weight: 400;
   text-align: left;
   line-height: 3.25vw;
   margin: 0.42vw 0 0 11.17vw;
@@ -4348,8 +4394,9 @@ button:active {
   overflow-wrap: break-word;
   color: rgba(255, 255, 255, 1);
   font-size: 0.9vw;
-  font-family: HarmonyOS_Sans_SC;
-  font-weight: normal;
+  font-family: HarmonyOS_Sans_SC_Regular, "HarmonyOS Sans SC", -apple-system,
+    BlinkMacSystemFont, "Segoe UI", "Microsoft YaHei", sans-serif;
+  font-weight: 400;
   text-align: left;
   line-height: 3.25vw;
   margin: 0.4vw 0 0 8.38vw;
@@ -4361,8 +4408,9 @@ button:active {
   overflow-wrap: break-word;
   color: rgba(255, 255, 255, 1);
   font-size: 0.9vw;
-  font-family: HarmonyOS_Sans_SC;
-  font-weight: normal;
+  font-family: HarmonyOS_Sans_SC_Regular, "HarmonyOS Sans SC", -apple-system,
+    BlinkMacSystemFont, "Segoe UI", "Microsoft YaHei", sans-serif;
+  font-weight: 400;
   text-align: left;
   line-height: 3.25vw;
   margin: 0.4vw 0 0 8.37vw;
@@ -4380,8 +4428,9 @@ button:active {
   overflow-wrap: break-word;
   color: rgba(255, 255, 255, 1);
   font-size: 1.19vw;
-  font-family: HarmonyOS_Sans_SC_Light;
-  font-weight: 300;
+  font-family: HarmonyOS_Sans_SC_Regular, "HarmonyOS Sans SC", -apple-system,
+    BlinkMacSystemFont, "Segoe UI", "Microsoft YaHei", sans-serif;
+  font-weight: 400;
   text-align: left;
   white-space: nowrap;
   line-height: 1.2vw;
@@ -4448,8 +4497,9 @@ button:active {
   overflow-wrap: break-word;
   color: rgba(255, 255, 255, 1);
   font-size: 0.94vw;
-  font-family: HarmonyOS_Sans_SC_Light;
-  font-weight: 300;
+  font-family: HarmonyOS_Sans_SC_Regular, "HarmonyOS Sans SC", -apple-system,
+    BlinkMacSystemFont, "Segoe UI", "Microsoft YaHei", sans-serif;
+  font-weight: 400;
   text-align: left;
   white-space: nowrap;
   line-height: 0.95vw;
@@ -4462,8 +4512,9 @@ button:active {
   overflow-wrap: break-word;
   color: rgba(255, 255, 255, 1);
   font-size: 0.86vw;
-  font-family: HarmonyOS_Sans_SC_Light;
-  font-weight: 300;
+  font-family: HarmonyOS_Sans_SC_Regular, "HarmonyOS Sans SC", -apple-system,
+    BlinkMacSystemFont, "Segoe UI", "Microsoft YaHei", sans-serif;
+  font-weight: 400;
   text-align: left;
   white-space: nowrap;
   line-height: 0.83vw;
@@ -4529,9 +4580,10 @@ button:active {
   overflow-wrap: break-word;
   color: rgba(96, 96, 96, 1);
   font-size: 0.78vw;
-  font-family: HarmonyOS_Sans_SC_Thin;
-  font-weight: 100;
-  text-align: justifyLeft;
+  font-family: HarmonyOS_Sans_SC_Regular, "HarmonyOS Sans SC", -apple-system,
+    BlinkMacSystemFont, "Segoe UI", "Microsoft YaHei", sans-serif;
+  font-weight: 400;
+  text-align: justify;
   line-height: 1.68vw;
   margin: 3.64vw 0 8.96vw 1.47vw;
 }
@@ -4575,9 +4627,10 @@ button:active {
   overflow-wrap: break-word;
   color: rgba(96, 96, 96, 1);
   font-size: 0.78vw;
-  font-family: HarmonyOS_Sans_SC_Thin;
-  font-weight: 100;
-  text-align: justifyLeft;
+  font-family: HarmonyOS_Sans_SC_Regular, "HarmonyOS Sans SC", -apple-system,
+    BlinkMacSystemFont, "Segoe UI", "Microsoft YaHei", sans-serif;
+  font-weight: 400;
+  text-align: justify;
   line-height: 1.68vw;
   margin: 3.64vw 0 10.67vw 1.45vw;
 }
@@ -4691,6 +4744,8 @@ button:active {
     max-width: 100%;
     margin-left: auto;
     margin-right: auto;
+    /* 顶部再留出一点空间，避免紧贴导航条 */
+    margin-top: 6vw;
     padding: 0 2vw 8vw;
     box-sizing: border-box;
   }
@@ -4722,7 +4777,7 @@ button:active {
     width: 50vw;
     max-width: 200px;
     height: 3px;
-    margin-bottom: 5vw;
+    margin-bottom: 7vw;
   }
 
   .contact-company-block {
@@ -5017,8 +5072,12 @@ button:active {
 
   /* 产业布局轮播 */
   .image_4-swiper {
-    width: 80vw;
-    margin: 3vw auto 0;
+    /* 移动端占满屏宽，防止左右露出上一张/下一张 */
+    width: 100vw;
+    margin: 3vw 0 0;
+    overflow: hidden;
+    left: 50%;
+    transform: translateX(-50%);
   }
 
   .image_4-swiper .image_4 {
@@ -5356,6 +5415,14 @@ button:active {
   }
 
   /* footer */
+  .footer-nav {
+    width: 100%;
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    column-gap: 8vw;
+    row-gap: 3vw;
+  }
+
   .section_8 {
     width: 88.1vw;
     height: auto;
