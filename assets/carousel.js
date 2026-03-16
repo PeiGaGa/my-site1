@@ -44,6 +44,19 @@
       function px(vw) { return (window.innerWidth * vw) / 100; }
       function updateNavFixed() {
         var wrapRect = sidebarWrap.getBoundingClientRect();
+        // footer 是否进入视口：一旦进入，则整体隐藏侧边栏（page-sidebar-hidden）
+        if (footerEl) {
+          var fr = footerEl.getBoundingClientRect();
+          var viewportH = window.innerHeight || document.documentElement.clientHeight;
+          // 根据 footer 底边是否进入视口来判断：
+          // - 当 footer 底边（bottom）进入视口（<= viewportH）时，隐藏侧边栏
+          // - 当 footer 底边还未进入视口时，展示侧边栏
+          if (fr.bottom <= viewportH) {
+            sidebarWrap.classList.add('page-sidebar-hidden');
+          } else {
+            sidebarWrap.classList.remove('page-sidebar-hidden');
+          }
+        }
         if (wrapRect.top <= fixThreshold) {
           nav.classList.add('is-fixed');
           nav.style.left = wrapRect.left + 'px';
@@ -51,9 +64,9 @@
           var topOffsetPx = px(topOffsetVw);
           var maxH = window.innerHeight - topOffsetPx - 16;
           if (footerEl) {
-            var fr = footerEl.getBoundingClientRect();
-            if (fr.top < window.innerHeight) {
-              maxH = Math.min(maxH, Math.max(0, fr.top - topOffsetPx - 12));
+            var fr2 = footerEl.getBoundingClientRect();
+            if (fr2.top < window.innerHeight) {
+              maxH = Math.min(maxH, Math.max(0, fr2.top - topOffsetPx - 12));
             }
           }
           nav.style.maxHeight = maxH + 'px';
@@ -197,6 +210,39 @@
       var paginationEl = side.querySelector('.news-side-pagination');
       if (!swiperEl || !paginationEl) return;
 
+      var slides = swiperEl.querySelectorAll('.swiper-slide');
+      var total = slides ? slides.length : 0;
+      var numsContainer = paginationEl.querySelector('.product-dot-numbers');
+      var dotsContainer = paginationEl.querySelector('.product-dots');
+      var windowSize = Math.min(5, total || 5);
+      var centerPos = Math.floor(windowSize / 2);
+
+      if (dotsContainer && total > 0) {
+        dotsContainer.innerHTML = '';
+        for (var d = 0; d < windowSize; d++) {
+          var dotSpan = document.createElement('span');
+          dotSpan.className = 'product-dot';
+          dotsContainer.appendChild(dotSpan);
+          dotSpan.addEventListener('click', function () {
+            var index = parseInt(this.getAttribute('data-index'), 10);
+            if (!isNaN(index)) swiper.slideToLoop(index);
+          });
+        }
+      }
+
+      if (numsContainer && total > 0) {
+        numsContainer.innerHTML = '';
+        for (var i = 0; i < windowSize; i++) {
+          var numSpan = document.createElement('span');
+          numSpan.className = 'product-dot-num';
+          numsContainer.appendChild(numSpan);
+          numSpan.addEventListener('click', function () {
+            var index = parseInt(this.getAttribute('data-index'), 10);
+            if (!isNaN(index)) swiper.slideToLoop(index);
+          });
+        }
+      }
+
       var swiper = new Swiper(swiperEl, {
         loop: true,
         speed: 600,
@@ -217,26 +263,39 @@
       });
 
       function setNewsSidePaginationActive(el, realIndex) {
-        var total = 5;
         var dots = el.querySelectorAll('.product-dot');
         var nums = el.querySelectorAll('.product-dot-num');
-        dots.forEach(function (dot, i) {
-          dot.classList.toggle('active', i === realIndex);
-        });
-        nums.forEach(function (num, i) {
-          num.classList.toggle('active', i === realIndex);
-        });
+        var start = 0;
+        if (total > 0) {
+          start = realIndex - centerPos;
+          if (start < 0) start = 0;
+          if (start > total - windowSize) start = Math.max(0, total - windowSize);
+        }
+
+        if (dotsContainer && total > 0) {
+          dots.forEach(function (dot, i) {
+            if (i >= windowSize) return;
+            var slideIndex = start + i;
+            dot.setAttribute('data-index', String(slideIndex));
+            dot.classList.toggle('active', slideIndex === realIndex);
+          });
+        }
+
+        if (numsContainer && total > 0) {
+          nums.forEach(function (num, i) {
+            if (i >= windowSize) return;
+            var slideIndex = start + i;
+            var displayNum = slideIndex + 1;
+            num.textContent = displayNum < 10 ? '0' + displayNum : String(displayNum);
+            num.setAttribute('data-index', String(slideIndex));
+            num.classList.toggle('active', slideIndex === realIndex);
+          });
+        }
       }
 
       paginationEl.querySelectorAll('.product-dot').forEach(function (dot) {
         dot.addEventListener('click', function () {
           var index = parseInt(dot.getAttribute('data-index'), 10);
-          swiper.slideToLoop(index);
-        });
-      });
-      paginationEl.querySelectorAll('.product-dot-num').forEach(function (num) {
-        num.addEventListener('click', function () {
-          var index = parseInt(num.getAttribute('data-index'), 10);
           swiper.slideToLoop(index);
         });
       });

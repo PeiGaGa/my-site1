@@ -24,6 +24,220 @@ button {
   background-color: transparent;
 }
 
+/* ---------- UEditor 富文本兼容（新闻详情页渲染） ---------- */
+/*
+  目标：让后台 UEditor 生成的 HTML（包含内联样式 + 部分 class 模板）
+  在 .news-detail-content .news-detail-body 中尽量“所见即所得”。
+  注意：这里全部做了作用域限制，避免影响全站其它区域。
+*/
+.news-detail-content .news-detail-body img,
+.news-detail-content .news-detail-body video,
+.news-detail-content .news-detail-body iframe {
+  max-width: 100%;
+  height: auto;
+}
+
+.news-detail-content .news-detail-body iframe {
+  display: block;
+}
+
+/* UEditor 上传图片常见“居中”写法兜底处理 */
+/* 1）段落设置 text-align:center 或 align="center" 的情况 */
+.news-detail-content .news-detail-body p[style*="text-align:center"],
+.news-detail-content .news-detail-body p[style*="text-align: center"],
+.news-detail-content .news-detail-body p[align="center"],
+.news-detail-content .news-detail-body div[style*="text-align:center"],
+.news-detail-content .news-detail-body div[style*="text-align: center"],
+.news-detail-content .news-detail-body div[align="center"] {
+  text-align: center;
+}
+.news-detail-content .news-detail-body p[style*="text-align:center"] img,
+.news-detail-content .news-detail-body p[style*="text-align: center"] img,
+.news-detail-content .news-detail-body p[align="center"] img,
+.news-detail-content .news-detail-body div[style*="text-align:center"] img,
+.news-detail-content .news-detail-body div[style*="text-align: center"] img,
+.news-detail-content .news-detail-body div[align="center"] img {
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+/* 2）图片自己带 text-align:center 的情况 */
+.news-detail-content .news-detail-body img[style*="text-align:center"],
+.news-detail-content .news-detail-body img[style*="text-align: center"] {
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+/* UEditor 常见图片对齐：有些内容会只给 img 设置 margin:auto 或 display:inline */
+.news-detail-content .news-detail-body p img,
+.news-detail-content .news-detail-body div img {
+  max-width: 100%;
+}
+
+/* 表格：UEditor 插入表格常见为 table/td/th，不同主题下可能缺边框与溢出处理 */
+.news-detail-content .news-detail-body table {
+  width: 100%;
+  max-width: 100%;
+  border-collapse: collapse;
+  border-spacing: 0;
+  margin: 0.8em 0;
+}
+.news-detail-content .news-detail-body th,
+.news-detail-content .news-detail-body td {
+  border: 1px solid rgba(0, 0, 0, 0.12);
+  padding: 0.5em 0.6em;
+  vertical-align: top;
+  word-break: break-word;
+}
+.news-detail-content .news-detail-body thead th {
+  background: rgba(0, 0, 0, 0.03);
+}
+
+/* 列表：有些富文本会被全局 reset 去掉 list-style，这里强制恢复 */
+.news-detail-content .news-detail-body ul,
+.news-detail-content .news-detail-body ol {
+  padding-left: 1.5em;
+}
+.news-detail-content .news-detail-body ul {
+  list-style: disc;
+}
+.news-detail-content .news-detail-body ol {
+  list-style: decimal;
+}
+.news-detail-content .news-detail-body li {
+  margin: 0.3em 0;
+}
+
+.news-detail-content .news-detail-body blockquote {
+  margin: 0.8em 0;
+  padding: 0.6em 1em;
+  border-left: 4px solid rgba(0, 0, 0, 0.12);
+  background: rgba(0, 0, 0, 0.02);
+}
+
+.news-detail-content .news-detail-body hr {
+  border: none;
+  border-top: 1px solid rgba(0, 0, 0, 0.12);
+  margin: 1em 0;
+}
+
+.news-detail-content .news-detail-body pre {
+  white-space: pre-wrap;
+  word-break: break-word;
+  padding: 0.9em 1em;
+  background: rgba(0, 0, 0, 0.03);
+  border-radius: 8px;
+  overflow: auto;
+}
+.news-detail-content .news-detail-body code {
+  font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono",
+    "Courier New", monospace;
+  font-size: 0.95em;
+}
+
+/* 下面是后台 editor.vue initialStyle / src/admin/css/layout.css 里用到的模板类的前台映射 */
+.news-detail-content .news-detail-body .col-2_1v1,
+.news-detail-content .news-detail-body .col-2_1v1 > div,
+.news-detail-content .news-detail-body .col-2_2v1,
+.news-detail-content .news-detail-body .col-2_2v1 > div {
+  overflow: hidden;
+  clear: both;
+}
+.news-detail-content .news-detail-body .col-2_1v1 > div img,
+.news-detail-content .news-detail-body .col-2_2v1 > div img {
+  max-width: 100%;
+}
+.news-detail-content .news-detail-body .col-2_1v1 {
+  width: 100%;
+}
+.news-detail-content .news-detail-body .col-2_1v1 > div:nth-child(even) > div,
+.news-detail-content .news-detail-body .col-2_1v1 > div:nth-child(odd) > div {
+  width: 44%;
+  padding: 3%;
+}
+.news-detail-content .news-detail-body .col-2_1v1 td {
+  border: 1px solid #737373;
+}
+.news-detail-content .news-detail-body .col-2_1v1.line > div:nth-child(2n) {
+  border-top: 1px solid #ededed;
+}
+.news-detail-content .news-detail-body .col-2_1v1 > div:nth-child(odd) > div:nth-child(odd) {
+  float: right;
+}
+.news-detail-content .news-detail-body .col-2_1v1 > div:nth-child(odd) > div:nth-child(even) {
+  float: left;
+  text-align: center;
+}
+.news-detail-content .news-detail-body .col-2_1v1 > div:nth-child(even) > div:nth-child(odd) {
+  float: left;
+}
+.news-detail-content .news-detail-body .col-2_1v1 > div:nth-child(even) > div:nth-child(even) {
+  float: right;
+  text-align: center;
+}
+.news-detail-content .news-detail-body .col-2_2v1 {
+  width: 100%;
+}
+.news-detail-content .news-detail-body .col-2_2v1 > div:nth-child(odd) > div {
+  padding: 3%;
+}
+.news-detail-content .news-detail-body .col-2_2v1 > div:nth-child(odd) > div:nth-child(odd) {
+  width: 60.66666667%;
+  float: left;
+}
+.news-detail-content .news-detail-body .col-2_2v1 > div:nth-child(odd) > div:nth-child(even) {
+  width: 27.33333333%;
+  float: right;
+}
+.news-detail-content .news-detail-body .col-2_2v1 > div:nth-child(even) {
+  background: #f8f9fb;
+}
+.news-detail-content .news-detail-body .col-2_2v1 > div:nth-child(even) > div {
+  padding: 3%;
+}
+.news-detail-content .news-detail-body .col-2_2v1 > div:nth-child(even) > div:nth-child(odd) {
+  width: 60.66666667%;
+  float: right;
+}
+.news-detail-content .news-detail-body .col-2_2v1 > div:nth-child(even) > div:nth-child(even) {
+  width: 27.33333333%;
+  float: left;
+}
+.news-detail-content .news-detail-body .product_list {
+  font-size: 16px;
+}
+.news-detail-content .news-detail-body .product_list strong {
+  margin: 1em 0;
+}
+.news-detail-content .news-detail-body .product_list p {
+  text-indent: 2em;
+  margin: 1em 0;
+}
+.news-detail-content .news-detail-body .product_list .btn-more {
+  margin-top: 1em;
+  display: inline-block;
+  margin-right: 10px;
+  padding: 0.5em;
+  text-align: center;
+  border-radius: 6px;
+  border: 1px solid #00b3dc;
+  color: #00b3dc;
+  transition: background 0.3s;
+}
+.news-detail-content .news-detail-body .btn-buy {
+  margin-top: 1em;
+  display: inline-block;
+  margin-right: 10px;
+  padding: 0.5em 2em;
+  text-align: center;
+  border-radius: 6px;
+  background: #0057a0;
+  color: #fff;
+  transition: background 0.3s;
+}
+
 button:active {
   opacity: 0.6;
 }
@@ -498,9 +712,7 @@ button:active {
 }
 
 .news-detail-body {
-  display: flex;
-  flex-direction: column;
-  gap: 1.2vw;
+  display: block;
 }
 
 .news-detail-section {
@@ -1068,6 +1280,13 @@ button:active {
   align-self: flex-start;
   border-radius: 0.3vw;
   padding: 0.4vw 0;
+}
+
+/* 关于我们 / 科研平台：根据滚动需要隐藏侧边栏时使用 */
+.page-sidebar.page-sidebar-hidden {
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity 0.2s ease;
 }
 
 .about-anchor-nav {
