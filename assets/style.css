@@ -438,7 +438,7 @@ button:active {
 .products-content .products-subtitle {
   margin-left: 0;
   width: auto;
-  max-width: 22vw;
+  max-width: 45vw;
 }
 
 .products-content .image_3 {
@@ -3589,7 +3589,8 @@ button:active {
 .header-logo {
   width: 9vw;
   height: auto;
-  transform: scale(3.5);
+  object-fit: contain;
+  transform: scale(1.2);
 }
 
 /* 主导航样式 */
@@ -5002,8 +5003,9 @@ button:active {
 
   .header-logo {
     width: 12vw !important;
-    transform: scale(2) !important;
+    transform: scale(1.2) !important;
     transform-origin: left center;
+    object-fit: contain;
   }
 
   .box_11 {
