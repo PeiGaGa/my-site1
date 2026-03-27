@@ -447,7 +447,7 @@ button:active {
 
 .products-subtitle {
   width: auto;
-  max-width: 22vw;
+  max-width: 45vw;
 }
 
 /* 产品中心标题右侧无色块时保持右对齐 */
@@ -2180,8 +2180,8 @@ button:active {
 }
 
 .paragraph_1 {
-  width: 12.4vw;
-  height: 2.5vw;
+  max-width: 50vw;
+  height: auto;
   overflow-wrap: break-word;
   color: rgba(111, 111, 111, 1);
   font-size: 0.95vw;
@@ -2486,13 +2486,17 @@ button:active {
 .section_2 {
   position: relative;
   width: 70.95vw;
-  height: 1.56vw;
+  height: auto;
   margin: 1.09vw 0 0 8.04vw;
+  /* 允许副标题变长后自动换行；空间不足时 tabs 可下移 */
+  flex-wrap: wrap;
+  align-items: flex-start;
+  row-gap: 0.6vw;
 }
 
 .text_12 {
-  width: 17.01vw;
-  height: 0.96vw;
+  width: auto;
+  height: auto;
   overflow-wrap: break-word;
   color: rgba(111, 111, 111, 1);
   font-size: 0.95vw;
@@ -2500,9 +2504,13 @@ button:active {
     BlinkMacSystemFont, "Segoe UI", "Microsoft YaHei", sans-serif;
   font-weight: 400;
   text-align: left;
-  white-space: nowrap;
+  white-space: normal;
   line-height: 1.6vw;
   margin-top: 0.31vw;
+  /* 在同一行时优先占据可用空间，避免把 tabs 挤出容器 */
+  flex: 1 1 26vw;
+  min-width: 18ch;
+  margin-right: 1.5vw;
 }
 
 /* 新闻动态 tab：全部、企业新闻、媒体报道、通知公告 */
@@ -2960,13 +2968,17 @@ button:active {
 
 .section_6 {
   width: 72.06vw;
-  height: 1.37vw;
+  height: auto;
   margin: 1.24vw 0 0 8.04vw;
+  /* 允许副标题字数变长后自动换行；空间不足时右侧色块可下移 */
+  flex-wrap: wrap;
+  align-items: flex-start;
+  row-gap: 0.6vw;
 }
 
 .text_28 {
-  width: 37.61vw;
-  height: 0.91vw;
+  width: auto;
+  height: auto;
   overflow-wrap: break-word;
   color: rgba(111, 111, 111, 1);
   font-size: 0.95vw;
@@ -2974,9 +2986,11 @@ button:active {
     BlinkMacSystemFont, "Segoe UI", "Microsoft YaHei", sans-serif;
   font-weight: 400;
   text-align: left;
-  white-space: nowrap;
+  white-space: normal;
   line-height: 1.6vw;
   margin-top: 0.16vw;
+  flex: 1 1 34vw;
+  min-width: 18ch;
 }
 
 .image_21 {
@@ -5162,6 +5176,7 @@ button:active {
     flex-direction: column;
     align-items: flex-start;
     gap: 2vw;
+    flex-wrap: nowrap;
   }
 
   .text_12 {
@@ -5170,6 +5185,8 @@ button:active {
     font-size: 3.2vw;
     line-height: 1.5;
     white-space: normal;
+    flex: none;
+    min-width: 0;
   }
 
   .news-tabs {
@@ -5352,6 +5369,7 @@ button:active {
     flex-direction: column;
     align-items: flex-start;
     gap: 2vw;
+    flex-wrap: nowrap;
   }
 
   .text_28 {
@@ -5360,6 +5378,8 @@ button:active {
     font-size: 3vw;
     line-height: 1.5;
     white-space: normal;
+    flex: none;
+    min-width: 0;
   }
 
   /* 产品中心装饰线 */
