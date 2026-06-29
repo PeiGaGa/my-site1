@@ -2266,6 +2266,13 @@ button:active {
   justify-content: center;
 }
 
+.image_4-swiper .image_4-link {
+  display: block;
+  width: 100%;
+  line-height: 0;
+  text-decoration: none;
+}
+
 .image_4-swiper .image_4 {
   width: 100%;
   height: 34vw;
