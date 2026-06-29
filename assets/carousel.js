@@ -91,6 +91,68 @@
     initAnchorNav('.research-content-block', '.research-anchor-link', '.research-anchor-nav');
   }
 
+  function initNewsDetailLatest() {
+    var latest = document.querySelector('.news-detail-latest');
+    var latestWrap = document.querySelector('.news-detail-latest-wrap');
+    if (!latest || !latestWrap) return;
+
+    var footerEl = document.querySelector('.section_8');
+    var topOffsetVw = 5.2;
+    function px(vw) { return (window.innerWidth * vw) / 100; }
+
+    function clearFixed() {
+      latest.classList.remove('is-fixed');
+      latest.style.left = '';
+      latest.style.width = '';
+      latest.style.maxHeight = '';
+      latestWrap.classList.remove('news-detail-latest-hidden');
+    }
+
+    function updateLatestFixed() {
+      if (window.innerWidth <= 900) {
+        clearFixed();
+        return;
+      }
+
+      var wrapRect = latestWrap.getBoundingClientRect();
+      var topOffsetPx = px(topOffsetVw);
+
+      if (footerEl) {
+        var footerRect = footerEl.getBoundingClientRect();
+        var viewportH = window.innerHeight || document.documentElement.clientHeight;
+        if (footerRect.bottom <= viewportH) {
+          latestWrap.classList.add('news-detail-latest-hidden');
+        } else {
+          latestWrap.classList.remove('news-detail-latest-hidden');
+        }
+      }
+
+      if (wrapRect.top <= topOffsetPx) {
+        latest.classList.add('is-fixed');
+        latest.style.left = wrapRect.left + 'px';
+        latest.style.width = wrapRect.width + 'px';
+
+        var maxH = window.innerHeight - topOffsetPx - 16;
+        if (footerEl) {
+          var footerRect2 = footerEl.getBoundingClientRect();
+          if (footerRect2.top < window.innerHeight) {
+            maxH = Math.min(maxH, Math.max(0, footerRect2.top - topOffsetPx - 12));
+          }
+        }
+        latest.style.maxHeight = maxH + 'px';
+      } else {
+        latest.classList.remove('is-fixed');
+        latest.style.left = '';
+        latest.style.width = '';
+        latest.style.maxHeight = '';
+      }
+    }
+
+    window.addEventListener('scroll', updateLatestFixed, { passive: true });
+    window.addEventListener('resize', updateLatestFixed);
+    updateLatestFixed();
+  }
+
   function initNewsTabs() {
     var tabsEl = document.getElementById('newsTabs');
     var sectionEl = document.getElementById('newsSection');
@@ -454,6 +516,7 @@
     initNewsTabs();
     initAboutPage();
     initResearchPage();
+    initNewsDetailLatest();
     initMobileNav();
   }
 
