@@ -3586,7 +3586,16 @@ button:active {
 }
 
 /* Header Logo */
+.header-logo-title {
+  margin: 0;
+  padding: 0;
+  font-size: 0;
+  line-height: 0;
+  font-weight: inherit;
+}
+
 .header-logo {
+  display: block;
   width: 9vw;
   height: auto;
   object-fit: contain;
